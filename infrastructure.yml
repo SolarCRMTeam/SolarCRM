@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+    rabbit:
+        image: "ronnyroos/rpi-rabbitmq"
+        restart: always
+        ports:
+            - 5672:5672
+            - 15672:15672
+        volumes:
+            - /media/rabbit/logs:/data/log
+            - /media/rabbit/data:/data/mnesia
