@@ -2,6 +2,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NotiWorker.Models;
+using NotiWorker.Models.Interfaces;
+using NotiWorker.Services;
 
 namespace NotiWorker
 {
@@ -21,6 +23,7 @@ namespace NotiWorker
                     BusConfig busConfig = configuration.GetSection("BusConfig").Get<BusConfig>();
 
                     services.AddSingleton(busConfig);
+                    services.AddSingleton<IDistributionChannel, MailDistributionChannel>();
                     services.AddHostedService<Worker>();
                 });
     }

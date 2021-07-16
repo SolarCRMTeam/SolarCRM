@@ -10,3 +10,8 @@ services:
         volumes:
             - /media/rabbit/logs:/data/log
             - /media/rabbit/data:/data/mnesia
+    smtp:
+        image: "jsurf/rpi-smtp"
+        restart: always
+        ports: 
+            - 25:25
