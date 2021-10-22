@@ -37,7 +37,7 @@ namespace NotiWorker.Services
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("", "")
+                Credentials = new NetworkCredential("arkes987@gmail.com", "akomwiexidbvuosu")
             };
 
             try
