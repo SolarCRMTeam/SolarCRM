@@ -1,0 +1,493 @@
+{
+ "$id": "1",
+ "modelTypes": [
+  {
+   "$id": "2",
+   "$type": "CompositeType",
+   "properties": [
+    {
+     "$id": "3",
+     "isReadOnly": false,
+     "realPath": [
+      "id"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "4",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "5",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "6",
+      "fixed": false,
+      "raw": "id"
+     },
+     "serializedName": "id",
+     "modelType": {
+      "$id": "7",
+      "$type": "PrimaryType",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
+      "deprecated": false,
+      "name": {
+       "$id": "8",
+       "fixed": false,
+       "raw": "Uuid"
+      }
+     }
+    }
+   ],
+   "serializedName": "ClientDto",
+   "containsConstantProperties": false,
+   "name": {
+    "$id": "9",
+    "fixed": false,
+    "raw": "ClientDto"
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "ClientDto",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/ClientDto"
+     ]
+    }
+   },
+   "deprecated": false
+  },
+  {
+   "$id": "10",
+   "$type": "CompositeType",
+   "properties": [
+    {
+     "$id": "11",
+     "isReadOnly": false,
+     "realPath": [
+      "id"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "12",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "13",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "14",
+      "fixed": false,
+      "raw": "id"
+     },
+     "serializedName": "id",
+     "modelType": {
+      "$id": "15",
+      "$type": "PrimaryType",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
+      "deprecated": false,
+      "name": {
+       "$id": "16",
+       "fixed": false,
+       "raw": "Uuid"
+      }
+     }
+    }
+   ],
+   "serializedName": "RepresentativeDto",
+   "containsConstantProperties": false,
+   "name": {
+    "$id": "17",
+    "fixed": false,
+    "raw": "RepresentativeDto"
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "RepresentativeDto",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/RepresentativeDto"
+     ]
+    }
+   },
+   "deprecated": false
+  }
+ ],
+ "name": "API",
+ "namespace": "",
+ "modelsName": "Models",
+ "apiVersion": "v1.0",
+ "baseUrl": "http://localhost",
+ "properties": [
+  {
+   "$id": "18",
+   "isReadOnly": false,
+   "realPath": [
+    "id"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "19",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "20",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·client·get·parameters·0",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": false,
+   "isConstant": false,
+   "name": {
+    "$id": "21",
+    "fixed": false,
+    "raw": "id"
+   },
+   "serializedName": "id",
+   "modelType": {
+    "$id": "22",
+    "$type": "PrimaryType",
+    "format": "uuid",
+    "knownPrimaryType": "uuid",
+    "deprecated": false,
+    "name": {
+     "$id": "23",
+     "fixed": false,
+     "raw": "Uuid"
+    }
+   }
+  },
+  {
+   "$id": "24",
+   "isReadOnly": false,
+   "realPath": [
+    "id"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "25",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "26",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·representative·get·parameters·0",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": false,
+   "isConstant": false,
+   "name": {
+    "$id": "27",
+    "fixed": false,
+    "raw": "Id1"
+   },
+   "serializedName": "id",
+   "modelType": {
+    "$id": "28",
+    "$type": "PrimaryType",
+    "format": "uuid",
+    "knownPrimaryType": "uuid",
+    "deprecated": false,
+    "name": {
+     "$id": "29",
+     "fixed": false,
+     "raw": "Uuid"
+    }
+   }
+  }
+ ],
+ "operations": [
+  {
+   "$id": "30",
+   "methods": [
+    {
+     "$id": "31",
+     "parameters": [
+      {
+       "$id": "32",
+       "clientProperty": {
+        "$ref": "18"
+       },
+       "location": "query",
+       "collectionFormat": "none",
+       "defaultValue": {
+        "$id": "33",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "34",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·client·get·parameters·0",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·0"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "35",
+        "fixed": false,
+        "raw": "id"
+       },
+       "serializedName": "id",
+       "modelType": {
+        "$id": "36",
+        "$type": "PrimaryType",
+        "format": "uuid",
+        "knownPrimaryType": "uuid",
+        "deprecated": false,
+        "name": {
+         "$id": "37",
+         "fixed": false,
+         "raw": "Uuid"
+        }
+       }
+      }
+     ],
+     "name": {
+      "$id": "38",
+      "fixed": false,
+      "raw": "GetById"
+     },
+     "group": {
+      "$id": "39",
+      "fixed": false,
+      "raw": ""
+     },
+     "serializedName": "GetById",
+     "url": "/Client",
+     "isAbsoluteUrl": false,
+     "httpMethod": "get",
+     "responses": {
+      "OK": {
+       "$id": "40",
+       "body": {
+        "$ref": "2"
+       },
+       "extensions": {
+        "$id": "41",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·client·get·responses·200",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/responses/paths·client·get·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "42",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "43",
+      "body": {
+       "$ref": "2"
+      },
+      "isNullable": true
+     },
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    },
+    {
+     "$id": "44",
+     "parameters": [
+      {
+       "$id": "45",
+       "clientProperty": {
+        "$ref": "18"
+       },
+       "location": "query",
+       "collectionFormat": "none",
+       "defaultValue": {
+        "$id": "46",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "47",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·representative·get·parameters·0",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·0"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "48",
+        "fixed": false,
+        "raw": "id"
+       },
+       "serializedName": "id",
+       "modelType": {
+        "$id": "49",
+        "$type": "PrimaryType",
+        "format": "uuid",
+        "knownPrimaryType": "uuid",
+        "deprecated": false,
+        "name": {
+         "$id": "50",
+         "fixed": false,
+         "raw": "Uuid"
+        }
+       }
+      }
+     ],
+     "name": {
+      "$id": "51",
+      "fixed": false,
+      "raw": "GetById1"
+     },
+     "group": {
+      "$id": "52",
+      "fixed": false,
+      "raw": ""
+     },
+     "serializedName": "GetById",
+     "url": "/Representative",
+     "isAbsoluteUrl": false,
+     "httpMethod": "get",
+     "responses": {
+      "OK": {
+       "$id": "53",
+       "body": {
+        "$ref": "10"
+       },
+       "extensions": {
+        "$id": "54",
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·representative·get·responses·200",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/responses/paths·representative·get·responses·200"
+         ]
+        }
+       },
+       "isNullable": true
+      }
+     },
+     "defaultResponse": {
+      "$id": "55",
+      "isNullable": true
+     },
+     "returnType": {
+      "$id": "56",
+      "body": {
+       "$ref": "10"
+      },
+      "isNullable": true
+     },
+     "requestContentType": "application/json; charset=utf-8",
+     "responseContentTypes": [
+      "application/json"
+     ],
+     "extensions": {
+      "servers": []
+     },
+     "deprecated": false,
+     "hidden": false
+    }
+   ],
+   "name": {
+    "$id": "57",
+    "fixed": false,
+    "raw": ""
+   },
+   "typeName": {
+    "$id": "58",
+    "fixed": false
+   },
+   "nameForProperty": "API"
+  }
+ ]
+}
