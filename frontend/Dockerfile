@@ -1,4 +1,4 @@
-FROM alpine as builder
+FROM balenalib/raspberry-pi-alpine-node as builder
 
 RUN apk add --update nodejs nodejs-npm
 
