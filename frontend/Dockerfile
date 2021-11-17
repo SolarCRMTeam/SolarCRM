@@ -1,4 +1,4 @@
-FROM ubuntu:latest as builder
+FROM arm32v7/node as builder
 
 WORKDIR /app
 COPY ./frontend/package*.json ./
