@@ -1,4 +1,4 @@
-FROM arm32v7/node as builder
+FROM hypriot/rpi-node as builder
 
 WORKDIR /app
 COPY ./frontend/package*.json ./
