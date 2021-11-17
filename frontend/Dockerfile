@@ -1,7 +1,5 @@
 FROM balenalib/raspberry-pi-alpine-node as builder
 
-RUN apk add --update nodejs nodejs-npm
-
 WORKDIR /app
 COPY ./frontend/package*.json ./
 RUN npm install --no-optional
