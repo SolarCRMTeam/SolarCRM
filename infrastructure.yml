@@ -32,4 +32,4 @@ services:
 networks:
   solar-network:
     driver: bridge
-    name: td1-network
+    name: solar-network
