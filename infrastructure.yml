@@ -1,23 +1,35 @@
 version: "3.5"
 
 services:
-    rabbit:
-        image: "ronnyroos/rpi-rabbitmq"
-        restart: always
-        ports:
-            - 5672:5672
-            - 15672:15672
-        volumes:
-            - /media/rabbit/logs:/data/log
-            - /media/rabbit/data:/data/mnesia
-    smtp:
-        image: "jsurf/rpi-smtp"
-        restart: always
-        ports: 
-            - 25:25
-    mysql:
-        image: hypriot/rpi-mysql
-        environment:
-        - MYSQL_ROOT_PASSWORD=hT4sR8Kja!*h
-        ports:
-            - 3306:3306
+  rabbit:
+    image: "ronnyroos/rpi-rabbitmq"
+    restart: always
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - /media/rabbit/logs:/data/log
+      - /media/rabbit/data:/data/mnesia
+    networks:
+      - solar-network
+  smtp:
+    image: "jsurf/rpi-smtp"
+    restart: always
+    ports:
+      - 25:25
+    networks:
+      - solar-network
+  mysql:
+    image: hypriot/rpi-mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=hT4sR8Kja!*h
+    ports:
+      - 3306:3306
+    networks:
+      - solar-network
+
+networks:
+  solar-network:
+    driver: bridge
+    name: td1-network

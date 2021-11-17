@@ -1,10 +1,10 @@
-import { Button } from "antd";
-import React from "react";
+import { Space } from "antd";
+import { NewClient } from "./NewClient";
 
 export const Clients = () => {
   return (
-    <div>
-      Clients
-    </div>
+    <Space direction="vertical">
+      <NewClient />
+    </Space>
   );
 };
