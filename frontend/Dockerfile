@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi4-64-debian-node as builder
+FROM balenalib/raspberry-pi-alpine-node as builder
 
 WORKDIR /app
 COPY ./frontend/package*.json ./
