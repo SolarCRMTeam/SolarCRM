@@ -24,7 +24,7 @@ services:
       dockerfile: frontend/Dockerfile
     ports:
       - 9001:80
-      - 9002: 443
+      - 9002:443
     networks:
       - solar-network
   noti-worker:
