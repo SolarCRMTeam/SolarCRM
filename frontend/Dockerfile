@@ -1,4 +1,4 @@
-FROM ubuntu:latest as builder
+FROM alpine as builder
 
 # update 
 RUN apt-get update
