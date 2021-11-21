@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./App.css";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Clients } from "./components/clients/Clients";
 import { Representatives } from "./components/representatives/Representatives";
