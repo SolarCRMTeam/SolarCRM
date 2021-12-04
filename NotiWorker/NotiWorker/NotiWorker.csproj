@@ -4,6 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>dotnet-NotiWorker-1AAFFC16-FE61-483A-8E25-56AE6D9EC0A3</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>SolarNotiWorker</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>

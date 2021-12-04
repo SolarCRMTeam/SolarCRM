@@ -5,7 +5,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["NotiWorker/NotiWorker.csproj", "NotiWorker/"]
+COPY ["NotiWorker/NotiWorker/NotiWorker.csproj", "NotiWorker/"]
 RUN dotnet restore "NotiWorker/NotiWorker.csproj"
 COPY . .
 WORKDIR "/src/NotiWorker"
