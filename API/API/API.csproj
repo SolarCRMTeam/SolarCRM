@@ -4,6 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>8a0c2a7a-dca9-400a-8b91-7593511a6e75</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <AssemblyName>SolarAPI</AssemblyName>  
   </PropertyGroup>
 
   <ItemGroup>

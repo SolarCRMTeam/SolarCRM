@@ -33,8 +33,9 @@ export const ClientsTable = () => {
     <Table
       columns={columns}
       dataSource={data}
-      pagination={{ pageSize: 50 }}
-      scroll={{ y: 240 }}
+      style={{width: '99vw'}}
+       pagination={{ pageSize: 50 }}
+       scroll={{ y: '70vh' }}
     />
   );
 };
