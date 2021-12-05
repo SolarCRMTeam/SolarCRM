@@ -5,7 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim-arm32v7 AS build
 WORKDIR /src
 COPY ["API/API/API.csproj", "API/"]
 COPY ["API/Infrastructure/API.Infrastructure/API.Infrastructure.csproj", "Infrastructure/API.Infrastructure/"]
@@ -22,4 +22,4 @@ RUN dotnet publish "API.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "API.dll"]
+ENTRYPOINT ["dotnet", "SolarAPI.dll"]
