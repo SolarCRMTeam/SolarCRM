@@ -15,11 +15,10 @@ namespace API.Infrastructure.Installers
             IHostEnvironment hostingEnvironment
             )
         {
-            var connectionString = configuration["Database:ConnectionString"];
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
             services.AddDbContext<DatabaseContext>(options => options
-                .UseMySql(connectionString, serverVersion)
+                .UseMySql(configuration.GetConnectionString("Database"), serverVersion)
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
