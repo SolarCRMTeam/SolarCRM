@@ -8,7 +8,7 @@ services:
       context: .
       dockerfile: API/API/Dockerfile
     environment:
-      - ASPNETCORE_ConnectionStrings__Database=server=mysql;port=4600;database=database;uid=root;pwd=hT4sR8Kja!*h
+      - ASPNETCORE_ConnectionStrings__Database=server=mysql;port=4600;database=solardb;uid=root;pwd=hT4sR8Kja!*h
     networks:
       - solar-network
     ports:
@@ -32,6 +32,11 @@ services:
     build:
       context: .
       dockerfile: NotiWorker/NotiWorker/Dockerfile
+    environment:
+      - BusConfig__HostName=host.docker.internal
+      - BusConfig__Port=5672
+      - BusConfig__MailQueueName="EMAIL_BUS"
+      - MailConfiguration__Hostname=host.docker.internal
     networks:
       - solar-network
 
