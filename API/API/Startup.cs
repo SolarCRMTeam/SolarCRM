@@ -1,12 +1,16 @@
+using API.Framework.EventBus;
 using API.Infrastructure;
 using API.Installers;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Sieve.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
 using System.Reflection;
 
 namespace API
@@ -33,6 +37,11 @@ namespace API
 
             services.InstallServicesInAssembly(Configuration, Environment, typeof(Startup).Assembly);
             services.InstallServicesInAssembly(Configuration, Environment, typeof(DatabaseContext).Assembly);
+            services.AddScoped<SieveProcessor>();
+
+            var domainAssemblies = AppDomain.CurrentDomain.GetAssemblies();
+            services.AddMediatR(domainAssemblies);
+            services.AddScoped<IInternalBus, InMemoryBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +65,14 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+
+
+            app.UseCors(corsPolicyBuilder =>
+                corsPolicyBuilder.WithOrigins("http://localhost:3003")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders("Content-Disposition")
+            );
 
             app.UpdateDatabase<DatabaseContext>();
         }

@@ -17,6 +17,87 @@ export const ClientDto: msRest.CompositeMapper = {
         type: {
           name: "Uuid"
         }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const ClientDtoPagedResult: msRest.CompositeMapper = {
+  serializedName: "ClientDtoPagedResult",
+  type: {
+    name: "Composite",
+    className: "ClientDtoPagedResult",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ClientDto"
+            }
+          }
+        }
+      },
+      rowCount: {
+        serializedName: "rowCount",
+        type: {
+          name: "Number"
+        }
+      },
+      pageSize: {
+        serializedName: "pageSize",
+        type: {
+          name: "Number"
+        }
+      },
+      currentPage: {
+        serializedName: "currentPage",
+        type: {
+          name: "Number"
+        }
+      },
+      totalPagesNumber: {
+        readOnly: true,
+        serializedName: "totalPagesNumber",
+        type: {
+          name: "Number"
+        }
+      },
+      hasPreviousPage: {
+        readOnly: true,
+        serializedName: "hasPreviousPage",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hasNextPage: {
+        readOnly: true,
+        serializedName: "hasNextPage",
+        type: {
+          name: "Boolean"
+        }
+      },
+      firstRowOnPage: {
+        readOnly: true,
+        serializedName: "firstRowOnPage",
+        type: {
+          name: "Number"
+        }
+      },
+      lastRowOnPage: {
+        readOnly: true,
+        serializedName: "lastRowOnPage",
+        type: {
+          name: "Number"
+        }
       }
     }
   }

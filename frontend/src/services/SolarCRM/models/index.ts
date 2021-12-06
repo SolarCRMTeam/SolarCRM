@@ -11,6 +11,37 @@ import * as msRest from "@azure/ms-rest-js";
  */
 export interface ClientDto {
   id?: string;
+  name?: string;
+}
+
+/**
+ * An interface representing ClientDtoPagedResult.
+ */
+export interface ClientDtoPagedResult {
+  results?: ClientDto[];
+  rowCount?: number;
+  pageSize?: number;
+  currentPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly totalPagesNumber?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasPreviousPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasNextPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly firstRowOnPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly lastRowOnPage?: number;
 }
 
 /**
@@ -30,8 +61,11 @@ export interface APIOptions extends ServiceClientOptions {
 /**
  * Optional Parameters.
  */
-export interface APIGetByIdOptionalParams extends msRest.RequestOptionsBase {
-  id?: string;
+export interface APIGetOptionalParams extends msRest.RequestOptionsBase {
+  filters?: string;
+  sorts?: string;
+  page?: number;
+  pageSize?: number;
 }
 
 /**
@@ -58,6 +92,26 @@ export type GetByIdResponse = ClientDto & {
        * The response body as parsed JSON or XML
        */
       parsedBody: ClientDto;
+    };
+};
+
+/**
+ * Contains response data for the get operation.
+ */
+export type GetResponse = ClientDtoPagedResult & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: ClientDtoPagedResult;
     };
 };
 

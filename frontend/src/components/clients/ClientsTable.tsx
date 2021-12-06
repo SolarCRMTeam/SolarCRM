@@ -1,5 +1,7 @@
 import { Table } from "antd";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ClientDto } from "../../services/SolarCRM/models";
+import { getAPI } from "../../services/SolarCRM/SolarAPI";
 
 export const ClientsTable = () => {
   const columns = [
@@ -8,34 +10,28 @@ export const ClientsTable = () => {
       dataIndex: "name",
       width: 150,
     },
-    {
-      title: "Age",
-      dataIndex: "age",
-      width: 150,
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-    },
   ];
 
-  const data = [];
-  for (let i = 0; i < 100; i++) {
-    data.push({
-      key: i,
-      name: `Edward King ${i}`,
-      age: 32,
-      address: `London, Park Lane no. ${i}`,
-    });
-  }
+  useEffect(() => {
+    (async () => {
+      const api = await getAPI();
+      const data = await api.get();
+
+      if (data?.results) {
+        setData(data.results);
+      }
+    })();
+  }, []);
+
+  const [data, setData] = useState<ClientDto[]>([]);
 
   return (
     <Table
       columns={columns}
       dataSource={data}
-      style={{width: '99vw'}}
-       pagination={{ pageSize: 50 }}
-       scroll={{ y: '70vh' }}
+      style={{ width: "99vw" }}
+      pagination={{ pageSize: 50 }}
+      scroll={{ y: "70vh" }}
     />
   );
 };

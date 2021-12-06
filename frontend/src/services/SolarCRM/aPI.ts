@@ -21,26 +21,53 @@ class API extends APIContext {
   }
 
   /**
+   * @param id
    * @param [options] The optional parameters
    * @returns Promise<Models.GetByIdResponse>
    */
-  getById(options?: Models.APIGetByIdOptionalParams): Promise<Models.GetByIdResponse>;
+  getById(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetByIdResponse>;
   /**
+   * @param id
    * @param callback The callback
    */
-  getById(callback: msRest.ServiceCallback<Models.ClientDto>): void;
+  getById(id: string, callback: msRest.ServiceCallback<Models.ClientDto>): void;
   /**
+   * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  getById(options: Models.APIGetByIdOptionalParams, callback: msRest.ServiceCallback<Models.ClientDto>): void;
-  getById(options?: Models.APIGetByIdOptionalParams | msRest.ServiceCallback<Models.ClientDto>, callback?: msRest.ServiceCallback<Models.ClientDto>): Promise<Models.GetByIdResponse> {
+  getById(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ClientDto>): void;
+  getById(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ClientDto>, callback?: msRest.ServiceCallback<Models.ClientDto>): Promise<Models.GetByIdResponse> {
     return this.sendOperationRequest(
       {
+        id,
         options
       },
       getByIdOperationSpec,
       callback) as Promise<Models.GetByIdResponse>;
+  }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.GetResponse>
+   */
+  get(options?: Models.APIGetOptionalParams): Promise<Models.GetResponse>;
+  /**
+   * @param callback The callback
+   */
+  get(callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  get(options: Models.APIGetOptionalParams, callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
+  get(options?: Models.APIGetOptionalParams | msRest.ServiceCallback<Models.ClientDtoPagedResult>, callback?: msRest.ServiceCallback<Models.ClientDtoPagedResult>): Promise<Models.GetResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      getOperationSpec,
+      callback) as Promise<Models.GetResponse>;
   }
 
   /**
@@ -71,9 +98,9 @@ class API extends APIContext {
 const serializer = new msRest.Serializer(Mappers);
 const getByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
-  path: "Client",
-  queryParameters: [
-    Parameters.id
+  path: "Client/{id}",
+  urlParameters: [
+    Parameters.id0
   ],
   responses: {
     200: {
@@ -84,11 +111,29 @@ const getByIdOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
+const getOperationSpec: msRest.OperationSpec = {
+  httpMethod: "GET",
+  path: "Client",
+  queryParameters: [
+    Parameters.filters,
+    Parameters.sorts,
+    Parameters.page,
+    Parameters.pageSize
+  ],
+  responses: {
+    200: {
+      bodyMapper: Mappers.ClientDtoPagedResult
+    },
+    default: {}
+  },
+  serializer
+};
+
 const getById1OperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Representative",
   queryParameters: [
-    Parameters.id
+    Parameters.id1
   ],
   responses: {
     200: {

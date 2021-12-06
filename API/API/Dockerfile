@@ -11,6 +11,7 @@ COPY ["API/API/API.csproj", "API/"]
 COPY ["API/Infrastructure/API.Infrastructure/API.Infrastructure.csproj", "Infrastructure/API.Infrastructure/"]
 COPY ["API/Domain/API.Domain/API.Domain.csproj", "Domain/API.Domain/"]
 COPY ["API/Application/API.Application/API.Application.csproj", "Application/API.Application/"]
+COPY ["API/Framework/API.Framework/API.Framework.csproj", "Framework/API.Framework/"]
 RUN dotnet restore "API/API.csproj"
 COPY . .
 WORKDIR "/src/API"
