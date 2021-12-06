@@ -33,10 +33,10 @@ services:
       context: .
       dockerfile: NotiWorker/NotiWorker/Dockerfile
     environment:
-      - BusConfig__HostName=host.docker.internal
+      - BusConfig__HostName=rabbit
       - BusConfig__Port=5672
       - BusConfig__MailQueueName="EMAIL_BUS"
-      - MailConfiguration__Hostname=host.docker.internal
+      - MailConfiguration__Hostname=smtp
     networks:
       - solar-network
 
