@@ -35,7 +35,7 @@ services:
     environment:
       - BusConfig__HostName=rabbit
       - BusConfig__Port=5672
-      - BusConfig__MailQueueName="EMAIL_BUS"
+      - BusConfig__MailQueueName=EMAIL_BUS
       - MailConfiguration__Hostname=smtp
     networks:
       - solar-network
