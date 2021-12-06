@@ -18,7 +18,7 @@ namespace API.Infrastructure.Installers
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
             services.AddDbContext<DatabaseContext>(options => options
-                .UseMySql(configuration.GetConnectionString("Database"), serverVersion)
+                .UseMySql(configuration.GetConnectionString("SolarCRM_Main"), serverVersion)
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
