@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Infrastructure", "Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.CronScheduler", "CronScheduler\API.CronScheduler\API.CronScheduler.csproj", "{3E39D62E-29A6-48A9-A0A6-A3D2E74385AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Framework", "..\Framework\API.Framework\API.Framework.csproj", "{6882C152-3671-4D3F-81DB-7FE7E44E5829}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Framework", "Framework\API.Framework\API.Framework.csproj", "{6882C152-3671-4D3F-81DB-7FE7E44E5829}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

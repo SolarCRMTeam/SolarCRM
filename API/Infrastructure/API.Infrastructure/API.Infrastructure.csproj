@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\..\Framework\API.Framework\API.Framework.csproj" />
     <ProjectReference Include="..\..\Application\API.Application\API.Application.csproj" />
     <ProjectReference Include="..\..\Domain\API.Domain\API.Domain.csproj" />
+    <ProjectReference Include="..\..\Framework\API.Framework\API.Framework.csproj" />
   </ItemGroup>
 
 </Project>

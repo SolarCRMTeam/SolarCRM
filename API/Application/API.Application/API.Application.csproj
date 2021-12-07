@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\API.Framework\API.Framework.csproj" />
+    <ProjectReference Include="..\..\Framework\API.Framework\API.Framework.csproj" />
   </ItemGroup>
 
 </Project>
