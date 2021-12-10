@@ -41,7 +41,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "Get",
+        "operationId": "GetClients",
         "parameters": [
           {
             "name": "Filters",

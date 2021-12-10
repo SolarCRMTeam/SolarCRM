@@ -61,7 +61,7 @@ export interface APIOptions extends ServiceClientOptions {
 /**
  * Optional Parameters.
  */
-export interface APIGetOptionalParams extends msRest.RequestOptionsBase {
+export interface APIGetClientsOptionalParams extends msRest.RequestOptionsBase {
   filters?: string;
   sorts?: string;
   page?: number;
@@ -96,9 +96,9 @@ export type GetByIdResponse = ClientDto & {
 };
 
 /**
- * Contains response data for the get operation.
+ * Contains response data for the getClients operation.
  */
-export type GetResponse = ClientDtoPagedResult & {
+export type GetClientsResponse = ClientDtoPagedResult & {
   /**
    * The underlying HTTP response.
    */

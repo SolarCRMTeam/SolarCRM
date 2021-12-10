@@ -49,25 +49,25 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.GetResponse>
+   * @returns Promise<Models.GetClientsResponse>
    */
-  get(options?: Models.APIGetOptionalParams): Promise<Models.GetResponse>;
+  getClients(options?: Models.APIGetClientsOptionalParams): Promise<Models.GetClientsResponse>;
   /**
    * @param callback The callback
    */
-  get(callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
+  getClients(callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  get(options: Models.APIGetOptionalParams, callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
-  get(options?: Models.APIGetOptionalParams | msRest.ServiceCallback<Models.ClientDtoPagedResult>, callback?: msRest.ServiceCallback<Models.ClientDtoPagedResult>): Promise<Models.GetResponse> {
+  getClients(options: Models.APIGetClientsOptionalParams, callback: msRest.ServiceCallback<Models.ClientDtoPagedResult>): void;
+  getClients(options?: Models.APIGetClientsOptionalParams | msRest.ServiceCallback<Models.ClientDtoPagedResult>, callback?: msRest.ServiceCallback<Models.ClientDtoPagedResult>): Promise<Models.GetClientsResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      getOperationSpec,
-      callback) as Promise<Models.GetResponse>;
+      getClientsOperationSpec,
+      callback) as Promise<Models.GetClientsResponse>;
   }
 
   /**
@@ -111,7 +111,7 @@ const getByIdOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const getOperationSpec: msRest.OperationSpec = {
+const getClientsOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Client",
   queryParameters: [

@@ -27,7 +27,7 @@ namespace API
         public IWebHostEnvironment Environment { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -61,18 +61,17 @@ namespace API
 
             app.UseAuthorization();
 
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-
-            app.UseCors(corsPolicyBuilder =>
-                corsPolicyBuilder.WithOrigins("http://localhost:3003")
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .WithExposedHeaders("Content-Disposition")
-            );
+            app.UseHttpsRedirection();
 
             app.UpdateDatabase<DatabaseContext>();
         }

@@ -32,7 +32,7 @@ namespace API.Controllers
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(PagedResult<ClientDto>), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Get([FromQuery] SieveModel sieve)
+        public async Task<IActionResult> GetClients([FromQuery] SieveModel sieve)
         {
             var query = new GetClientsQuery
             {

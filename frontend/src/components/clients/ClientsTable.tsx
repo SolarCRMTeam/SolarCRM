@@ -15,7 +15,7 @@ export const ClientsTable = () => {
   useEffect(() => {
     (async () => {
       const api = await getAPI();
-      const data = await api.get();
+      const data = await api.getClients();
 
       if (data?.results) {
         setData(data.results);

@@ -1192,14 +1192,14 @@
      "name": {
       "$id": "155",
       "fixed": false,
-      "raw": "Get"
+      "raw": "GetClients"
      },
      "group": {
       "$id": "156",
       "fixed": false,
       "raw": ""
      },
-     "serializedName": "Get",
+     "serializedName": "GetClients",
      "url": "/Client",
      "isAbsoluteUrl": false,
      "httpMethod": "get",
