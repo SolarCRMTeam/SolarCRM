@@ -71,8 +71,6 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            app.UseHttpsRedirection();
-
             app.UpdateDatabase<DatabaseContext>();
         }
     }

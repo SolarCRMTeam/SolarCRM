@@ -5,6 +5,9 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_HTTPS_PORT https://*:443
+
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim-arm32v7 AS build
 WORKDIR /src
 COPY ["API/API/API.csproj", "API/"]
