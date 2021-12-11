@@ -55,8 +55,6 @@ namespace API
 
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();
