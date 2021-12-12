@@ -2,7 +2,9 @@
 using API.Application.DTO;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
-using System;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Sieve.Services;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,28 +14,28 @@ namespace API.Infrastructure.Database.Client.Queries
     public class GetClientsQueryHandler : IQueryHandler<GetClientsQuery, PagedResult<ClientDto>>
     {
         private readonly DatabaseContext _databaseContext;
-        public GetClientsQueryHandler(DatabaseContext databaseContext)
+        private readonly SieveProcessor _sieveProcessor;
+        private readonly IMapper _mapper;
+        public GetClientsQueryHandler(DatabaseContext databaseContext, SieveProcessor sieveProcessor, IMapper mapper)
         {
             _databaseContext = databaseContext;
+            _sieveProcessor = sieveProcessor;
+            _mapper = mapper;
         }
-        public Task<PagedResult<ClientDto>> Handle(GetClientsQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResult<ClientDto>> Handle(GetClientsQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new PagedResult<ClientDto>
-            {
-                CurrentPage = 1,
-                RowCount = 1,
-                PageSize = 1,
-                Results = new List<ClientDto>()
-                {
-                    new ClientDto
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Nowy klient1"
-                    }
-                }
-            });
+            var data = _databaseContext.Clients.AsNoTracking();
+            var result = _sieveProcessor.Apply(request.Sieve, data);
 
-            throw new System.NotImplementedException();
+            var output = await result.ToListAsync(cancellationToken);
+
+            return new PagedResult<ClientDto>
+            {
+                CurrentPage = request.Sieve.Page.Value,
+                PageSize = request.Sieve.PageSize.Value,
+                RowCount = output.Count,
+                Results = _mapper.Map<ClientDto[]>(output)
+            };
         }
     }
 }
