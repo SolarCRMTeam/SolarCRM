@@ -8,7 +8,7 @@ services:
       context: .
       dockerfile: API/API/Dockerfile
     environment:
-      - ASPNETCORE_ConnectionStrings__SolarCRM_Main=server=mysql;port=3306;database=solardb;uid=root;pwd=hT4sR8Kja!*h
+      - ASPNETCORE_ConnectionStrings__SolarCRM_Main=server=mysql;port=3306;database=solardb;uid=solaruser;pwd=hT4sR8Kja!*h
     networks:
       - solar-network
     ports:
