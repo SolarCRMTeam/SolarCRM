@@ -27,13 +27,15 @@ namespace API.Infrastructure.Database.Client.Queries
             var data = _databaseContext.Clients.AsNoTracking();
             var result = _sieveProcessor.Apply(request.Sieve, data);
 
+            var count = await result.CountAsync(cancellationToken);
+
             var output = await result.ToListAsync(cancellationToken);
 
             return new PagedResult<ClientDto>
             {
-                CurrentPage = request.Sieve.Page.Value,
-                PageSize = request.Sieve.PageSize.Value,
-                RowCount = output.Count,
+                CurrentPage = request.Sieve.Page.GetValueOrDefault(),
+                PageSize = request.Sieve.PageSize.GetValueOrDefault(),
+                RowCount = 2,
                 Results = _mapper.Map<ClientDto[]>(output)
             };
         }
