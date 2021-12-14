@@ -72,6 +72,29 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
+   * @returns Promise<Models.CreateResponse>
+   */
+  create(options?: Models.APICreateOptionalParams): Promise<Models.CreateResponse>;
+  /**
+   * @param callback The callback
+   */
+  create(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  create(options: Models.APICreateOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  create(options?: Models.APICreateOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      createOperationSpec,
+      callback) as Promise<Models.CreateResponse>;
+  }
+
+  /**
+   * @param [options] The optional parameters
    * @returns Promise<Models.GetById1Response>
    */
   getById1(options?: Models.APIGetById1OptionalParams): Promise<Models.GetById1Response>;
@@ -123,6 +146,30 @@ const getClientsOperationSpec: msRest.OperationSpec = {
   responses: {
     200: {
       bodyMapper: Mappers.ClientDtoPagedResult
+    },
+    default: {}
+  },
+  serializer
+};
+
+const createOperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Client",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.CreateClientCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
+        }
+      }
     },
     default: {}
   },

@@ -25,18 +25,17 @@ namespace API.Infrastructure.Database.Client.Queries
         public async Task<PagedResult<ClientDto>> Handle(GetClientsQuery request, CancellationToken cancellationToken)
         {
             var data = _databaseContext.Clients.AsNoTracking();
-            var result = _sieveProcessor.Apply(request.Sieve, data);
 
-            var count = await result.CountAsync(cancellationToken);
+            var rowCount = await _sieveProcessor.Apply(request.Sieve, data, applyPagination: false).CountAsync(cancellationToken);
 
-            var output = await result.ToListAsync(cancellationToken);
+            var result = await _sieveProcessor.Apply(request.Sieve, data).ToListAsync(cancellationToken);
 
             return new PagedResult<ClientDto>
             {
                 CurrentPage = request.Sieve.Page.GetValueOrDefault(),
                 PageSize = request.Sieve.PageSize.GetValueOrDefault(),
-                RowCount = 2,
-                Results = _mapper.Map<ClientDto[]>(output)
+                RowCount = rowCount,
+                Results = _mapper.Map<ClientDto[]>(result)
             };
         }
     }

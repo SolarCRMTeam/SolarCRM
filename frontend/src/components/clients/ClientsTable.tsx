@@ -1,10 +1,12 @@
 import { Table } from "antd";
-import React, { useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import { useEffect, useState } from "react";
 import {
   APIGetClientsOptionalParams,
   ClientDto,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
+import { tableStore } from "../../stores/TableStore";
 
 interface ISieve {
   pageSize: number;
@@ -14,10 +16,10 @@ interface ISieve {
   sorts?: string;
 }
 
-export const ClientsTable = () => {
+const ClientsTable = () => {
   const [sieve, setSieve] = useState<ISieve>({
     current: 1,
-    pageSize: 1,
+    pageSize: 15,
     total: undefined,
   });
 
@@ -37,10 +39,12 @@ export const ClientsTable = () => {
         pageSize: sieve?.pageSize,
         page: sieve?.current,
         filters: sieve.filters,
-        sorts: sieve.sorts
+        sorts: sieve.sorts,
       };
 
-      const data = await api.getClients(params);
+      const data = await api
+        .getClients(params)
+        .finally(() => (tableStore.refreshClients = false));
 
       if (data?.results) {
         setData(data.results);
@@ -49,7 +53,7 @@ export const ClientsTable = () => {
         }
       }
     })();
-  }, [sieve.current]);
+  }, [sieve.current, tableStore.refreshClients]);
 
   const [data, setData] = useState<ClientDto[]>([]);
 
@@ -57,6 +61,7 @@ export const ClientsTable = () => {
     <Table
       columns={columns}
       dataSource={data}
+      loading={tableStore.refreshClients}
       style={{ width: "99vw" }}
       pagination={sieve}
       onChange={(pagination, filters, sorting) => {
@@ -69,3 +74,5 @@ export const ClientsTable = () => {
     />
   );
 };
+
+export default observer(ClientsTable);

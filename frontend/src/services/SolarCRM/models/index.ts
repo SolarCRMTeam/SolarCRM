@@ -45,6 +45,13 @@ export interface ClientDtoPagedResult {
 }
 
 /**
+ * An interface representing CreateClientCommand.
+ */
+export interface CreateClientCommand {
+  name?: string;
+}
+
+/**
  * An interface representing RepresentativeDto.
  */
 export interface RepresentativeDto {
@@ -66,6 +73,13 @@ export interface APIGetClientsOptionalParams extends msRest.RequestOptionsBase {
   sorts?: string;
   page?: number;
   pageSize?: number;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APICreateOptionalParams extends msRest.RequestOptionsBase {
+  body?: CreateClientCommand;
 }
 
 /**
@@ -112,6 +126,31 @@ export type GetClientsResponse = ClientDtoPagedResult & {
        * The response body as parsed JSON or XML
        */
       parsedBody: ClientDtoPagedResult;
+    };
+};
+
+/**
+ * Contains response data for the create operation.
+ */
+export type CreateResponse = {
+  /**
+   * The parsed response body.
+   */
+  body: string;
+
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: string;
     };
 };
 

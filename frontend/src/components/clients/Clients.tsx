@@ -1,5 +1,5 @@
 import { Space } from "antd";
-import { ClientsTable } from "./ClientsTable";
+import ClientsTable from "./ClientsTable";
 import { ImportClients } from "./ImportClients";
 import { NewClient } from "./NewClient";
 

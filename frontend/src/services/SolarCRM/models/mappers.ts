@@ -103,6 +103,22 @@ export const ClientDtoPagedResult: msRest.CompositeMapper = {
   }
 };
 
+export const CreateClientCommand: msRest.CompositeMapper = {
+  serializedName: "CreateClientCommand",
+  type: {
+    name: "Composite",
+    className: "CreateClientCommand",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
 export const RepresentativeDto: msRest.CompositeMapper = {
   serializedName: "RepresentativeDto",
   type: {
