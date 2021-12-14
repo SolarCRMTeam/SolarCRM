@@ -48,6 +48,33 @@ class API extends APIContext {
   }
 
   /**
+   * @param id
+   * @param [options] The optional parameters
+   * @returns Promise<msRest.RestResponse>
+   */
+  deleteMethod(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
+  /**
+   * @param id
+   * @param callback The callback
+   */
+  deleteMethod(id: string, callback: msRest.ServiceCallback<void>): void;
+  /**
+   * @param id
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  deleteMethod(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteMethod(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+    return this.sendOperationRequest(
+      {
+        id,
+        options
+      },
+      deleteMethodOperationSpec,
+      callback);
+  }
+
+  /**
    * @param [options] The optional parameters
    * @returns Promise<Models.GetClientsResponse>
    */
@@ -129,6 +156,19 @@ const getByIdOperationSpec: msRest.OperationSpec = {
     200: {
       bodyMapper: Mappers.ClientDto
     },
+    default: {}
+  },
+  serializer
+};
+
+const deleteMethodOperationSpec: msRest.OperationSpec = {
+  httpMethod: "DELETE",
+  path: "Client/{id}",
+  urlParameters: [
+    Parameters.id0
+  ],
+  responses: {
+    200: {},
     default: {}
   },
   serializer

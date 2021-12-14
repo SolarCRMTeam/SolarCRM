@@ -1,4 +1,5 @@
-﻿using API.Application.Client.Commands;
+﻿using API.Application.Client.Commands.Create;
+using API.Application.Client.Commands.Delete;
 using API.Application.Client.Queries;
 using API.Application.DTO;
 using API.Framework.EventBus;
@@ -60,6 +61,20 @@ namespace API.Controllers
         {
             var id = await _internalBus.SendCommandAsync(command);
             return Ok(id);
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var command = new DeleteClientCommand
+            {
+                Id = id
+            };
+
+            await _internalBus.SendCommandAsync(command);
+
+            return Ok();
         }
     }
 }

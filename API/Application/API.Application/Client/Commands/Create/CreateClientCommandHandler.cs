@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace API.Application.Client.Commands
+namespace API.Application.Client.Commands.Create
 {
     public class CreateClientCommandHandler : ICommandHandler<CreateClientCommand, Guid>
     {
