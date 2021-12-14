@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import {
   CreateClientCommand,
   CreateResponse,
+  UpdateClientCommand,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
@@ -15,11 +16,11 @@ interface IProps {
 
 export const EditClient = (props: IProps) => {
   const [isVisible, setIsVisible] = useState<boolean>();
-  const [client, setClient] = useState<CreateClientCommand>();
+  const [client, setClient] = useState<UpdateClientCommand>();
 
   const onSubmit = async (): Promise<CreateResponse> => {
     const api = await getAPI();
-    const result = await api.create({ body: client });
+    const result = await api.update({ body: client });
 
     return result;
   };

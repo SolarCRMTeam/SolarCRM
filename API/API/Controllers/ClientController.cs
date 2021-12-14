@@ -1,5 +1,6 @@
 ﻿using API.Application.Client.Commands.Create;
 using API.Application.Client.Commands.Delete;
+using API.Application.Client.Commands.Update;
 using API.Application.Client.Queries;
 using API.Application.DTO;
 using API.Framework.EventBus;
@@ -61,6 +62,16 @@ namespace API.Controllers
         {
             var id = await _internalBus.SendCommandAsync(command);
             return Ok(id);
+        }
+
+        [HttpPut]
+        [Produces(MediaTypeNames.Application.Json)]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Update([FromBody] UpdateClientCommand command)
+        {
+            await _internalBus.SendCommandAsync(command);
+            return Ok();
         }
 
         [HttpDelete("{id}")]

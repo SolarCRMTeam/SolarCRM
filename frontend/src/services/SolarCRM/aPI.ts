@@ -122,6 +122,29 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
+   * @returns Promise<Models.UpdateResponse>
+   */
+  update(options?: Models.APIUpdateOptionalParams): Promise<Models.UpdateResponse>;
+  /**
+   * @param callback The callback
+   */
+  update(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  update(options: Models.APIUpdateOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  update(options?: Models.APIUpdateOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.UpdateResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      updateOperationSpec,
+      callback) as Promise<Models.UpdateResponse>;
+  }
+
+  /**
+   * @param [options] The optional parameters
    * @returns Promise<Models.GetById1Response>
    */
   getById1(options?: Models.APIGetById1OptionalParams): Promise<Models.GetById1Response>;
@@ -201,6 +224,30 @@ const createOperationSpec: msRest.OperationSpec = {
       "body"
     ],
     mapper: Mappers.CreateClientCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
+const updateOperationSpec: msRest.OperationSpec = {
+  httpMethod: "PUT",
+  path: "Client",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.UpdateClientCommand
   },
   responses: {
     200: {
