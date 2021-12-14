@@ -1,7 +1,7 @@
 import { Button, Popconfirm, Space, Table } from "antd";
 import { ColumnGroupType } from "antd/lib/table";
 import { observer } from "mobx-react-lite";
-import { ColumnsType, ColumnType } from "rc-table/lib/interface";
+import { ColumnType } from "rc-table/lib/interface";
 import { useEffect, useState } from "react";
 import {
   APIGetClientsOptionalParams,
@@ -9,7 +9,7 @@ import {
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
-import { DeleteOutlined } from "@ant-design/icons";
+import { TableActions } from "./TableActions";
 
 interface ISieve {
   pageSize: number;
@@ -31,38 +31,7 @@ const ClientsTable = () => {
       title: "Name",
       dataIndex: "name",
     },
-    {
-      title: "Actions",
-      dataIndex: "actions",
-      width: 80,
-      fixed: "right",
-      render: (_, item: ClientDto) => {
-        return (
-          <Space direction="horizontal">
-            <Popconfirm
-              title="Are you sure to delete this client?"
-              onConfirm={async () => {
-                const api = await getAPI();
-                await api
-                  .deleteMethod(item.id!)
-                  .then(() => (tableStore.refreshClients = true));
-              }}
-              onCancel={() => {}}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button
-                type="primary"
-                shape="circle"
-                size="small"
-                icon={<DeleteOutlined />}
-                danger
-              />
-            </Popconfirm>
-          </Space>
-        );
-      },
-    },
+    TableActions,
   ];
 
   useEffect(() => {

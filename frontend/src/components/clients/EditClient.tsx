@@ -1,6 +1,5 @@
-import { Button, Input, Modal, Space } from "antd";
-import React, { Fragment, useState } from "react";
-import { AppstoreAddOutlined } from "@ant-design/icons";
+import { Button, Modal } from "antd";
+import { Fragment, useEffect, useState } from "react";
 import {
   CreateClientCommand,
   CreateResponse,
@@ -8,10 +7,13 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { FormFields } from "./shared/FormFields";
+import { EditOutlined } from "@ant-design/icons";
 
-interface IProps {}
+interface IProps {
+  id: string;
+}
 
-export const NewClient = (props: IProps) => {
+export const EditClient = (props: IProps) => {
   const [isVisible, setIsVisible] = useState<boolean>();
   const [client, setClient] = useState<CreateClientCommand>();
 
@@ -27,18 +29,27 @@ export const NewClient = (props: IProps) => {
     setIsVisible(false);
   };
 
+  useEffect(() => {
+    (async () => {
+      const api = await getAPI();
+      const result = await api.getById(props.id);
+
+      setClient({ name: result.name });
+    })();
+  }, [props.id]);
+
   return (
     <Fragment>
       <Button
-        icon={<AppstoreAddOutlined />}
         type="primary"
+        shape="circle"
+        size="small"
+        icon={<EditOutlined />}
         onClick={() => setIsVisible(true)}
-      >
-        Add new client
-      </Button>
+      />
       <Modal
         visible={isVisible}
-        title="Create new client"
+        title={client?.name}
         onOk={() =>
           onSubmit().then(() => {
             tableStore.refreshClients = true;
@@ -48,7 +59,7 @@ export const NewClient = (props: IProps) => {
         }
         onCancel={() => onCancel()}
       >
-        <FormFields client={client} setClient={setClient}/>
+        <FormFields client={client} setClient={setClient} />
       </Modal>
     </Fragment>
   );
