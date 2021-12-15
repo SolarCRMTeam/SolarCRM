@@ -1,4 +1,4 @@
-import { Button, Popconfirm, Space, Table } from "antd";
+import { Table } from "antd";
 import { ColumnGroupType } from "antd/lib/table";
 import { observer } from "mobx-react-lite";
 import { ColumnType } from "rc-table/lib/interface";
@@ -9,7 +9,7 @@ import {
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
-import { TableActions } from "./TableActions";
+import { GetTableActions } from "./TableActions";
 
 interface ISieve {
   pageSize: number;
@@ -31,7 +31,7 @@ const ClientsTable = () => {
       title: "Name",
       dataIndex: "name",
     },
-    TableActions,
+    GetTableActions(),
   ];
 
   useEffect(() => {

@@ -30,5 +30,11 @@ namespace API.Infrastructure.Database.Client
 
         public async Task<Domain.Models.Client> GetById(Guid id, CancellationToken cancellationToken)
             => await _databaseContext.Clients.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+
+        public async Task Update(Domain.Models.Client client, CancellationToken cancellationToken)
+        {
+            _databaseContext.Clients.Update(client);
+            await _databaseContext.SaveChangesAsync(cancellationToken);
+        }
     }
 }

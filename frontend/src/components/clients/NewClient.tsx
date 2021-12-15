@@ -1,5 +1,5 @@
-import { Button, Input, Modal, Space } from "antd";
-import React, { Fragment, useState } from "react";
+import { Button, Modal } from "antd";
+import { Fragment, useState } from "react";
 import { AppstoreAddOutlined } from "@ant-design/icons";
 import {
   CreateClientCommand,
@@ -14,6 +14,7 @@ interface IProps {}
 export const NewClient = (props: IProps) => {
   const [isVisible, setIsVisible] = useState<boolean>();
   const [client, setClient] = useState<CreateClientCommand>();
+  const [isBusy, setIsBusy] = useState<boolean>();
 
   const onSubmit = async (): Promise<CreateResponse> => {
     const api = await getAPI();
@@ -33,22 +34,27 @@ export const NewClient = (props: IProps) => {
         icon={<AppstoreAddOutlined />}
         type="primary"
         onClick={() => setIsVisible(true)}
+        loading={isBusy}
       >
         Add new client
       </Button>
       <Modal
         visible={isVisible}
         title="Create new client"
-        onOk={() =>
-          onSubmit().then(() => {
-            tableStore.refreshClients = true;
-            setIsVisible(false);
-            setClient(undefined);
-          })
-        }
+        okButtonProps={{ loading: isBusy }}
+        onOk={() => {
+          setIsBusy(true);
+          onSubmit()
+            .then(() => {
+              tableStore.refreshClients = true;
+              setIsVisible(false);
+              setClient(undefined);
+            })
+            .finally(() => setIsBusy(false));
+        }}
         onCancel={() => onCancel()}
       >
-        <FormFields client={client} setClient={setClient}/>
+        <FormFields client={client} setClient={setClient} />
       </Modal>
     </Fragment>
   );

@@ -1,7 +1,6 @@
 import { Button, Modal } from "antd";
 import { Fragment, useEffect, useState } from "react";
 import {
-  CreateClientCommand,
   CreateResponse,
   UpdateClientCommand,
 } from "../../services/SolarCRM/models";
@@ -17,6 +16,7 @@ interface IProps {
 export const EditClient = (props: IProps) => {
   const [isVisible, setIsVisible] = useState<boolean>();
   const [client, setClient] = useState<UpdateClientCommand>();
+  const [isBusy, setIsBusy] = useState<boolean>();
 
   const onSubmit = async (): Promise<CreateResponse> => {
     const api = await getAPI();
@@ -26,7 +26,6 @@ export const EditClient = (props: IProps) => {
   };
 
   const onCancel = (): void => {
-    setClient(undefined);
     setIsVisible(false);
   };
 
@@ -35,7 +34,7 @@ export const EditClient = (props: IProps) => {
       const api = await getAPI();
       const result = await api.getById(props.id);
 
-      setClient({ name: result.name });
+      setClient({ id: result.id, name: result.name });
     })();
   }, [props.id]);
 
@@ -47,17 +46,21 @@ export const EditClient = (props: IProps) => {
         size="small"
         icon={<EditOutlined />}
         onClick={() => setIsVisible(true)}
+        loading={isBusy}
       />
       <Modal
         visible={isVisible}
         title={client?.name}
-        onOk={() =>
-          onSubmit().then(() => {
-            tableStore.refreshClients = true;
-            setIsVisible(false);
-            setClient(undefined);
-          })
-        }
+        onOk={() => {
+          setIsBusy(true);
+          onSubmit()
+            .then(() => {
+              tableStore.refreshClients = true;
+              setIsVisible(false);
+            })
+            .finally(() => setIsBusy(false));
+        }}
+        okButtonProps={{ loading: isBusy }}
         onCancel={() => onCancel()}
       >
         <FormFields client={client} setClient={setClient} />

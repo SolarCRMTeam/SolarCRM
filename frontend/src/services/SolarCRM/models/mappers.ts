@@ -125,6 +125,12 @@ export const UpdateClientCommand: msRest.CompositeMapper = {
     name: "Composite",
     className: "UpdateClientCommand",
     modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Uuid"
+        }
+      },
       name: {
         serializedName: "name",
         type: {

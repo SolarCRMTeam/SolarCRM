@@ -55,6 +55,7 @@ export interface CreateClientCommand {
  * An interface representing UpdateClientCommand.
  */
 export interface UpdateClientCommand {
+  id?: string;
   name?: string;
 }
 
