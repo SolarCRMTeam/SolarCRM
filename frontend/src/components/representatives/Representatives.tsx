@@ -1,9 +1,16 @@
-import React from 'react'
+import { Space } from "antd";
+import { ImportRepresentatives } from "./ImportRepresentatives";
+import { NewRepresentative } from "./NewRepresentative";
+import RepresentativesTable from "./RepresentativesTable";
 
 export const Representatives = () => {
-    return (
-        <div>
-            Representatives
-        </div>
-    )
-}
+  return (
+    <Space direction="vertical">
+      <Space direction="horizontal">
+        <NewRepresentative />
+        <ImportRepresentatives />
+      </Space>
+      <RepresentativesTable />
+    </Space>
+  );
+};

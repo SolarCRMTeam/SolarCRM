@@ -145,25 +145,171 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.GetById1Response>
+   * @returns Promise<msRest.RestResponse>
    */
-  getById1(options?: Models.APIGetById1OptionalParams): Promise<Models.GetById1Response>;
+  importMethod(options?: Models.APIImportMethodOptionalParams): Promise<msRest.RestResponse>;
   /**
    * @param callback The callback
    */
-  getById1(callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
+  importMethod(callback: msRest.ServiceCallback<void>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  getById1(options: Models.APIGetById1OptionalParams, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
-  getById1(options?: Models.APIGetById1OptionalParams | msRest.ServiceCallback<Models.RepresentativeDto>, callback?: msRest.ServiceCallback<Models.RepresentativeDto>): Promise<Models.GetById1Response> {
+  importMethod(options: Models.APIImportMethodOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  importMethod(options?: Models.APIImportMethodOptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
     return this.sendOperationRequest(
       {
         options
       },
+      importMethodOperationSpec,
+      callback);
+  }
+
+  /**
+   * @param id
+   * @param [options] The optional parameters
+   * @returns Promise<Models.GetById1Response>
+   */
+  getById1(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetById1Response>;
+  /**
+   * @param id
+   * @param callback The callback
+   */
+  getById1(id: string, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
+  /**
+   * @param id
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  getById1(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
+  getById1(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.RepresentativeDto>, callback?: msRest.ServiceCallback<Models.RepresentativeDto>): Promise<Models.GetById1Response> {
+    return this.sendOperationRequest(
+      {
+        id,
+        options
+      },
       getById1OperationSpec,
       callback) as Promise<Models.GetById1Response>;
+  }
+
+  /**
+   * @param id
+   * @param [options] The optional parameters
+   * @returns Promise<msRest.RestResponse>
+   */
+  delete1(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
+  /**
+   * @param id
+   * @param callback The callback
+   */
+  delete1(id: string, callback: msRest.ServiceCallback<void>): void;
+  /**
+   * @param id
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  delete1(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  delete1(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+    return this.sendOperationRequest(
+      {
+        id,
+        options
+      },
+      delete1OperationSpec,
+      callback);
+  }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.GetRepresentativesResponse>
+   */
+  getRepresentatives(options?: Models.APIGetRepresentativesOptionalParams): Promise<Models.GetRepresentativesResponse>;
+  /**
+   * @param callback The callback
+   */
+  getRepresentatives(callback: msRest.ServiceCallback<Models.RepresentativeDtoPagedResult>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  getRepresentatives(options: Models.APIGetRepresentativesOptionalParams, callback: msRest.ServiceCallback<Models.RepresentativeDtoPagedResult>): void;
+  getRepresentatives(options?: Models.APIGetRepresentativesOptionalParams | msRest.ServiceCallback<Models.RepresentativeDtoPagedResult>, callback?: msRest.ServiceCallback<Models.RepresentativeDtoPagedResult>): Promise<Models.GetRepresentativesResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      getRepresentativesOperationSpec,
+      callback) as Promise<Models.GetRepresentativesResponse>;
+  }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.Create1Response>
+   */
+  create1(options?: Models.APICreate1OptionalParams): Promise<Models.Create1Response>;
+  /**
+   * @param callback The callback
+   */
+  create1(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  create1(options: Models.APICreate1OptionalParams, callback: msRest.ServiceCallback<string>): void;
+  create1(options?: Models.APICreate1OptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.Create1Response> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      create1OperationSpec,
+      callback) as Promise<Models.Create1Response>;
+  }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.Update1Response>
+   */
+  update1(options?: Models.APIUpdate1OptionalParams): Promise<Models.Update1Response>;
+  /**
+   * @param callback The callback
+   */
+  update1(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  update1(options: Models.APIUpdate1OptionalParams, callback: msRest.ServiceCallback<string>): void;
+  update1(options?: Models.APIUpdate1OptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.Update1Response> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      update1OperationSpec,
+      callback) as Promise<Models.Update1Response>;
+  }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<msRest.RestResponse>
+   */
+  import1(options?: Models.APIImport1OptionalParams): Promise<msRest.RestResponse>;
+  /**
+   * @param callback The callback
+   */
+  import1(callback: msRest.ServiceCallback<void>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  import1(options: Models.APIImport1OptionalParams, callback: msRest.ServiceCallback<void>): void;
+  import1(options?: Models.APIImport1OptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      import1OperationSpec,
+      callback);
   }
 }
 
@@ -173,7 +319,7 @@ const getByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Client/{id}",
   urlParameters: [
-    Parameters.id0
+    Parameters.id
   ],
   responses: {
     200: {
@@ -188,7 +334,7 @@ const deleteMethodOperationSpec: msRest.OperationSpec = {
   httpMethod: "DELETE",
   path: "Client/{id}",
   urlParameters: [
-    Parameters.id0
+    Parameters.id
   ],
   responses: {
     200: {},
@@ -263,16 +409,123 @@ const updateOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
+const importMethodOperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Client/import",
+  formDataParameters: [
+    Parameters.file
+  ],
+  contentType: "multipart/form-data",
+  responses: {
+    200: {},
+    default: {}
+  },
+  serializer
+};
+
 const getById1OperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
-  path: "Representative",
-  queryParameters: [
-    Parameters.id1
+  path: "Representative/{id}",
+  urlParameters: [
+    Parameters.id
   ],
   responses: {
     200: {
       bodyMapper: Mappers.RepresentativeDto
     },
+    default: {}
+  },
+  serializer
+};
+
+const delete1OperationSpec: msRest.OperationSpec = {
+  httpMethod: "DELETE",
+  path: "Representative/{id}",
+  urlParameters: [
+    Parameters.id
+  ],
+  responses: {
+    200: {},
+    default: {}
+  },
+  serializer
+};
+
+const getRepresentativesOperationSpec: msRest.OperationSpec = {
+  httpMethod: "GET",
+  path: "Representative",
+  queryParameters: [
+    Parameters.filters,
+    Parameters.sorts,
+    Parameters.page,
+    Parameters.pageSize
+  ],
+  responses: {
+    200: {
+      bodyMapper: Mappers.RepresentativeDtoPagedResult
+    },
+    default: {}
+  },
+  serializer
+};
+
+const create1OperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Representative",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.CreateRepresentativeCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
+const update1OperationSpec: msRest.OperationSpec = {
+  httpMethod: "PUT",
+  path: "Representative",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.UpdateRepresentativeCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
+const import1OperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Representative/import",
+  formDataParameters: [
+    Parameters.file
+  ],
+  contentType: "multipart/form-data",
+  responses: {
+    200: {},
     default: {}
   },
   serializer

@@ -6,6 +6,18 @@
 
 import * as msRest from "@azure/ms-rest-js";
 
+export const file: msRest.OperationParameter = {
+  parameterPath: [
+    "options",
+    "file"
+  ],
+  mapper: {
+    serializedName: "File",
+    type: {
+      name: "String"
+    }
+  }
+};
 export const filters: msRest.OperationQueryParameter = {
   parameterPath: [
     "options",
@@ -18,22 +30,10 @@ export const filters: msRest.OperationQueryParameter = {
     }
   }
 };
-export const id0: msRest.OperationURLParameter = {
+export const id: msRest.OperationURLParameter = {
   parameterPath: "id",
   mapper: {
     required: true,
-    serializedName: "id",
-    type: {
-      name: "Uuid"
-    }
-  }
-};
-export const id1: msRest.OperationQueryParameter = {
-  parameterPath: [
-    "options",
-    "id"
-  ],
-  mapper: {
     serializedName: "id",
     type: {
       name: "Uuid"

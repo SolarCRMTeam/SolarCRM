@@ -1,5 +1,6 @@
 ﻿using API.Application.Client.Commands.Create;
 using API.Application.Client.Commands.Delete;
+using API.Application.Client.Commands.Import;
 using API.Application.Client.Commands.Update;
 using API.Application.Client.Queries;
 using API.Application.DTO;
@@ -83,6 +84,17 @@ namespace API.Controllers
                 Id = id
             };
 
+            await _internalBus.SendCommandAsync(command);
+
+            return Ok();
+        }
+
+        [HttpPost("import")]
+        [DisableRequestSizeLimit]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Import([FromForm] ImportClientCommand command)
+        {
             await _internalBus.SendCommandAsync(command);
 
             return Ok();

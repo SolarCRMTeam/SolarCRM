@@ -64,6 +64,52 @@ export interface UpdateClientCommand {
  */
 export interface RepresentativeDto {
   id?: string;
+  name?: string;
+}
+
+/**
+ * An interface representing RepresentativeDtoPagedResult.
+ */
+export interface RepresentativeDtoPagedResult {
+  results?: RepresentativeDto[];
+  rowCount?: number;
+  pageSize?: number;
+  currentPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly totalPagesNumber?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasPreviousPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasNextPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly firstRowOnPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly lastRowOnPage?: number;
+}
+
+/**
+ * An interface representing CreateRepresentativeCommand.
+ */
+export interface CreateRepresentativeCommand {
+  name?: string;
+}
+
+/**
+ * An interface representing UpdateRepresentativeCommand.
+ */
+export interface UpdateRepresentativeCommand {
+  id?: string;
+  name?: string;
 }
 
 /**
@@ -100,8 +146,39 @@ export interface APIUpdateOptionalParams extends msRest.RequestOptionsBase {
 /**
  * Optional Parameters.
  */
-export interface APIGetById1OptionalParams extends msRest.RequestOptionsBase {
-  id?: string;
+export interface APIImportMethodOptionalParams extends msRest.RequestOptionsBase {
+  file?: string;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APIGetRepresentativesOptionalParams extends msRest.RequestOptionsBase {
+  filters?: string;
+  sorts?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APICreate1OptionalParams extends msRest.RequestOptionsBase {
+  body?: CreateRepresentativeCommand;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APIUpdate1OptionalParams extends msRest.RequestOptionsBase {
+  body?: UpdateRepresentativeCommand;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APIImport1OptionalParams extends msRest.RequestOptionsBase {
+  file?: string;
 }
 
 /**
@@ -211,5 +288,75 @@ export type GetById1Response = RepresentativeDto & {
        * The response body as parsed JSON or XML
        */
       parsedBody: RepresentativeDto;
+    };
+};
+
+/**
+ * Contains response data for the getRepresentatives operation.
+ */
+export type GetRepresentativesResponse = RepresentativeDtoPagedResult & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: RepresentativeDtoPagedResult;
+    };
+};
+
+/**
+ * Contains response data for the create1 operation.
+ */
+export type Create1Response = {
+  /**
+   * The parsed response body.
+   */
+  body: string;
+
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: string;
+    };
+};
+
+/**
+ * Contains response data for the update1 operation.
+ */
+export type Update1Response = {
+  /**
+   * The parsed response body.
+   */
+  body: string;
+
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: string;
     };
 };

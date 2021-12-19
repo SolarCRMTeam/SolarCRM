@@ -5,11 +5,9 @@ import { MenuItem, menuItems } from "./MenuItems";
 export const MenuBar = () => {
   const history = useHistory();
 
-  const getSelectedKey = (): string[] => {
-    console.log(history.location);
-
-    return [history.location.pathname.replaceAll("/", "")];
-  };
+  const getSelectedKey = (): string[] => [
+    history.location.pathname.replaceAll("/", ""),
+  ];
 
   return (
     <Menu theme="dark" mode="horizontal" selectedKeys={getSelectedKey()}>

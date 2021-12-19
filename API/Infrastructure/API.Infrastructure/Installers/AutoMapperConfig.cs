@@ -10,6 +10,7 @@ namespace API.Infrastructure.Installers
         {
                     typeof(AutoMapperConfig).Assembly,
                     typeof(ClientProfile).Assembly,
+                    typeof(RepresentativeProfile).Assembly,
         };
     }
 }
