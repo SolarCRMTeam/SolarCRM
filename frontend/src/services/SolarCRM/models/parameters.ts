@@ -14,7 +14,7 @@ export const file: msRest.OperationParameter = {
   mapper: {
     serializedName: "File",
     type: {
-      name: "String"
+      name: "Stream"
     }
   }
 };

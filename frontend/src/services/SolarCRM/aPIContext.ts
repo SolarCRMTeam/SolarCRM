@@ -19,7 +19,7 @@ export class APIContext extends msRest.ServiceClient {
    * @param [options] The parameter options
    */
   constructor(credentials: msRest.ServiceClientCredentials, options?: Models.APIOptions) {
-    if (credentials === undefined) {
+    if (credentials == undefined) {
       throw new Error("'credentials' cannot be null.");
     }
 

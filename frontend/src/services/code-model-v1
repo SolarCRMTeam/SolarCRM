@@ -2622,11 +2622,11 @@
         "$id": "347",
         "$type": "PrimaryType",
         "format": "binary",
-        "knownPrimaryType": "string",
+        "knownPrimaryType": "stream",
         "name": {
          "$id": "348",
          "fixed": false,
-         "raw": "String"
+         "raw": "Stream"
         },
         "deprecated": false
        }
@@ -3408,11 +3408,11 @@
         "$id": "443",
         "$type": "PrimaryType",
         "format": "binary",
-        "knownPrimaryType": "string",
+        "knownPrimaryType": "stream",
         "name": {
          "$id": "444",
          "fixed": false,
-         "raw": "String"
+         "raw": "Stream"
         },
         "deprecated": false
        }

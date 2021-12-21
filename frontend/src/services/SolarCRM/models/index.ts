@@ -147,7 +147,7 @@ export interface APIUpdateOptionalParams extends msRest.RequestOptionsBase {
  * Optional Parameters.
  */
 export interface APIImportMethodOptionalParams extends msRest.RequestOptionsBase {
-  file?: string;
+  file?: msRest.HttpRequestBody;
 }
 
 /**
@@ -178,7 +178,7 @@ export interface APIUpdate1OptionalParams extends msRest.RequestOptionsBase {
  * Optional Parameters.
  */
 export interface APIImport1OptionalParams extends msRest.RequestOptionsBase {
-  file?: string;
+  file?: msRest.HttpRequestBody;
 }
 
 /**

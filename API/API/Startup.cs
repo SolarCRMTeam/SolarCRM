@@ -4,6 +4,7 @@ using API.Installers;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,6 +34,7 @@ namespace API
             {
                 c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "API", Version = "v1.0" });
                 c.CustomOperationIds(apiDesc => apiDesc.TryGetMethodInfo(out MethodInfo methodInfo) ? methodInfo.Name : null);
+                c.MapType<IFormFile>(() => new OpenApiSchema() { Type = "file", Format = "binary" });
             });
 
             services.InstallServicesInAssembly(Configuration, Environment, typeof(Startup).Assembly);
