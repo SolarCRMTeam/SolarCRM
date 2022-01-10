@@ -13,7 +13,7 @@ export const DeleteRepresentative= (props: IProps) => {
 
   return (
     <Popconfirm
-      title="Are you sure to delete this representative?"
+      title="Czy jesteś pewny, że chcesz usunąć tego przedstawiciela?"
       onConfirm={() => {
         setIsBusy(true);
         (async () => {
@@ -26,8 +26,8 @@ export const DeleteRepresentative= (props: IProps) => {
       }}
       okButtonProps={{ loading: isBusy }}
       onCancel={() => {}}
-      okText="Yes"
-      cancelText="No"
+      okText="Tak"
+      cancelText="Nie"
     >
       <Button
         type="primary"

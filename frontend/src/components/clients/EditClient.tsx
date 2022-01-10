@@ -34,7 +34,7 @@ export const EditClient = (props: IProps) => {
       const api = await getAPI();
       const result = await api.getById(props.id);
 
-      setClient({ id: result.id, name: result.name });
+      setClient(result);
     })();
   }, [props.id]);
 
@@ -49,6 +49,7 @@ export const EditClient = (props: IProps) => {
         loading={isBusy}
       />
       <Modal
+        destroyOnClose
         visible={isVisible}
         title={client?.name}
         onOk={() => {

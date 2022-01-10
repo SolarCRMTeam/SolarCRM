@@ -36,11 +36,14 @@ export const NewClient = (props: IProps) => {
         onClick={() => setIsVisible(true)}
         loading={isBusy}
       >
-        Add new client
+        Dodaj nowego klienta
       </Button>
       <Modal
+        destroyOnClose
         visible={isVisible}
-        title="Create new client"
+        okText="Dodaj"
+        cancelText="Anuluj"
+        title="Dodaj nowego klienta"
         okButtonProps={{ loading: isBusy }}
         onOk={() => {
           setIsBusy(true);

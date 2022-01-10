@@ -37,11 +37,11 @@ export const NewRepresentative = (props: IProps) => {
         onClick={() => setIsVisible(true)}
         loading={isBusy}
       >
-        Add new representative
+        Dodaj nowego przedstawiciela
       </Button>
       <Modal
         visible={isVisible}
-        title="Create new representative"
+        title="Dodaj nowego przedstawiciela"
         okButtonProps={{ loading: isBusy }}
         onOk={() => {
           setIsBusy(true);

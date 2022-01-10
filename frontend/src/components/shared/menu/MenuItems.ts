@@ -7,17 +7,17 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     key: "clients",
-    title: "Clients",
+    title: "Klienci",
     path: "/clients",
   },
   {
     key: "representatives",
-    title: "Representatives",
+    title: "Przedstawiciele",
     path: "/representatives",
   },
   {
     key: "account",
-    title: "My Account",
+    title: "Moje konto",
     path: "/account",
   },
 ];

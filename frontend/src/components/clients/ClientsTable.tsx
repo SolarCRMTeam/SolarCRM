@@ -28,8 +28,48 @@ const ClientsTable = () => {
 
   const columns: (ColumnGroupType<ClientDto> | ColumnType<ClientDto>)[] = [
     {
-      title: "Name",
-      dataIndex: "name",
+      title: "Typ klienta",
+      dataIndex: "clientType",
+    },
+    {
+      title: "Id",
+      dataIndex: "identifier",
+    },
+    {
+      title: "Nazwa",
+      dataIndex: "companyName",
+    },
+    {
+      title: "Ulica",
+      dataIndex: "street",
+    },
+    {
+      title: "Kod pocztowy",
+      dataIndex: "postalCode",
+    },
+    {
+      title: "Miejscowość",
+      dataIndex: "place",
+    },
+    {
+      title: "Województwo",
+      dataIndex: "voivodeship",
+    },
+    {
+      title: "Powiat",
+      dataIndex: "district",
+    },
+    {
+      title: "Adres e-mail",
+      dataIndex: "mail",
+    },
+    {
+      title: "Numer telefonu",
+      dataIndex: "phoneNumber",
+    },
+    {
+      title: "Uwagi",
+      dataIndex: "comments",
     },
     GetTableActions(),
   ];

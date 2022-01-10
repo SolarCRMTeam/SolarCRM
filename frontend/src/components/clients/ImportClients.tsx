@@ -1,18 +1,19 @@
-import { Button, Modal, Progress } from "antd";
+import { Button, Modal } from "antd";
 import { ImportOutlined } from "@ant-design/icons";
 import { Fragment, useState } from "react";
 import Dragger from "antd/lib/upload/Dragger";
 import { InboxOutlined } from "@ant-design/icons";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
+import { notify } from "../../wrappers/Noti";
 
 export const ImportClients = () => {
   const [isVisible, setIsVisible] = useState<boolean>();
-  // const [file, setFile] = useState<File | undefined>();
 
   const props = {
     name: "file",
     multiple: true,
+    showUploadList: false,
     onChange(change: any) {
       console.log(change);
     },
@@ -22,6 +23,7 @@ export const ImportClients = () => {
         () => {
           tableStore.refreshClients = true;
           options.onSuccess();
+          notify("Import został zakończony");
         },
         () => {
           options.onError();
@@ -43,21 +45,22 @@ export const ImportClients = () => {
           setIsVisible(true);
         }}
       >
-        Import new clients
+        Zaimportuj nowych klientów
       </Button>
       <Modal
+        destroyOnClose
         visible={isVisible}
-        title="Import new clients"
+        title="Zaimportuj nowych klientów"
         onCancel={() => onCancel()}
         okButtonProps={{ hidden: true }}
-        cancelText="Close"
+        cancelText="Zamknij"
       >
         <Dragger {...props}>
           <p className="ant-upload-drag-icon">
             <InboxOutlined />
           </p>
           <p className="ant-upload-text">
-            Click or drag file to this area to upload
+            Kliknij lub przeciągnij plik tutaj aby zaimportować
           </p>
         </Dragger>
       </Modal>

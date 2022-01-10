@@ -8,7 +8,7 @@ export const GetTableActions = ():
   | ColumnGroupType<RepresentativeDto>
   | ColumnType<RepresentativeDto> => {
   return {
-    title: "Actions",
+    title: "Akcję",
     dataIndex: "actions",
     width: 80,
     fixed: "right",

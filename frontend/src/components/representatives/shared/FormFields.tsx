@@ -13,9 +13,9 @@ export const FormFields = (props: IProps) => {
   return (
     <Space direction="vertical">
       <Space direction="horizontal">
-        Representative name:
+        Nazwa przedstawiciela:
         <Input
-          placeholder="Name"
+          placeholder="Nazwa przedstawiciela"
           value={props.representative?.name}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             props.setRepresentative({

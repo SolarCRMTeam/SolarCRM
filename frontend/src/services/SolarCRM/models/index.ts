@@ -11,7 +11,19 @@ import * as msRest from "@azure/ms-rest-js";
  */
 export interface ClientDto {
   id?: string;
+  identifier?: string;
+  companyName?: string;
   name?: string;
+  surname?: string;
+  street?: string;
+  place?: string;
+  postalCode?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
+  clientType?: number;
 }
 
 /**
@@ -48,7 +60,18 @@ export interface ClientDtoPagedResult {
  * An interface representing CreateClientCommand.
  */
 export interface CreateClientCommand {
+  companyName?: string;
   name?: string;
+  surname?: string;
+  street?: string;
+  place?: string;
+  postalCode?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
+  clientType?: number;
 }
 
 /**
