@@ -3,6 +3,7 @@ import { ColumnGroupType } from "antd/lib/table";
 import { observer } from "mobx-react-lite";
 import { ColumnType } from "rc-table/lib/interface";
 import { useEffect, useState } from "react";
+import { map } from "../../mappers/ClientTypeMapper";
 import {
   APIGetClientsOptionalParams,
   ClientDto,
@@ -30,6 +31,9 @@ const ClientsTable = () => {
     {
       title: "Typ klienta",
       dataIndex: "clientType",
+      render: (value) => {
+        return map(value)
+      }
     },
     {
       title: "Id",

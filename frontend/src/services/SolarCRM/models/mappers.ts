@@ -269,10 +269,76 @@ export const UpdateClientCommand: msRest.CompositeMapper = {
           name: "Uuid"
         }
       },
+      companyName: {
+        serializedName: "companyName",
+        type: {
+          name: "String"
+        }
+      },
       name: {
         serializedName: "name",
         type: {
           name: "String"
+        }
+      },
+      surname: {
+        serializedName: "surname",
+        type: {
+          name: "String"
+        }
+      },
+      street: {
+        serializedName: "street",
+        type: {
+          name: "String"
+        }
+      },
+      place: {
+        serializedName: "place",
+        type: {
+          name: "String"
+        }
+      },
+      postalCode: {
+        serializedName: "postalCode",
+        type: {
+          name: "String"
+        }
+      },
+      voivodeship: {
+        serializedName: "voivodeship",
+        type: {
+          name: "String"
+        }
+      },
+      district: {
+        serializedName: "district",
+        type: {
+          name: "String"
+        }
+      },
+      mail: {
+        serializedName: "mail",
+        type: {
+          name: "String"
+        }
+      },
+      phoneNumber: {
+        serializedName: "phoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      comments: {
+        serializedName: "comments",
+        type: {
+          name: "String"
+        }
+      },
+      clientType: {
+        serializedName: "clientType",
+        type: {
+          name: "Number"
         }
       }
     }

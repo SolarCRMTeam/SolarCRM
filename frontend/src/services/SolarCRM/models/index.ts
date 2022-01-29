@@ -79,7 +79,18 @@ export interface CreateClientCommand {
  */
 export interface UpdateClientCommand {
   id?: string;
+  companyName?: string;
   name?: string;
+  surname?: string;
+  street?: string;
+  place?: string;
+  postalCode?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
+  clientType?: number;
 }
 
 /**

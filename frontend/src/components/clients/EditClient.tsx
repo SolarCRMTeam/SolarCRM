@@ -52,6 +52,7 @@ export const EditClient = (props: IProps) => {
         destroyOnClose
         visible={isVisible}
         title={client?.name}
+        width="28vw"
         onOk={() => {
           setIsBusy(true);
           onSubmit()

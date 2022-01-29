@@ -2,8 +2,8 @@
 {
     public enum ClientType
     {
-        Firm,
-        Prosumer,
-        Farmer
+        Firma,
+        Prosument,
+        Rolnik
     }
 }

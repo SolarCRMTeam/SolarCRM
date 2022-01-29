@@ -21,7 +21,7 @@ namespace API.Application.Client.Commands.Import
             using (TextFieldParser csvParser = new(request.File.OpenReadStream()))
             {
                 csvParser.CommentTokens = new string[] { "#" };
-                csvParser.SetDelimiters(new string[] { ";" });
+                csvParser.SetDelimiters(new string[] { "," });
                 csvParser.HasFieldsEnclosedInQuotes = true;
 
                 csvParser.ReadLine();
@@ -44,7 +44,30 @@ namespace API.Application.Client.Commands.Import
             return new Domain.Models.Client
             {
                 Id = Guid.NewGuid(),
-                Name = fields[0]
+                //Identifier = fields[0],
+                CompanyName = fields[1],
+                Name = fields[2],
+                Surname = fields[3],
+                Place = fields[4],
+                Street = fields[5],
+                PostalCode = fields[6],
+                Voivodeship = fields[7],
+                District = fields[8],
+                Mail = fields[9],
+                PhoneNumber = fields[10],
+                Comments = fields[11],
+                ClientType = MapToClientType(fields[12])
+            };
+        }
+
+        private static Domain.Enums.ClientType MapToClientType(string fieldValue)
+        {
+            return fieldValue switch
+            {
+                "Firma" => Domain.Enums.ClientType.Firma,
+                "Prosument" => Domain.Enums.ClientType.Prosument,
+                "Rolnik" => Domain.Enums.ClientType.Rolnik,
+                _ => Domain.Enums.ClientType.Firma,
             };
         }
     }

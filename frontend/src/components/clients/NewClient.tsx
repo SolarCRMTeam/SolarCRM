@@ -44,6 +44,7 @@ export const NewClient = (props: IProps) => {
         okText="Dodaj"
         cancelText="Anuluj"
         title="Dodaj nowego klienta"
+        width="28vw"
         okButtonProps={{ loading: isBusy }}
         onOk={() => {
           setIsBusy(true);
