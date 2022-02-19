@@ -450,6 +450,10 @@
             "type": "string",
             "nullable": true
           },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
           "place": {
             "type": "string",
             "nullable": true
@@ -551,6 +555,10 @@
             "type": "string",
             "nullable": true
           },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
           "place": {
             "type": "string",
             "nullable": true
@@ -608,6 +616,10 @@
             "type": "string",
             "nullable": true
           },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
           "place": {
             "type": "string",
             "nullable": true
@@ -650,6 +662,46 @@
             "format": "uuid"
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "place": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "voivodeship": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "comments": {
             "type": "string",
             "nullable": true
           }
@@ -710,6 +762,46 @@
           "name": {
             "type": "string",
             "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "place": {
+            "type": "string",
+            "nullable": true
+          },
+          "voivodeship": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -722,6 +814,46 @@
             "format": "uuid"
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "place": {
+            "type": "string",
+            "nullable": true
+          },
+          "voivodeship": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "comments": {
             "type": "string",
             "nullable": true
           }

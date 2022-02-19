@@ -28,8 +28,44 @@ const RepresentativesTable = () => {
 
   const columns: (ColumnGroupType<RepresentativeDto> | ColumnType<RepresentativeDto>)[] = [
     {
-      title: "Name",
+      title: "Imię",
       dataIndex: "name",
+    },
+    {
+      title: "Nazwisko",
+      dataIndex: "surname",
+    },
+    {
+      title: "Ulica",
+      dataIndex: "street",
+    },
+    {
+      title: "Kod pocztowy",
+      dataIndex: "postalCode",
+    },
+    {
+      title: "Miejscowość",
+      dataIndex: "place",
+    },
+    {
+      title: "Województwo",
+      dataIndex: "voivodeship",
+    },
+    {
+      title: "Powiat",
+      dataIndex: "district",
+    },
+    {
+      title: "Adres e-mail",
+      dataIndex: "mail",
+    },
+    {
+      title: "Numer telefonu",
+      dataIndex: "phoneNumber",
+    },
+    {
+      title: "Uwagi",
+      dataIndex: "comments",
     },
     GetTableActions(),
   ];

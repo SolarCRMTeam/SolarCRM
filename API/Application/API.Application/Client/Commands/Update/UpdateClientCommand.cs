@@ -11,6 +11,7 @@ namespace API.Application.Client.Commands.Update
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Street { get; set; }
+        public string Address { get; set; }
         public string Place { get; set; }
         public string PostalCode { get; set; }
         public string Voivodeship { get; set; }

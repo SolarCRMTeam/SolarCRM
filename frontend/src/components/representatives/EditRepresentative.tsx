@@ -35,7 +35,7 @@ export const EditRepresentative = (props: IProps) => {
       const api = await getAPI();
       const result = await api.getById1(props.id);
 
-      setRepresentative({ id: result.id, name: result.name });
+      setRepresentative(result);
     })();
   }, [props.id]);
 

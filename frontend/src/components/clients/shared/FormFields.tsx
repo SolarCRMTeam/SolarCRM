@@ -160,6 +160,19 @@ export const FormFields = (props: IProps) => {
               }}
             />
           </Space>
+          <Space direction="vertical">
+            <Label>Adres</Label>
+            <Input
+              placeholder="Adres"
+              value={props.client?.address}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                props.setClient({
+                  ...props.client,
+                  address: event.target.value,
+                });
+              }}
+            />
+          </Space>
         </Space>
       </Space>
       <Space direction="vertical">

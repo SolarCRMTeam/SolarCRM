@@ -20,7 +20,7 @@ namespace API.Application.Representative.Commands.Import
             using (TextFieldParser csvParser = new(request.File.OpenReadStream()))
             {
                 csvParser.CommentTokens = new string[] { "#" };
-                csvParser.SetDelimiters(new string[] { ";" });
+                csvParser.SetDelimiters(new string[] { "," });
                 csvParser.HasFieldsEnclosedInQuotes = true;
 
                 csvParser.ReadLine();
@@ -43,7 +43,17 @@ namespace API.Application.Representative.Commands.Import
             return new Domain.Models.Representative
             {
                 Id = Guid.NewGuid(),
-                Name = fields[0]
+                Name = fields[0],
+                Surname = fields[1],
+                Place = fields[2],
+                Street = fields[3],
+                Address = fields[4],
+                PostalCode = fields[5],
+                Voivodeship = fields[6],
+                District = fields[7],
+                Mail = fields[8],
+                PhoneNumber = fields[9],
+                Comments = fields[10],
             };
         }
     }

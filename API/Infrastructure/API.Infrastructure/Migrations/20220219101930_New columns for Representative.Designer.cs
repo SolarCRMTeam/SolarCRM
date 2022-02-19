@@ -3,14 +3,16 @@ using System;
 using API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220219101930_New columns for Representative")]
+    partial class NewcolumnsforRepresentative
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,9 +24,6 @@ namespace API.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("longtext");
 
                     b.Property<int>("ClientType")
                         .HasColumnType("int");
@@ -75,9 +74,6 @@ namespace API.Infrastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Comments")
                         .HasColumnType("longtext");

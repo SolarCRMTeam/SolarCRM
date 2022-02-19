@@ -16,6 +16,7 @@ export interface ClientDto {
   name?: string;
   surname?: string;
   street?: string;
+  address?: string;
   place?: string;
   postalCode?: string;
   voivodeship?: string;
@@ -64,6 +65,7 @@ export interface CreateClientCommand {
   name?: string;
   surname?: string;
   street?: string;
+  address?: string;
   place?: string;
   postalCode?: string;
   voivodeship?: string;
@@ -83,6 +85,7 @@ export interface UpdateClientCommand {
   name?: string;
   surname?: string;
   street?: string;
+  address?: string;
   place?: string;
   postalCode?: string;
   voivodeship?: string;
@@ -99,6 +102,16 @@ export interface UpdateClientCommand {
 export interface RepresentativeDto {
   id?: string;
   name?: string;
+  surname?: string;
+  street?: string;
+  postalCode?: string;
+  place?: string;
+  address?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
 }
 
 /**
@@ -136,6 +149,16 @@ export interface RepresentativeDtoPagedResult {
  */
 export interface CreateRepresentativeCommand {
   name?: string;
+  surname?: string;
+  street?: string;
+  postalCode?: string;
+  address?: string;
+  place?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
 }
 
 /**
@@ -144,6 +167,16 @@ export interface CreateRepresentativeCommand {
 export interface UpdateRepresentativeCommand {
   id?: string;
   name?: string;
+  surname?: string;
+  street?: string;
+  address?: string;
+  postalCode?: string;
+  place?: string;
+  voivodeship?: string;
+  district?: string;
+  mail?: string;
+  phoneNumber?: string;
+  comments?: string;
 }
 
 /**

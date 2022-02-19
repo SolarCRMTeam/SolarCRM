@@ -48,6 +48,12 @@ export const ClientDto: msRest.CompositeMapper = {
           name: "String"
         }
       },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
       place: {
         serializedName: "place",
         type: {
@@ -205,6 +211,12 @@ export const CreateClientCommand: msRest.CompositeMapper = {
           name: "String"
         }
       },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
       place: {
         serializedName: "place",
         type: {
@@ -293,6 +305,12 @@ export const UpdateClientCommand: msRest.CompositeMapper = {
           name: "String"
         }
       },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
       place: {
         serializedName: "place",
         type: {
@@ -359,6 +377,66 @@ export const RepresentativeDto: msRest.CompositeMapper = {
       },
       name: {
         serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      surname: {
+        serializedName: "surname",
+        type: {
+          name: "String"
+        }
+      },
+      street: {
+        serializedName: "street",
+        type: {
+          name: "String"
+        }
+      },
+      postalCode: {
+        serializedName: "postalCode",
+        type: {
+          name: "String"
+        }
+      },
+      place: {
+        serializedName: "place",
+        type: {
+          name: "String"
+        }
+      },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
+      voivodeship: {
+        serializedName: "voivodeship",
+        type: {
+          name: "String"
+        }
+      },
+      district: {
+        serializedName: "district",
+        type: {
+          name: "String"
+        }
+      },
+      mail: {
+        serializedName: "mail",
+        type: {
+          name: "String"
+        }
+      },
+      phoneNumber: {
+        serializedName: "phoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      comments: {
+        serializedName: "comments",
         type: {
           name: "String"
         }
@@ -453,6 +531,66 @@ export const CreateRepresentativeCommand: msRest.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      surname: {
+        serializedName: "surname",
+        type: {
+          name: "String"
+        }
+      },
+      street: {
+        serializedName: "street",
+        type: {
+          name: "String"
+        }
+      },
+      postalCode: {
+        serializedName: "postalCode",
+        type: {
+          name: "String"
+        }
+      },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
+      place: {
+        serializedName: "place",
+        type: {
+          name: "String"
+        }
+      },
+      voivodeship: {
+        serializedName: "voivodeship",
+        type: {
+          name: "String"
+        }
+      },
+      district: {
+        serializedName: "district",
+        type: {
+          name: "String"
+        }
+      },
+      mail: {
+        serializedName: "mail",
+        type: {
+          name: "String"
+        }
+      },
+      phoneNumber: {
+        serializedName: "phoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      comments: {
+        serializedName: "comments",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -472,6 +610,66 @@ export const UpdateRepresentativeCommand: msRest.CompositeMapper = {
       },
       name: {
         serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      surname: {
+        serializedName: "surname",
+        type: {
+          name: "String"
+        }
+      },
+      street: {
+        serializedName: "street",
+        type: {
+          name: "String"
+        }
+      },
+      address: {
+        serializedName: "address",
+        type: {
+          name: "String"
+        }
+      },
+      postalCode: {
+        serializedName: "postalCode",
+        type: {
+          name: "String"
+        }
+      },
+      place: {
+        serializedName: "place",
+        type: {
+          name: "String"
+        }
+      },
+      voivodeship: {
+        serializedName: "voivodeship",
+        type: {
+          name: "String"
+        }
+      },
+      district: {
+        serializedName: "district",
+        type: {
+          name: "String"
+        }
+      },
+      mail: {
+        serializedName: "mail",
+        type: {
+          name: "String"
+        }
+      },
+      phoneNumber: {
+        serializedName: "phoneNumber",
+        type: {
+          name: "String"
+        }
+      },
+      comments: {
+        serializedName: "comments",
         type: {
           name: "String"
         }
