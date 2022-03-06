@@ -1,5 +1,7 @@
 using API.Framework.EventBus;
 using API.Infrastructure;
+using API.Infrastructure.Middleware;
+using API.Infrastructure.Services;
 using API.Installers;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -40,6 +42,7 @@ namespace API
             services.InstallServicesInAssembly(Configuration, Environment, typeof(Startup).Assembly);
             services.InstallServicesInAssembly(Configuration, Environment, typeof(DatabaseContext).Assembly);
             services.AddScoped<SieveProcessor>();
+            services.AddScoped<IUserService, UserService>();
 
             var domainAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             services.AddMediatR(domainAssemblies);
@@ -59,17 +62,23 @@ namespace API
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+
+            
 
             app.UseCors(x => x
                .AllowAnyOrigin()
                .AllowAnyMethod()
                .AllowAnyHeader());
 
+            app.UseMiddleware<BasicAuthMiddleware>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            
 
             app.UpdateDatabase<DatabaseContext>();
         }

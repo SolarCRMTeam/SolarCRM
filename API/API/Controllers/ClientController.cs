@@ -6,6 +6,7 @@ using API.Application.Client.Queries;
 using API.Application.DTO;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
+using API.Infrastructure.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 using System;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ClientController : ControllerBase

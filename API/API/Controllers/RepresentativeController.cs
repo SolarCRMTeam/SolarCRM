@@ -6,6 +6,9 @@ using API.Application.Representative.Commands.Update;
 using API.Application.Representative.Queries;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
+using API.Infrastructure.Attributes;
+using API.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sieve.Models;
 using System;
@@ -15,15 +18,18 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Infrastructure.Attributes.Authorize]
     [ApiController]
     [Route("[controller]")]
     public class RepresentativeController : ControllerBase
     {
         private readonly IInternalBus _internalBus;
+        private readonly IUserService _userService;  
 
-        public RepresentativeController(IInternalBus internalBus)
+        public RepresentativeController(IInternalBus internalBus, IUserService userService)
         {
             _internalBus = internalBus;
+            _userService = userService;
         }
 
         [HttpGet("{id}")]
@@ -99,6 +105,18 @@ namespace API.Controllers
             await _internalBus.SendCommandAsync(command);
 
             return Ok();
+        }
+
+        [AllowAnonymous]
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticateDto model)
+        {
+            var user = await _userService.Authenticate(model.Login, model.Password);
+
+            if (user == null)
+                return BadRequest(new { message = "Username or password is incorrect" });
+
+            return Ok(user);
         }
     }
 }

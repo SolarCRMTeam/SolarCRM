@@ -16,5 +16,7 @@ namespace API.Domain.Models
         public string Mail { get; set; }
         public string PhoneNumber { get; set; }
         public string Comments { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }
