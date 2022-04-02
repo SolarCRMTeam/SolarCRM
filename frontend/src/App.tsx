@@ -4,6 +4,8 @@ import { Clients } from "./components/clients/Clients";
 import { Representatives } from "./components/representatives/Representatives";
 import { PrimaryView } from "./components/shared/PrimaryView";
 import { MyAccount } from "./components/account/MyAccount";
+import { Login } from "./components/account/Login";
+import { Logout } from "./components/account/Logout";
 
 function App() {
   return (
@@ -42,6 +44,7 @@ function App() {
           </PrimaryView>
         )}
       />
+      <Route path="/logout" exact={true} render={(props) => <Logout />} />
     </Switch>
   );
 }

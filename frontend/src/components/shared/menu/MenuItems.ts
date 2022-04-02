@@ -20,4 +20,9 @@ export const menuItems: MenuItem[] = [
     title: "Moje konto",
     path: "/account",
   },
+  {
+    key: "logout",
+    title: "Wyloguj",
+    path: "/logout",
+  },
 ];

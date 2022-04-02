@@ -1,9 +1,10 @@
 import React from 'react'
+import { userStore } from '../../stores/UserStore'
 
 export const MyAccount = () => {
     return (
         <div>
-            My account
+            Witaj, {userStore.representative?.name}
         </div>
     )
 }

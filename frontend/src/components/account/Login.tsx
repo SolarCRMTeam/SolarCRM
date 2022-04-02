@@ -1,28 +1,32 @@
 import { Button, Col, Form, Input } from "antd";
+import { useState } from "react";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { userStore } from "../../stores/UserStore";
 
-const onFinish = async (values: any) => {
-  const api = await getAPI();
+export const Login = () => {
+  const onFinish = async (values: any) => {
+    const api = await getAPI();
 
-  const body = {
-    login: values.username,
-    password: values.password,
+    const body = {
+      login: values.username,
+      password: values.password,
+    };
+
+    try {
+      const result = await api.authenticate({ body: body });
+      userStore.login = values.username;
+      userStore.password = values.password;
+      userStore.representative = result._response.parsedBody;
+    } catch (ex) {
+      console.log(ex);
+      setIsError(true);
+    }
   };
 
-  try {
-    const result = await api.authenticate({ body: body });
-    userStore.login = values.username;
-    userStore.password = values.password;
-    userStore.representative = result._response.parsedBody;
-  } catch (ex) {
-    console.log(ex);
-  }
-};
+  const onFinishFailed = () => {};
 
-const onFinishFailed = () => {};
+  const [isError, setIsError] = useState<boolean>(false);
 
-export const Login = () => {
   return (
     <>
       <Form
@@ -60,6 +64,11 @@ export const Login = () => {
             Submit
           </Button>
         </Form.Item>
+        {isError && (
+          <Col span={12} offset={8}>
+            <h2 style={{ color: "red" }}>Niepoprawny login lub hasło.</h2>
+          </Col>
+        )}
       </Form>
     </>
   );
