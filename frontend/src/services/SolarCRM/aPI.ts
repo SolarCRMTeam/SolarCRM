@@ -311,6 +311,29 @@ class API extends APIContext {
       import1OperationSpec,
       callback);
   }
+
+  /**
+   * @param [options] The optional parameters
+   * @returns Promise<msRest.RestResponse>
+   */
+  authenticate(options?: Models.APIAuthenticateOptionalParams): Promise<msRest.RestResponse>;
+  /**
+   * @param callback The callback
+   */
+  authenticate(callback: msRest.ServiceCallback<void>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  authenticate(options: Models.APIAuthenticateOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  authenticate(options?: Models.APIAuthenticateOptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      authenticateOperationSpec,
+      callback);
+  }
 }
 
 // Operation Specifications
@@ -524,6 +547,23 @@ const import1OperationSpec: msRest.OperationSpec = {
     Parameters.file
   ],
   contentType: "multipart/form-data",
+  responses: {
+    200: {},
+    default: {}
+  },
+  serializer
+};
+
+const authenticateOperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Representative/authenticate",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.AuthenticateDto
+  },
   responses: {
     200: {},
     default: {}

@@ -180,6 +180,14 @@ export interface UpdateRepresentativeCommand {
 }
 
 /**
+ * An interface representing AuthenticateDto.
+ */
+export interface AuthenticateDto {
+  login?: string;
+  password?: string;
+}
+
+/**
  * An interface representing APIOptions.
  */
 export interface APIOptions extends ServiceClientOptions {
@@ -246,6 +254,13 @@ export interface APIUpdate1OptionalParams extends msRest.RequestOptionsBase {
  */
 export interface APIImport1OptionalParams extends msRest.RequestOptionsBase {
   file?: msRest.HttpRequestBody;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APIAuthenticateOptionalParams extends msRest.RequestOptionsBase {
+  body?: AuthenticateDto;
 }
 
 /**

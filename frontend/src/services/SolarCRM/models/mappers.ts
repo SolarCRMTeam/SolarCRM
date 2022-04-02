@@ -677,3 +677,25 @@ export const UpdateRepresentativeCommand: msRest.CompositeMapper = {
     }
   }
 };
+
+export const AuthenticateDto: msRest.CompositeMapper = {
+  serializedName: "AuthenticateDto",
+  type: {
+    name: "Composite",
+    className: "AuthenticateDto",
+    modelProperties: {
+      login: {
+        serializedName: "login",
+        type: {
+          name: "String"
+        }
+      },
+      password: {
+        serializedName: "password",
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};

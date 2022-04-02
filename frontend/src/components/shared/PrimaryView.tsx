@@ -1,5 +1,7 @@
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/lib/layout/layout";
+import Authorize from "../account/Authorize";
+
 import { MenuBar } from "./menu/MenuBar";
 
 interface IProps {
@@ -8,12 +10,14 @@ interface IProps {
 
 export const PrimaryView = (props: IProps) => {
   return (
-    <Layout>
-      <Header className="fixedHeader">
-        <MenuBar />
-      </Header>
-      <Content className="content">{props.children}</Content>
-      <Footer className="footer">Solar CRM</Footer>
-    </Layout>
+    <Authorize>
+      <Layout>
+        <Header className="fixedHeader">
+          <MenuBar />
+        </Header>
+        <Content className="content">{props.children}</Content>
+        <Footer className="footer">Solar CRM</Footer>
+      </Layout>
+    </Authorize>
   );
 };
