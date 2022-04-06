@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim-arm64v8 AS build
 WORKDIR /src
 COPY ["API/API/API.csproj", "API/"]
 COPY ["API/Infrastructure/API.Infrastructure/API.Infrastructure.csproj", "Infrastructure/API.Infrastructure/"]
+COPY ["API/Contract/API.Contract/API.Contract.csproj", "Contract/API.Contract/"]
 COPY ["API/Domain/API.Domain/API.Domain.csproj", "Domain/API.Domain/"]
 COPY ["API/Application/API.Application/API.Application.csproj", "Application/API.Application/"]
 COPY ["API/Framework/API.Framework/API.Framework.csproj", "Framework/API.Framework/"]
