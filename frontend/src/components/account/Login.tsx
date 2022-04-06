@@ -46,7 +46,7 @@ export const Login = () => {
         <Form.Item
           label="Login"
           name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          rules={[{ required: true, message: "Wprowadź nazwę użytkownika!" }]}
         >
           <Input />
         </Form.Item>
@@ -54,14 +54,14 @@ export const Login = () => {
         <Form.Item
           label="Hasło"
           name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
+          rules={[{ required: true, message: "Wprowadź hasło!" }]}
         >
           <Input.Password />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            Zaloguj
           </Button>
         </Form.Item>
         {isError && (

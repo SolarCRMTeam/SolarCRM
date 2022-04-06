@@ -4,14 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import pl_PL from "antd/lib/locale-provider/pl_PL";
 
 const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={baseUrl!}>
-      <App />
-    </BrowserRouter>
+    <ConfigProvider locale={pl_PL}>
+      <BrowserRouter basename={baseUrl!}>
+        <App />
+      </BrowserRouter>
+    </ConfigProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
