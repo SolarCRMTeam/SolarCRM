@@ -24,7 +24,7 @@ namespace API.Application.Client.Commands.Import
             using (TextFieldParser csvParser = new(request.File.OpenReadStream()))
             {
                 csvParser.CommentTokens = new string[] { "#" };
-                csvParser.SetDelimiters(new string[] { "," });
+                csvParser.SetDelimiters(new string[] { ",", ";" });
                 csvParser.HasFieldsEnclosedInQuotes = true;
 
                 csvParser.ReadLine();

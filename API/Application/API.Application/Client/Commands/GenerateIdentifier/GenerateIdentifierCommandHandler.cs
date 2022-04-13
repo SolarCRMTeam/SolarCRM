@@ -14,7 +14,7 @@ namespace API.Application.Client.Commands.GenerateIdentifier
         }
         public async Task<string> Handle(GenerateIdentifierCommand request, CancellationToken cancellationToken)
         {
-            var number = await _clientRepository.GetCount(cancellationToken) + 1;
+            var number = await _clientRepository.GetCount(cancellationToken);
             return $"{request.ClientType[..1]}{number}";
         }
     }

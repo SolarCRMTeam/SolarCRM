@@ -1,6 +1,7 @@
 ﻿using API.Contract;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,7 +33,21 @@ namespace API.Infrastructure.Database.Client
             => await _databaseContext.Clients.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
         public async Task<long> GetCount(CancellationToken cancellationToken)
-            => await _databaseContext.Clients.LongCountAsync(cancellationToken);
+        {
+            var entity = await _databaseContext.Clients.AsNoTracking().OrderByDescending(x => x.Created).Select(x => x.Identifier).FirstOrDefaultAsync(cancellationToken: cancellationToken);
+
+            if (entity == null)
+                return 1;
+
+            var identifier = entity.Substring(1, entity.Length - 1);
+
+            if(long.TryParse(identifier, out var count))
+            {
+                return count + 1;
+            }
+
+            return 1;
+        }
 
         public async Task Update(Domain.Models.Client client, CancellationToken cancellationToken)
         {
