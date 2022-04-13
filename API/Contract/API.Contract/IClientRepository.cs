@@ -11,5 +11,6 @@ namespace API.Contract
         Task<Guid> AddAsync(Client client, CancellationToken cancellationToken);
         Task Update(Client client, CancellationToken cancellationToken);
         Task DeleteAsync(Client client, CancellationToken cancellationToken);
+        Task<long> GetCount(CancellationToken cancellationToken);
     }
 }

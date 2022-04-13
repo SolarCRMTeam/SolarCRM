@@ -24,6 +24,7 @@ export const ImportClients = () => {
           tableStore.refreshClients = true;
           options.onSuccess();
           notify("Import został zakończony");
+          setIsVisible(false);
         },
         () => {
           options.onError();

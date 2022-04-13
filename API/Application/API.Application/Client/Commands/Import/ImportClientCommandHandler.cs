@@ -1,4 +1,5 @@
-﻿using API.Contract;
+﻿using API.Application.Client.Commands.GenerateIdentifier;
+using API.Contract;
 using API.Framework.EventBus;
 using MediatR;
 using Microsoft.VisualBasic.FileIO;
@@ -11,10 +12,12 @@ namespace API.Application.Client.Commands.Import
     public class ImportClientCommandHandler : ICommandHandler<ImportClientCommand>
     {
         private readonly IClientRepository _clientRepository;
+        private readonly IInternalBus _internalBus;
 
-        public ImportClientCommandHandler(IClientRepository clientRepository)
+        public ImportClientCommandHandler(IClientRepository clientRepository, IInternalBus internalBus)
         {
             _clientRepository = clientRepository;
+            _internalBus = internalBus;
         }
         public async Task<Unit> Handle(ImportClientCommand request, CancellationToken cancellationToken)
         {
@@ -30,7 +33,7 @@ namespace API.Application.Client.Commands.Import
                 {
                     string[] fields = csvParser.ReadFields();
 
-                    var client = MapToClientEntity(fields);
+                    var client = await MapToClientEntity(fields, cancellationToken);
 
                     await _clientRepository.AddAsync(client, cancellationToken);
                 }
@@ -39,12 +42,17 @@ namespace API.Application.Client.Commands.Import
             return Unit.Value;
         }
 
-        private static Domain.Models.Client MapToClientEntity(string[] fields)
+        private async Task<Domain.Models.Client> MapToClientEntity(string[] fields, CancellationToken cancellationToken)
         {
+            var identifier = await _internalBus.SendCommandAsync(new GenerateIdentifierCommand
+            {
+                ClientType = fields[12]
+            });
+
             return new Domain.Models.Client
             {
                 Id = Guid.NewGuid(),
-                //Identifier = fields[0],
+                Identifier = identifier,
                 CompanyName = fields[0],
                 Name = fields[1],
                 Surname = fields[2],

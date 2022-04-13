@@ -86,14 +86,14 @@ export const FormFields = (props: IProps) => {
             />
           </Space>
           <Space direction="vertical">
-            <Label>Kod pocztowy</Label>
+            <Label>Adres</Label>
             <Input
-              placeholder="Kod pocztowy"
-              value={props.client?.postalCode}
+              placeholder="Adres"
+              value={props.client?.address}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 props.setClient({
                   ...props.client,
-                  postalCode: event.target.value,
+                  address: event.target.value,
                 });
               }}
             />
@@ -108,6 +108,19 @@ export const FormFields = (props: IProps) => {
               value={props.client?.place}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 props.setClient({ ...props.client, place: event.target.value });
+              }}
+            />
+          </Space>
+          <Space direction="vertical">
+            <Label>Kod pocztowy</Label>
+            <Input
+              placeholder="Kod pocztowy"
+              value={props.client?.postalCode}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                props.setClient({
+                  ...props.client,
+                  postalCode: event.target.value,
+                });
               }}
             />
           </Space>
@@ -156,19 +169,6 @@ export const FormFields = (props: IProps) => {
                 props.setClient({
                   ...props.client,
                   phoneNumber: event.target.value,
-                });
-              }}
-            />
-          </Space>
-          <Space direction="vertical">
-            <Label>Adres</Label>
-            <Input
-              placeholder="Adres"
-              value={props.client?.address}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                props.setClient({
-                  ...props.client,
-                  address: event.target.value,
                 });
               }}
             />
