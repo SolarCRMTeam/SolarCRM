@@ -92,7 +92,7 @@ const RepresentativesTable = () => {
         }
       }
     })();
-  }, [sieve.current, tableStore.refreshRepresentatives]);
+  }, [sieve.current, tableStore.refreshRepresentatives, sieve.pageSize]);
 
   const [data, setData] = useState<RepresentativeDto[]>([]);
 

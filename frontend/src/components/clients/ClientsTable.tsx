@@ -100,7 +100,7 @@ const ClientsTable = () => {
         }
       }
     })();
-  }, [sieve.current, tableStore.refreshClients]);
+  }, [sieve.current, tableStore.refreshClients, sieve.pageSize]);
 
   const [data, setData] = useState<ClientDto[]>([]);
 
