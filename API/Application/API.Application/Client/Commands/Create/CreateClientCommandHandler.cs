@@ -19,7 +19,7 @@ namespace API.Application.Client.Commands.Create
         public async Task<Guid> Handle(CreateClientCommand request, CancellationToken cancellationToken)
         {
             var client = _mapper.Map<Domain.Models.Client>(request);
-
+            client.Created = DateTime.Now;
             var id = await _clientRepository.AddAsync(client, cancellationToken);
 
             return id;

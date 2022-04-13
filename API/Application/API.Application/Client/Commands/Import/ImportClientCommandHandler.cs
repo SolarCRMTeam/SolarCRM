@@ -57,7 +57,8 @@ namespace API.Application.Client.Commands.Import
                 Mail = fields[9],
                 PhoneNumber = fields[10],
                 Comments = fields[11],
-                ClientType = MapToClientType(fields[12])
+                ClientType = MapToClientType(fields[12]),
+                Created = DateTime.Now
             };
         }
 

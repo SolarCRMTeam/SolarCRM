@@ -20,5 +20,6 @@ namespace API.Domain.Models
         public string PhoneNumber { get; set; }
         public string Comments { get; set; }
         public ClientType ClientType { get; set; }
+        public DateTime Created { get; set; }
     }
 }

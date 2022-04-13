@@ -5,6 +5,7 @@ using API.Framework.Sieve;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Services;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace API.Infrastructure.Database.Representative.Queries
         }
         public async Task<PagedResult<RepresentativeDto>> Handle(GetRepresentativesQuery request, CancellationToken cancellationToken)
         {
-            var data = _databaseContext.Representatives.AsNoTracking();
+            var data = _databaseContext.Representatives.OrderByDescending(x => x.Created).AsNoTracking();
             var rowCount = await _sieveProcessor.Apply(request.Sieve, data, applyPagination: false).CountAsync(cancellationToken);
             var result = await _sieveProcessor.Apply(request.Sieve, data).ToListAsync(cancellationToken);
 

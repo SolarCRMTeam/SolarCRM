@@ -28,7 +28,7 @@ namespace API.Application.Client.Commands.Update
             }
 
             _mapper.Map(request, client);
-
+            client.Created = DateTime.UtcNow;
             await _clientRepository.Update(client, cancellationToken);
 
             return Unit.Value;

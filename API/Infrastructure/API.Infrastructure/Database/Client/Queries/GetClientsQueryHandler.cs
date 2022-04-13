@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Sieve.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,7 +25,7 @@ namespace API.Infrastructure.Database.Client.Queries
         }
         public async Task<PagedResult<ClientDto>> Handle(GetClientsQuery request, CancellationToken cancellationToken)
         {
-            var data = _databaseContext.Clients.AsNoTracking();
+            var data = _databaseContext.Clients.OrderByDescending(x => x.Created).AsNoTracking();
 
             var rowCount = await _sieveProcessor.Apply(request.Sieve, data, applyPagination: false).CountAsync(cancellationToken);
 

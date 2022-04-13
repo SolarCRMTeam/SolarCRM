@@ -27,7 +27,7 @@ namespace API.Application.Representative.Commands.Update
             }
 
             _mapper.Map(request, representative);
-
+            representative.Created = DateTime.UtcNow;
             await _representativeRepository.Update(representative, cancellationToken);
 
             return Unit.Value;

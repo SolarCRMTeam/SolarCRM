@@ -21,7 +21,7 @@ namespace API.Application.Representative.Commands.Create
         public async Task<Guid> Handle(CreateRepresentativeCommand request, CancellationToken cancellationToken)
         {
             var representative = _mapper.Map<Domain.Models.Representative>(request);
-
+            representative.Created = DateTime.Now;
             var id = await _representativeRepository.AddAsync(representative, cancellationToken);
 
             return id;

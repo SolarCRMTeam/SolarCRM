@@ -18,5 +18,6 @@ namespace API.Domain.Models
         public string Comments { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public DateTime Created { get; set; }
     }
 }
