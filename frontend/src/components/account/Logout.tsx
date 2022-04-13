@@ -7,6 +7,7 @@ export const Logout = () => {
     userStore.representative = undefined;
     userStore.login = undefined;
     userStore.password = undefined;
+    localStorage.removeItem("user");
   }, []);
 
   return <Redirect to="/clients" />;

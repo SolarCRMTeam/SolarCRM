@@ -2,6 +2,7 @@ import { Button, Col, Form, Input } from "antd";
 import { useState } from "react";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { userStore } from "../../stores/UserStore";
+import { IStorageUser } from "./IStorageUser";
 
 export const Login = () => {
   const onFinish = async (values: any) => {
@@ -17,6 +18,15 @@ export const Login = () => {
       userStore.login = values.username;
       userStore.password = values.password;
       userStore.representative = result._response.parsedBody;
+
+      const storageUser: IStorageUser = {
+        representative: userStore.representative,
+        password: userStore.password,
+        login: userStore.login,
+      };
+
+      const user = JSON.stringify(storageUser);
+      localStorage.setItem("user", user);
     } catch (ex) {
       console.log(ex);
       setIsError(true);
