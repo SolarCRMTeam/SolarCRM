@@ -1,7 +1,11 @@
 import { Table } from "antd";
 import { ColumnGroupType, ColumnType } from "antd/lib/table";
-import React, { useState } from "react";
-import { ProcessDto } from "../../services/SolarCRM/models";
+import React, { useEffect, useState } from "react";
+import {
+  APIGetProcessesOptionalParams,
+  ProcessDto,
+} from "../../services/SolarCRM/models";
+import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 
 interface ISieve {
@@ -27,6 +31,30 @@ export const ProcessTable = () => {
   ];
 
   const [data, setData] = useState<ProcessDto[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const api = await getAPI();
+
+      const params: APIGetProcessesOptionalParams = {
+        pageSize: sieve?.pageSize,
+        page: sieve?.current,
+        filters: sieve.filters,
+        sorts: sieve.sorts,
+      };
+
+      const data = await api
+        .getProcesses(params)
+        .finally(() => (tableStore.refreshProcess = false));
+
+      if (data?.results) {
+        setData(data.results);
+        if (data.rowCount) {
+          setSieve({ ...sieve, total: data.rowCount });
+        }
+      }
+    })();
+  }, [sieve.current, tableStore.refreshProcess, sieve.pageSize]);
 
   return (
     <Table

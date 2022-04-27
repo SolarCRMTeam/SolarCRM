@@ -33,10 +33,12 @@ export const EditRepresentative = (props: IProps) => {
 
   useEffect(() => {
     (async () => {
-      const api = await getAPI();
-      const result = await api.getById1(props.id);
+      if (isVisible) {
+        const api = await getAPI();
+        const result = await api.getRepresentativeById(props.id);
 
-      setRepresentative(result);
+        setRepresentative(result);
+      }
     })();
   }, [props.id]);
 

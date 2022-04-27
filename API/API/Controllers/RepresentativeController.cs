@@ -35,7 +35,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(RepresentativeDto), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetById(Guid id)
+        public async Task<IActionResult> GetRepresentativeById(Guid id)
         {
             var query = new GetRepresentativeQuery
             {

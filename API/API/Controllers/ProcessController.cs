@@ -25,8 +25,8 @@ namespace API.Controllers
 
         [HttpGet("{id}")]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(ClientDto), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetById(Guid id)
+        [ProducesResponseType(typeof(ProcessDto), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetProcessById(Guid id)
         {
             var query = new GetProcessQuery
             {

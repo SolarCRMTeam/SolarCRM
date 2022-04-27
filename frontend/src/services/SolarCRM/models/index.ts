@@ -311,9 +311,9 @@ export interface APIAuthenticateOptionalParams extends msRest.RequestOptionsBase
 }
 
 /**
- * Contains response data for the getById operation.
+ * Contains response data for the getClientById operation.
  */
-export type GetByIdResponse = ClientDto & {
+export type GetClientByIdResponse = ClientDto & {
   /**
    * The underlying HTTP response.
    */
@@ -401,9 +401,9 @@ export type UpdateResponse = {
 };
 
 /**
- * Contains response data for the getById1 operation.
+ * Contains response data for the getProcessById operation.
  */
-export type GetById1Response = ClientDto & {
+export type GetProcessByIdResponse = ProcessDto & {
   /**
    * The underlying HTTP response.
    */
@@ -416,7 +416,7 @@ export type GetById1Response = ClientDto & {
       /**
        * The response body as parsed JSON or XML
        */
-      parsedBody: ClientDto;
+      parsedBody: ProcessDto;
     };
 };
 
@@ -441,9 +441,9 @@ export type GetProcessesResponse = ProcessDtoPagedResult & {
 };
 
 /**
- * Contains response data for the getById2 operation.
+ * Contains response data for the getRepresentativeById operation.
  */
-export type GetById2Response = RepresentativeDto & {
+export type GetRepresentativeByIdResponse = RepresentativeDto & {
   /**
    * The underlying HTTP response.
    */

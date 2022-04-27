@@ -5205,14 +5205,14 @@
      "name": {
       "$id": "776",
       "fixed": false,
-      "raw": "GetById"
+      "raw": "GetClientById"
      },
      "group": {
       "$id": "777",
       "fixed": false,
       "raw": ""
      },
-     "serializedName": "GetById",
+     "serializedName": "GetClientById",
      "url": "/Client/{id}",
      "isAbsoluteUrl": false,
      "httpMethod": "get",
@@ -5991,14 +5991,14 @@
      "name": {
       "$id": "872",
       "fixed": false,
-      "raw": "GetById1"
+      "raw": "GetProcessById"
      },
      "group": {
       "$id": "873",
       "fixed": false,
       "raw": ""
      },
-     "serializedName": "GetById",
+     "serializedName": "GetProcessById",
      "url": "/Process/{id}",
      "isAbsoluteUrl": false,
      "httpMethod": "get",
@@ -6006,7 +6006,7 @@
       "OK": {
        "$id": "874",
        "body": {
-        "$ref": "2"
+        "$ref": "316"
        },
        "extensions": {
         "$id": "875",
@@ -6033,7 +6033,7 @@
      "returnType": {
       "$id": "877",
       "body": {
-       "$ref": "2"
+       "$ref": "316"
       },
       "isNullable": true
      },
@@ -6383,14 +6383,14 @@
      "name": {
       "$id": "916",
       "fixed": false,
-      "raw": "GetById2"
+      "raw": "GetRepresentativeById"
      },
      "group": {
       "$id": "917",
       "fixed": false,
       "raw": ""
      },
-     "serializedName": "GetById",
+     "serializedName": "GetRepresentativeById",
      "url": "/Representative/{id}",
      "isAbsoluteUrl": false,
      "httpMethod": "get",

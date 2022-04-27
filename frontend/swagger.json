@@ -10,7 +10,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "GetById",
+        "operationId": "GetClientById",
         "parameters": [
           {
             "name": "id",
@@ -213,7 +213,7 @@
         "tags": [
           "Process"
         ],
-        "operationId": "GetById",
+        "operationId": "GetProcessById",
         "parameters": [
           {
             "name": "id",
@@ -231,7 +231,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClientDto"
+                  "$ref": "#/components/schemas/ProcessDto"
                 }
               }
             }
@@ -304,7 +304,7 @@
         "tags": [
           "Representative"
         ],
-        "operationId": "GetById",
+        "operationId": "GetRepresentativeById",
         "parameters": [
           {
             "name": "id",

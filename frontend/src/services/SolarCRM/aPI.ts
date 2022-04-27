@@ -23,28 +23,28 @@ class API extends APIContext {
   /**
    * @param id
    * @param [options] The optional parameters
-   * @returns Promise<Models.GetByIdResponse>
+   * @returns Promise<Models.GetClientByIdResponse>
    */
-  getById(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetByIdResponse>;
+  getClientById(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetClientByIdResponse>;
   /**
    * @param id
    * @param callback The callback
    */
-  getById(id: string, callback: msRest.ServiceCallback<Models.ClientDto>): void;
+  getClientById(id: string, callback: msRest.ServiceCallback<Models.ClientDto>): void;
   /**
    * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  getById(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ClientDto>): void;
-  getById(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ClientDto>, callback?: msRest.ServiceCallback<Models.ClientDto>): Promise<Models.GetByIdResponse> {
+  getClientById(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ClientDto>): void;
+  getClientById(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ClientDto>, callback?: msRest.ServiceCallback<Models.ClientDto>): Promise<Models.GetClientByIdResponse> {
     return this.sendOperationRequest(
       {
         id,
         options
       },
-      getByIdOperationSpec,
-      callback) as Promise<Models.GetByIdResponse>;
+      getClientByIdOperationSpec,
+      callback) as Promise<Models.GetClientByIdResponse>;
   }
 
   /**
@@ -169,28 +169,28 @@ class API extends APIContext {
   /**
    * @param id
    * @param [options] The optional parameters
-   * @returns Promise<Models.GetById1Response>
+   * @returns Promise<Models.GetProcessByIdResponse>
    */
-  getById1(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetById1Response>;
+  getProcessById(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetProcessByIdResponse>;
   /**
    * @param id
    * @param callback The callback
    */
-  getById1(id: string, callback: msRest.ServiceCallback<Models.ClientDto>): void;
+  getProcessById(id: string, callback: msRest.ServiceCallback<Models.ProcessDto>): void;
   /**
    * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  getById1(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ClientDto>): void;
-  getById1(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ClientDto>, callback?: msRest.ServiceCallback<Models.ClientDto>): Promise<Models.GetById1Response> {
+  getProcessById(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ProcessDto>): void;
+  getProcessById(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ProcessDto>, callback?: msRest.ServiceCallback<Models.ProcessDto>): Promise<Models.GetProcessByIdResponse> {
     return this.sendOperationRequest(
       {
         id,
         options
       },
-      getById1OperationSpec,
-      callback) as Promise<Models.GetById1Response>;
+      getProcessByIdOperationSpec,
+      callback) as Promise<Models.GetProcessByIdResponse>;
   }
 
   /**
@@ -219,28 +219,28 @@ class API extends APIContext {
   /**
    * @param id
    * @param [options] The optional parameters
-   * @returns Promise<Models.GetById2Response>
+   * @returns Promise<Models.GetRepresentativeByIdResponse>
    */
-  getById2(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetById2Response>;
+  getRepresentativeById(id: string, options?: msRest.RequestOptionsBase): Promise<Models.GetRepresentativeByIdResponse>;
   /**
    * @param id
    * @param callback The callback
    */
-  getById2(id: string, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
+  getRepresentativeById(id: string, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
   /**
    * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  getById2(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
-  getById2(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.RepresentativeDto>, callback?: msRest.ServiceCallback<Models.RepresentativeDto>): Promise<Models.GetById2Response> {
+  getRepresentativeById(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.RepresentativeDto>): void;
+  getRepresentativeById(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.RepresentativeDto>, callback?: msRest.ServiceCallback<Models.RepresentativeDto>): Promise<Models.GetRepresentativeByIdResponse> {
     return this.sendOperationRequest(
       {
         id,
         options
       },
-      getById2OperationSpec,
-      callback) as Promise<Models.GetById2Response>;
+      getRepresentativeByIdOperationSpec,
+      callback) as Promise<Models.GetRepresentativeByIdResponse>;
   }
 
   /**
@@ -388,7 +388,7 @@ class API extends APIContext {
 
 // Operation Specifications
 const serializer = new msRest.Serializer(Mappers);
-const getByIdOperationSpec: msRest.OperationSpec = {
+const getClientByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Client/{id}",
   urlParameters: [
@@ -496,7 +496,7 @@ const importMethodOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const getById1OperationSpec: msRest.OperationSpec = {
+const getProcessByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Process/{id}",
   urlParameters: [
@@ -504,7 +504,7 @@ const getById1OperationSpec: msRest.OperationSpec = {
   ],
   responses: {
     200: {
-      bodyMapper: Mappers.ClientDto
+      bodyMapper: Mappers.ProcessDto
     },
     default: {}
   },
@@ -529,7 +529,7 @@ const getProcessesOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const getById2OperationSpec: msRest.OperationSpec = {
+const getRepresentativeByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Representative/{id}",
   urlParameters: [

@@ -3,14 +3,16 @@ using System;
 using API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220427162246_Add process model")]
+    partial class Addprocessmodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,63 +81,10 @@ namespace API.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<decimal>("Advance")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<bool>("Application")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("Assembly")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("Audit")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("ClientId")
-                        .HasColumnType("char(36)");
-
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime>("FinalBilling")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("FinalInvoice")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Identifier")
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("InstallationSize")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<int>("Kind")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Meeting")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<decimal>("OfferValue")
-                        .HasColumnType("decimal(65,30)");
-
-                    b.Property<int>("OperatorRequest")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("ProjectAccepted")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("Updated")
-                        .HasColumnType("datetime(6)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
 
                     b.ToTable("Process");
                 });
@@ -191,15 +140,6 @@ namespace API.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Representatives");
-                });
-
-            modelBuilder.Entity("API.Domain.Models.Process", b =>
-                {
-                    b.HasOne("API.Domain.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId");
-
-                    b.Navigation("Client");
                 });
 #pragma warning restore 612, 618
         }

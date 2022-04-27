@@ -32,10 +32,12 @@ export const EditClient = (props: IProps) => {
 
   useEffect(() => {
     (async () => {
-      const api = await getAPI();
-      const result = await api.getById(props.id);
+      if (isVisible) {
+        const api = await getAPI();
+        const result = await api.getClientById(props.id);
 
-      setClient(result);
+        setClient(result);
+      }
     })();
   }, [props.id]);
 
