@@ -363,6 +363,97 @@ export const UpdateClientCommand: msRest.CompositeMapper = {
   }
 };
 
+export const ProcessDto: msRest.CompositeMapper = {
+  serializedName: "ProcessDto",
+  type: {
+    name: "Composite",
+    className: "ProcessDto",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Uuid"
+        }
+      }
+    }
+  }
+};
+
+export const ProcessDtoPagedResult: msRest.CompositeMapper = {
+  serializedName: "ProcessDtoPagedResult",
+  type: {
+    name: "Composite",
+    className: "ProcessDtoPagedResult",
+    modelProperties: {
+      results: {
+        serializedName: "results",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ProcessDto"
+            }
+          }
+        }
+      },
+      rowCount: {
+        serializedName: "rowCount",
+        type: {
+          name: "Number"
+        }
+      },
+      pageSize: {
+        serializedName: "pageSize",
+        type: {
+          name: "Number"
+        }
+      },
+      currentPage: {
+        serializedName: "currentPage",
+        type: {
+          name: "Number"
+        }
+      },
+      totalPagesNumber: {
+        readOnly: true,
+        serializedName: "totalPagesNumber",
+        type: {
+          name: "Number"
+        }
+      },
+      hasPreviousPage: {
+        readOnly: true,
+        serializedName: "hasPreviousPage",
+        type: {
+          name: "Boolean"
+        }
+      },
+      hasNextPage: {
+        readOnly: true,
+        serializedName: "hasNextPage",
+        type: {
+          name: "Boolean"
+        }
+      },
+      firstRowOnPage: {
+        readOnly: true,
+        serializedName: "firstRowOnPage",
+        type: {
+          name: "Number"
+        }
+      },
+      lastRowOnPage: {
+        readOnly: true,
+        serializedName: "lastRowOnPage",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
 export const RepresentativeDto: msRest.CompositeMapper = {
   serializedName: "RepresentativeDto",
   type: {

@@ -4,9 +4,8 @@ import { Clients } from "./components/clients/Clients";
 import { Representatives } from "./components/representatives/Representatives";
 import { PrimaryView } from "./components/shared/PrimaryView";
 import { MyAccount } from "./components/account/MyAccount";
-import { Login } from "./components/account/Login";
 import { Logout } from "./components/account/Logout";
-import { Handling } from "./components/handling/Handling";
+import { Process } from "./components/handling/Process";
 
 function App() {
   return (
@@ -41,7 +40,7 @@ function App() {
         exact={true}
         render={(props) => (
           <PrimaryView>
-            <Handling />
+            <Process />
           </PrimaryView>
         )}
       />

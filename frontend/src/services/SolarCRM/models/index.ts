@@ -97,6 +97,43 @@ export interface UpdateClientCommand {
 }
 
 /**
+ * An interface representing ProcessDto.
+ */
+export interface ProcessDto {
+  id?: string;
+}
+
+/**
+ * An interface representing ProcessDtoPagedResult.
+ */
+export interface ProcessDtoPagedResult {
+  results?: ProcessDto[];
+  rowCount?: number;
+  pageSize?: number;
+  currentPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly totalPagesNumber?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasPreviousPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly hasNextPage?: boolean;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly firstRowOnPage?: number;
+  /**
+   * **NOTE: This property will not be serialized. It can only be populated by the server.**
+   */
+  readonly lastRowOnPage?: number;
+}
+
+/**
  * An interface representing RepresentativeDto.
  */
 export interface RepresentativeDto {
@@ -223,6 +260,16 @@ export interface APIUpdateOptionalParams extends msRest.RequestOptionsBase {
  */
 export interface APIImportMethodOptionalParams extends msRest.RequestOptionsBase {
   file?: msRest.HttpRequestBody;
+}
+
+/**
+ * Optional Parameters.
+ */
+export interface APIGetProcessesOptionalParams extends msRest.RequestOptionsBase {
+  filters?: string;
+  sorts?: string;
+  page?: number;
+  pageSize?: number;
 }
 
 /**
@@ -356,7 +403,47 @@ export type UpdateResponse = {
 /**
  * Contains response data for the getById1 operation.
  */
-export type GetById1Response = RepresentativeDto & {
+export type GetById1Response = ClientDto & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: ClientDto;
+    };
+};
+
+/**
+ * Contains response data for the getProcesses operation.
+ */
+export type GetProcessesResponse = ProcessDtoPagedResult & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: ProcessDtoPagedResult;
+    };
+};
+
+/**
+ * Contains response data for the getById2 operation.
+ */
+export type GetById2Response = RepresentativeDto & {
   /**
    * The underlying HTTP response.
    */
