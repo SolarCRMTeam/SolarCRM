@@ -57,33 +57,18 @@ export const FormFields = (props: IProps) => {
             />
           </Space>
           <Space direction="vertical">
-            <Label>Kod pocztowy</Label>
+            <Label>Adres</Label>
             <Input
-              placeholder="Kod pocztowy"
-              value={props.representative?.postalCode}
+              placeholder="Adres"
+              value={props.representative?.address}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 props.setRepresentative({
                   ...props.representative,
-                  postalCode: event.target.value,
+                  address: event.target.value,
                 });
               }}
             />
           </Space>
-          <Space direction="vertical">
-            <Label>Numer telefonu</Label>
-            <Input
-              placeholder="Numer telefonu"
-              value={props.representative?.phoneNumber}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                props.setRepresentative({
-                  ...props.representative,
-                  phoneNumber: event.target.value,
-                });
-              }}
-            />
-          </Space>
-        </Space>
-        <Space direction="vertical">
           <Space direction="vertical">
             <Label>Miejscowość</Label>
 
@@ -94,6 +79,21 @@ export const FormFields = (props: IProps) => {
                 props.setRepresentative({
                   ...props.representative,
                   place: event.target.value,
+                });
+              }}
+            />
+          </Space>
+        </Space>
+        <Space direction="vertical">
+          <Space direction="vertical">
+            <Label>Kod pocztowy</Label>
+            <Input
+              placeholder="Kod pocztowy"
+              value={props.representative?.postalCode}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                props.setRepresentative({
+                  ...props.representative,
+                  postalCode: event.target.value,
                 });
               }}
             />
@@ -138,14 +138,14 @@ export const FormFields = (props: IProps) => {
             />
           </Space>
           <Space direction="vertical">
-            <Label>Adres</Label>
+            <Label>Numer telefonu</Label>
             <Input
-              placeholder="Adres"
-              value={props.representative?.address}
+              placeholder="Numer telefonu"
+              value={props.representative?.phoneNumber}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 props.setRepresentative({
                   ...props.representative,
-                  address: event.target.value,
+                  phoneNumber: event.target.value,
                 });
               }}
             />

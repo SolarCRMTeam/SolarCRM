@@ -16,6 +16,11 @@ export const menuItems: MenuItem[] = [
     path: "/representatives",
   },
   {
+    key: "handling",
+    title: "Obsługa zleceń",
+    path: "/handling",
+  },
+  {
     key: "account",
     title: "Moje konto",
     path: "/account",

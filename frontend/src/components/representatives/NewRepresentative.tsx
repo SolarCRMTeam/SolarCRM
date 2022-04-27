@@ -8,6 +8,7 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { FormFields } from "./shared/FormFields";
+import { notify } from "../../wrappers/Noti";
 
 interface IProps {}
 
@@ -50,6 +51,7 @@ export const NewRepresentative = (props: IProps) => {
               tableStore.refreshRepresentatives = true;
               setIsVisible(false);
               setRepresentative(undefined);
+              notify("Poprawnie dodano nowego przedstawiciela.");
             })
             .finally(() => setIsBusy(false));
         }}

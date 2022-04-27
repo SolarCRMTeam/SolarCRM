@@ -8,6 +8,7 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { FormFields } from "./shared/FormFields";
+import { notify } from "../../wrappers/Noti";
 
 interface IProps {}
 
@@ -53,6 +54,7 @@ export const NewClient = (props: IProps) => {
               tableStore.refreshClients = true;
               setIsVisible(false);
               setClient(undefined);
+              notify("Poprawnie dodano nowego klienta.");
             })
             .finally(() => setIsBusy(false));
         }}

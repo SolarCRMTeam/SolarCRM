@@ -6,6 +6,7 @@ import { PrimaryView } from "./components/shared/PrimaryView";
 import { MyAccount } from "./components/account/MyAccount";
 import { Login } from "./components/account/Login";
 import { Logout } from "./components/account/Logout";
+import { Handling } from "./components/handling/Handling";
 
 function App() {
   return (
@@ -32,6 +33,15 @@ function App() {
         render={(props) => (
           <PrimaryView>
             <Representatives />
+          </PrimaryView>
+        )}
+      />
+      <Route
+        path="/handling"
+        exact={true}
+        render={(props) => (
+          <PrimaryView>
+            <Handling />
           </PrimaryView>
         )}
       />

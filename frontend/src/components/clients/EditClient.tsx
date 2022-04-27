@@ -8,6 +8,7 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { FormFields } from "./shared/FormFields";
 import { EditOutlined } from "@ant-design/icons";
+import { notify } from "../../wrappers/Noti";
 
 interface IProps {
   id: string;
@@ -59,6 +60,7 @@ export const EditClient = (props: IProps) => {
             .then(() => {
               tableStore.refreshClients = true;
               setIsVisible(false);
+              notify("Poprawnie zaktualizowano klienta.");
             })
             .finally(() => setIsBusy(false));
         }}

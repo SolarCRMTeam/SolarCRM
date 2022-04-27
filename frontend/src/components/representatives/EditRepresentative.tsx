@@ -8,6 +8,7 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { FormFields } from "./shared/FormFields";
 import { EditOutlined } from "@ant-design/icons";
+import { notify } from "../../wrappers/Noti";
 
 interface IProps {
   id: string;
@@ -58,6 +59,7 @@ export const EditRepresentative = (props: IProps) => {
             .then(() => {
               tableStore.refreshRepresentatives = true;
               setIsVisible(false);
+              notify("Poprawnie zaktualizowano przedstawiciela.");
             })
             .finally(() => setIsBusy(false));
         }}
