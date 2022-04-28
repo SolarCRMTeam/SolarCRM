@@ -10,6 +10,7 @@ namespace API.Domain.Models
         public string Status { get; set; }
         public DateTime Updated { get; set; }
         public string Identifier { get; set; }
+        public Guid ClientId { get; set; }
         public Client Client { get; set; }
         public string Name { get; set; }
         public ProcessKind Kind { get; set; }
