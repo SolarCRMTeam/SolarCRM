@@ -1,5 +1,6 @@
 ﻿using API.Application.DTO;
 using API.Application.Process.Queries;
+using API.Framework.Context;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
 using AutoMapper;
@@ -16,16 +17,20 @@ namespace API.Infrastructure.Database.Process.Queries
         private readonly DatabaseContext _databaseContext;
         private readonly SieveProcessor _sieveProcessor;
         private readonly IMapper _mapper;
+        private readonly RequestContext _requestContext;
 
-        public GetProcessesQueryHandler(DatabaseContext databaseContext, SieveProcessor sieveProcessor, IMapper mapper)
+        public GetProcessesQueryHandler(DatabaseContext databaseContext, SieveProcessor sieveProcessor, IMapper mapper, RequestContext requestContext)
         {
             _databaseContext = databaseContext;
             _sieveProcessor = sieveProcessor;
             _mapper = mapper;
+            _requestContext = requestContext;
         }
         public async Task<PagedResult<ProcessDto>> Handle(GetProcessesQuery request, CancellationToken cancellationToken)
         {
-            var data = _databaseContext.Process.OrderByDescending(x => x.Created).AsNoTracking();
+            var representativeId = _requestContext.RepresentativeId;
+
+            var data = _databaseContext.Process.Where(x => x.RepresentativeId == representativeId).OrderByDescending(x => x.Created).AsNoTracking();
 
             var rowCount = await _sieveProcessor.Apply(request.Sieve, data, applyPagination: false).CountAsync(cancellationToken);
 

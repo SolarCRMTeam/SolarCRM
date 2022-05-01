@@ -24,7 +24,9 @@ namespace API.Domain.Models
         public string FinalInvoice { get; set; }
         public DateTime? FinalBilling { get; set; }
         public bool? Application { get; set; }
-
+        public Guid RepresentativeId { get; set; }
+        [ForeignKey("RepresentativeId")]
+        public Representative Representative { get; set; }
         public Guid ClientId { get; set; }
         [ForeignKey("ClientId")]
         public Client Client { get; set; }

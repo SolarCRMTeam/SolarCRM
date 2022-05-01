@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProcessController : ControllerBase

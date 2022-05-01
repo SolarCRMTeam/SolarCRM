@@ -1,3 +1,4 @@
+using API.Framework.Context;
 using API.Framework.EventBus;
 using API.Infrastructure;
 using API.Infrastructure.Middleware;
@@ -38,7 +39,7 @@ namespace API
                 c.CustomOperationIds(apiDesc => apiDesc.TryGetMethodInfo(out MethodInfo methodInfo) ? methodInfo.Name : null);
                 c.MapType<IFormFile>(() => new OpenApiSchema() { Type = "file", Format = "binary" });
             });
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.InstallServicesInAssembly(Configuration, Environment, typeof(Startup).Assembly);
             services.InstallServicesInAssembly(Configuration, Environment, typeof(DatabaseContext).Assembly);
             services.AddScoped<SieveProcessor>();
@@ -47,6 +48,8 @@ namespace API
             var domainAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             services.AddMediatR(domainAssemblies);
             services.AddScoped<IInternalBus, InMemoryBus>();
+            services.AddScoped<RequestContext, RequestContext>();
+            services.AddTransient<DatabaseInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,9 +81,8 @@ namespace API
                 endpoints.MapControllers();
             });
 
-            
-
             app.UpdateDatabase<DatabaseContext>();
+            app.InitializeDatabase<DatabaseInitializer>();
         }
     }
 }

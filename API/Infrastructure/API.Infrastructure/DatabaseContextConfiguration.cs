@@ -11,6 +11,8 @@ namespace API.Infrastructure
 
             modelBuilder.Entity<Process>()
                 .HasOne(process => process.Client);
+            modelBuilder.Entity<Process>()
+                .HasOne(process => process.Representative);
         }
     }
 }
