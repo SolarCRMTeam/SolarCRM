@@ -22,15 +22,23 @@ namespace API.Application.Process.Commands.Create
         }
         public async Task<Guid> Handle(CreateProcessCommand request, CancellationToken cancellationToken)
         {
-            var process = _mapper.Map<Domain.Models.Process>(request);
-            process.Created = DateTime.Now;
-            var id = await _processRepository.AddAsync(process, cancellationToken);
+            var newProcessModel = _mapper.Map<Domain.Models.Process>(request);
+            newProcessModel.Created = DateTime.Now;
+            var process = await _processRepository.AddAsync(newProcessModel, cancellationToken);
 
-            process.Client.Comments += request.Comments;
+            process.Client.Comments = CreateNewClientComment(process.Client.Comments, request.Comments);
 
             await _clientRepository.Update(process.Client, cancellationToken);
 
-            return id;
+            return process.Id;
+        }
+
+        private string CreateNewClientComment(string comment, string newPart)
+        {
+            if(string.IsNullOrEmpty(comment))
+                return comment;
+
+            return comment += $" {newPart}";
         }
     }
 }

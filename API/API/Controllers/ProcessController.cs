@@ -1,4 +1,5 @@
 ﻿using API.Application.DTO;
+using API.Application.Process.Commands.Create;
 using API.Application.Process.Queries;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProcessController : ControllerBase
@@ -51,6 +52,16 @@ namespace API.Controllers
             var result = await _internalBus.ExecuteQueryAsync(query);
 
             return Ok(result);
+        }
+
+        [HttpPost]
+        [Produces(MediaTypeNames.Application.Json)]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> Create([FromBody] CreateProcessCommand command)
+        {
+            var id = await _internalBus.SendCommandAsync(command);
+            return Ok(id);
         }
     }
 }

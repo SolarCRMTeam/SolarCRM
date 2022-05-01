@@ -1,5 +1,5 @@
 ﻿using API.Contract;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,12 +12,14 @@ namespace API.Infrastructure.Database.Process
         {
             _databaseContext = databaseContext;
         }
-        public async Task<Guid> AddAsync(Domain.Models.Process process, CancellationToken cancellationToken)
+        public async Task<Domain.Models.Process> AddAsync(Domain.Models.Process process, CancellationToken cancellationToken)
         {
             await _databaseContext.Process.AddAsync(process, cancellationToken);
             await _databaseContext.SaveChangesAsync(cancellationToken);
 
-            return process.Id;
+            var identifier = process.Id;
+
+            return await _databaseContext.Process.Include(x => x.Client).FirstOrDefaultAsync(x => x.Id == identifier, cancellationToken: cancellationToken);
         }
     }
 }

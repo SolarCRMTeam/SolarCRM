@@ -3,14 +3,16 @@ using System;
 using API.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Infrastructure.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220501083543_Client foregin key in Process")]
+    partial class ClientforeginkeyinProcess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,16 +81,16 @@ namespace API.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<decimal?>("Advance")
+                    b.Property<decimal>("Advance")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<bool?>("Application")
+                    b.Property<bool>("Application")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("Assembly")
+                    b.Property<bool>("Assembly")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<int?>("Audit")
+                    b.Property<int>("Audit")
                         .HasColumnType("int");
 
                     b.Property<Guid>("ClientId")
@@ -97,7 +99,7 @@ namespace API.Infrastructure.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime?>("FinalBilling")
+                    b.Property<DateTime>("FinalBilling")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("FinalInvoice")
@@ -106,31 +108,31 @@ namespace API.Infrastructure.Migrations
                     b.Property<string>("Identifier")
                         .HasColumnType("longtext");
 
-                    b.Property<decimal?>("InstallationSize")
+                    b.Property<decimal>("InstallationSize")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<int>("Kind")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Meeting")
+                    b.Property<int>("Meeting")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
-                    b.Property<decimal?>("OfferValue")
+                    b.Property<decimal>("OfferValue")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<int?>("OperatorRequest")
+                    b.Property<int>("OperatorRequest")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("ProjectAccepted")
+                    b.Property<bool>("ProjectAccepted")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Status")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime?>("Updated")
+                    b.Property<DateTime>("Updated")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");

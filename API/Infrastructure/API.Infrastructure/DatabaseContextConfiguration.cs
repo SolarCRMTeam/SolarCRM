@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using API.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Infrastructure
 {
@@ -8,7 +9,8 @@ namespace API.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
 
-
+            modelBuilder.Entity<Process>()
+                .HasOne(process => process.Client);
         }
     }
 }

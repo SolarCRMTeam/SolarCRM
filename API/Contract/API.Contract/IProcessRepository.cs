@@ -7,6 +7,6 @@ namespace API.Contract
 {
     public interface IProcessRepository
     {
-        Task<Guid> AddAsync(Process process, CancellationToken cancellationToken);
+        Task<Process> AddAsync(Process process, CancellationToken cancellationToken);
     }
 }
