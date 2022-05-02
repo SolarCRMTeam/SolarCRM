@@ -19,7 +19,7 @@ export const DeleteRepresentative= (props: IProps) => {
         (async () => {
           const api = await getAPI();
           await api
-            .delete1(props.id)
+            .deleteRepresentative(props.id)
             .then(() => (tableStore.refreshRepresentatives = true))
             .finally(() => setIsBusy(false));
         })();

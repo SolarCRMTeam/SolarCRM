@@ -19,7 +19,7 @@ export const ImportRepresentatives = () => {
     },
     customRequest: async (options: any) => {
       const api = await getAPI();
-      await api.import1({ file: options.file }).then(
+      await api.importRepresentative({ file: options.file }).then(
         () => {
           tableStore.refreshRepresentatives = true;
           options.onSuccess();

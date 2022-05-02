@@ -22,7 +22,7 @@ export const EditRepresentative = (props: IProps) => {
 
   const onSubmit = async (): Promise<CreateRepresentativeResponse> => {
     const api = await getAPI();
-    const result = await api.update1({ body: representative });
+    const result = await api.updateRepresentative({ body: representative });
 
     return result;
   };

@@ -52,25 +52,25 @@ class API extends APIContext {
    * @param [options] The optional parameters
    * @returns Promise<msRest.RestResponse>
    */
-  deleteMethod(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
+  deleteClient(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
   /**
    * @param id
    * @param callback The callback
    */
-  deleteMethod(id: string, callback: msRest.ServiceCallback<void>): void;
+  deleteClient(id: string, callback: msRest.ServiceCallback<void>): void;
   /**
    * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  deleteMethod(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
-  deleteMethod(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+  deleteClient(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteClient(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
     return this.sendOperationRequest(
       {
         id,
         options
       },
-      deleteMethodOperationSpec,
+      deleteClientOperationSpec,
       callback);
   }
 
@@ -145,47 +145,47 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.UpdateResponse>
+   * @returns Promise<Models.UpdateClientResponse>
    */
-  update(options?: Models.APIUpdateOptionalParams): Promise<Models.UpdateResponse>;
+  updateClient(options?: Models.APIUpdateClientOptionalParams): Promise<Models.UpdateClientResponse>;
   /**
    * @param callback The callback
    */
-  update(callback: msRest.ServiceCallback<string>): void;
+  updateClient(callback: msRest.ServiceCallback<string>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  update(options: Models.APIUpdateOptionalParams, callback: msRest.ServiceCallback<string>): void;
-  update(options?: Models.APIUpdateOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.UpdateResponse> {
+  updateClient(options: Models.APIUpdateClientOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  updateClient(options?: Models.APIUpdateClientOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.UpdateClientResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      updateOperationSpec,
-      callback) as Promise<Models.UpdateResponse>;
+      updateClientOperationSpec,
+      callback) as Promise<Models.UpdateClientResponse>;
   }
 
   /**
    * @param [options] The optional parameters
    * @returns Promise<msRest.RestResponse>
    */
-  importMethod(options?: Models.APIImportMethodOptionalParams): Promise<msRest.RestResponse>;
+  importClient(options?: Models.APIImportClientOptionalParams): Promise<msRest.RestResponse>;
   /**
    * @param callback The callback
    */
-  importMethod(callback: msRest.ServiceCallback<void>): void;
+  importClient(callback: msRest.ServiceCallback<void>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  importMethod(options: Models.APIImportMethodOptionalParams, callback: msRest.ServiceCallback<void>): void;
-  importMethod(options?: Models.APIImportMethodOptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+  importClient(options: Models.APIImportClientOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  importClient(options?: Models.APIImportClientOptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      importMethodOperationSpec,
+      importClientOperationSpec,
       callback);
   }
 
@@ -214,6 +214,33 @@ class API extends APIContext {
       },
       getProcessByIdOperationSpec,
       callback) as Promise<Models.GetProcessByIdResponse>;
+  }
+
+  /**
+   * @param id
+   * @param [options] The optional parameters
+   * @returns Promise<msRest.RestResponse>
+   */
+  deleteProcess(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
+  /**
+   * @param id
+   * @param callback The callback
+   */
+  deleteProcess(id: string, callback: msRest.ServiceCallback<void>): void;
+  /**
+   * @param id
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  deleteProcess(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteProcess(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+    return this.sendOperationRequest(
+      {
+        id,
+        options
+      },
+      deleteProcessOperationSpec,
+      callback);
   }
 
   /**
@@ -294,25 +321,25 @@ class API extends APIContext {
    * @param [options] The optional parameters
    * @returns Promise<msRest.RestResponse>
    */
-  delete1(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
+  deleteRepresentative(id: string, options?: msRest.RequestOptionsBase): Promise<msRest.RestResponse>;
   /**
    * @param id
    * @param callback The callback
    */
-  delete1(id: string, callback: msRest.ServiceCallback<void>): void;
+  deleteRepresentative(id: string, callback: msRest.ServiceCallback<void>): void;
   /**
    * @param id
    * @param options The optional parameters
    * @param callback The callback
    */
-  delete1(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
-  delete1(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+  deleteRepresentative(id: string, options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<void>): void;
+  deleteRepresentative(id: string, options?: msRest.RequestOptionsBase | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
     return this.sendOperationRequest(
       {
         id,
         options
       },
-      delete1OperationSpec,
+      deleteRepresentativeOperationSpec,
       callback);
   }
 
@@ -364,47 +391,47 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.Update1Response>
+   * @returns Promise<Models.UpdateRepresentativeResponse>
    */
-  update1(options?: Models.APIUpdate1OptionalParams): Promise<Models.Update1Response>;
+  updateRepresentative(options?: Models.APIUpdateRepresentativeOptionalParams): Promise<Models.UpdateRepresentativeResponse>;
   /**
    * @param callback The callback
    */
-  update1(callback: msRest.ServiceCallback<string>): void;
+  updateRepresentative(callback: msRest.ServiceCallback<string>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  update1(options: Models.APIUpdate1OptionalParams, callback: msRest.ServiceCallback<string>): void;
-  update1(options?: Models.APIUpdate1OptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.Update1Response> {
+  updateRepresentative(options: Models.APIUpdateRepresentativeOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  updateRepresentative(options?: Models.APIUpdateRepresentativeOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.UpdateRepresentativeResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      update1OperationSpec,
-      callback) as Promise<Models.Update1Response>;
+      updateRepresentativeOperationSpec,
+      callback) as Promise<Models.UpdateRepresentativeResponse>;
   }
 
   /**
    * @param [options] The optional parameters
    * @returns Promise<msRest.RestResponse>
    */
-  import1(options?: Models.APIImport1OptionalParams): Promise<msRest.RestResponse>;
+  importRepresentative(options?: Models.APIImportRepresentativeOptionalParams): Promise<msRest.RestResponse>;
   /**
    * @param callback The callback
    */
-  import1(callback: msRest.ServiceCallback<void>): void;
+  importRepresentative(callback: msRest.ServiceCallback<void>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  import1(options: Models.APIImport1OptionalParams, callback: msRest.ServiceCallback<void>): void;
-  import1(options?: Models.APIImport1OptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
+  importRepresentative(options: Models.APIImportRepresentativeOptionalParams, callback: msRest.ServiceCallback<void>): void;
+  importRepresentative(options?: Models.APIImportRepresentativeOptionalParams | msRest.ServiceCallback<void>, callback?: msRest.ServiceCallback<void>): Promise<msRest.RestResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      import1OperationSpec,
+      importRepresentativeOperationSpec,
       callback);
   }
 
@@ -449,7 +476,7 @@ const getClientByIdOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const deleteMethodOperationSpec: msRest.OperationSpec = {
+const deleteClientOperationSpec: msRest.OperationSpec = {
   httpMethod: "DELETE",
   path: "Client/{id}",
   urlParameters: [
@@ -527,7 +554,7 @@ const createClientOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const updateOperationSpec: msRest.OperationSpec = {
+const updateClientOperationSpec: msRest.OperationSpec = {
   httpMethod: "PUT",
   path: "Client",
   requestBody: {
@@ -551,7 +578,7 @@ const updateOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const importMethodOperationSpec: msRest.OperationSpec = {
+const importClientOperationSpec: msRest.OperationSpec = {
   httpMethod: "POST",
   path: "Client/import",
   formDataParameters: [
@@ -575,6 +602,19 @@ const getProcessByIdOperationSpec: msRest.OperationSpec = {
     200: {
       bodyMapper: Mappers.ProcessDto
     },
+    default: {}
+  },
+  serializer
+};
+
+const deleteProcessOperationSpec: msRest.OperationSpec = {
+  httpMethod: "DELETE",
+  path: "Process/{id}",
+  urlParameters: [
+    Parameters.id
+  ],
+  responses: {
+    200: {},
     default: {}
   },
   serializer
@@ -637,7 +677,7 @@ const getRepresentativeByIdOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const delete1OperationSpec: msRest.OperationSpec = {
+const deleteRepresentativeOperationSpec: msRest.OperationSpec = {
   httpMethod: "DELETE",
   path: "Representative/{id}",
   urlParameters: [
@@ -692,7 +732,7 @@ const createRepresentativeOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const update1OperationSpec: msRest.OperationSpec = {
+const updateRepresentativeOperationSpec: msRest.OperationSpec = {
   httpMethod: "PUT",
   path: "Representative",
   requestBody: {
@@ -716,7 +756,7 @@ const update1OperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const import1OperationSpec: msRest.OperationSpec = {
+const importRepresentativeOperationSpec: msRest.OperationSpec = {
   httpMethod: "POST",
   path: "Representative/import",
   formDataParameters: [

@@ -19,7 +19,7 @@ export const ImportClients = () => {
     },
     customRequest: async (options: any) => {
       const api = await getAPI();
-      await api.importMethod({ file: options.file }).then(
+      await api.importClient({ file: options.file }).then(
         () => {
           tableStore.refreshClients = true;
           options.onSuccess();

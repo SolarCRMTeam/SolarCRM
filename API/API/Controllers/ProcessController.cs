@@ -1,5 +1,6 @@
 ﻿using API.Application.DTO;
 using API.Application.Process.Commands.Create;
+using API.Application.Process.Commands.Delete;
 using API.Application.Process.Queries;
 using API.Framework.EventBus;
 using API.Framework.Sieve;
@@ -62,6 +63,19 @@ namespace API.Controllers
         {
             var id = await _internalBus.SendCommandAsync(command);
             return Ok(id);
+        }
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<IActionResult> DeleteProcess(Guid id)
+        {
+            var command = new DeleteProcessCommand
+            {
+                Id = id
+            };
+
+            await _internalBus.SendCommandAsync(command);
+
+            return Ok();
         }
     }
 }

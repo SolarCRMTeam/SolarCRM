@@ -278,14 +278,14 @@ export interface APICreateClientOptionalParams extends msRest.RequestOptionsBase
 /**
  * Optional Parameters.
  */
-export interface APIUpdateOptionalParams extends msRest.RequestOptionsBase {
+export interface APIUpdateClientOptionalParams extends msRest.RequestOptionsBase {
   body?: UpdateClientCommand;
 }
 
 /**
  * Optional Parameters.
  */
-export interface APIImportMethodOptionalParams extends msRest.RequestOptionsBase {
+export interface APIImportClientOptionalParams extends msRest.RequestOptionsBase {
   file?: msRest.HttpRequestBody;
 }
 
@@ -326,14 +326,14 @@ export interface APICreateRepresentativeOptionalParams extends msRest.RequestOpt
 /**
  * Optional Parameters.
  */
-export interface APIUpdate1OptionalParams extends msRest.RequestOptionsBase {
+export interface APIUpdateRepresentativeOptionalParams extends msRest.RequestOptionsBase {
   body?: UpdateRepresentativeCommand;
 }
 
 /**
  * Optional Parameters.
  */
-export interface APIImport1OptionalParams extends msRest.RequestOptionsBase {
+export interface APIImportRepresentativeOptionalParams extends msRest.RequestOptionsBase {
   file?: msRest.HttpRequestBody;
 }
 
@@ -430,9 +430,9 @@ export type CreateClientResponse = {
 };
 
 /**
- * Contains response data for the update operation.
+ * Contains response data for the updateClient operation.
  */
-export type UpdateResponse = {
+export type UpdateClientResponse = {
   /**
    * The parsed response body.
    */
@@ -585,9 +585,9 @@ export type CreateRepresentativeResponse = {
 };
 
 /**
- * Contains response data for the update1 operation.
+ * Contains response data for the updateRepresentative operation.
  */
-export type Update1Response = {
+export type UpdateRepresentativeResponse = {
   /**
    * The parsed response body.
    */

@@ -39,7 +39,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "Delete",
+        "operationId": "DeleteClient",
         "parameters": [
           {
             "name": "id",
@@ -172,7 +172,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "Update",
+        "operationId": "UpdateClient",
         "requestBody": {
           "content": {
             "application/json": {
@@ -202,7 +202,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "Import",
+        "operationId": "ImportClient",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -258,6 +258,28 @@
                 }
               }
             }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Process"
+        ],
+        "operationId": "DeleteProcess",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -384,7 +406,7 @@
         "tags": [
           "Representative"
         ],
-        "operationId": "Delete",
+        "operationId": "DeleteRepresentative",
         "parameters": [
           {
             "name": "id",
@@ -494,7 +516,7 @@
         "tags": [
           "Representative"
         ],
-        "operationId": "Update",
+        "operationId": "UpdateRepresentative",
         "requestBody": {
           "content": {
             "application/json": {
@@ -524,7 +546,7 @@
         "tags": [
           "Representative"
         ],
-        "operationId": "Import",
+        "operationId": "ImportRepresentative",
         "requestBody": {
           "content": {
             "multipart/form-data": {

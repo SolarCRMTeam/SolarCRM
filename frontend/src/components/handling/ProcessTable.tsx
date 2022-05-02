@@ -9,6 +9,7 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
+import { GetTableActions } from "./TableActions";
 
 interface ISieve {
   pageSize: number;
@@ -97,6 +98,7 @@ const ProcessTable = () => {
       title: "Aplikacja",
       dataIndex: "application",
     },
+    GetTableActions()
   ];
 
   const [data, setData] = useState<ProcessDto[]>([]);

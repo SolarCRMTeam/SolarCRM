@@ -21,7 +21,7 @@ export const EditClient = (props: IProps) => {
 
   const onSubmit = async (): Promise<CreateClientResponse> => {
     const api = await getAPI();
-    const result = await api.update({ body: client });
+    const result = await api.updateClient({ body: client });
 
     return result;
   };

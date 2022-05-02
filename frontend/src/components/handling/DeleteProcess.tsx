@@ -8,19 +8,19 @@ interface IProps {
   id: string;
 }
 
-export const DeleteClient = (props: IProps) => {
+export const DeleteProcess = (props: IProps) => {
   const [isBusy, setIsBusy] = useState<boolean>();
 
   return (
     <Popconfirm
-      title="Czy jesteś pewny, że chcesz usunąć tego klienta?"
+      title="Czy jesteś pewny, że chcesz usunąć to zlecenie?"
       onConfirm={() => {
         setIsBusy(true);
         (async () => {
           const api = await getAPI();
           await api
-            .deleteClient(props.id)
-            .then(() => (tableStore.refreshClients = true))
+            .deleteProcess(props.id)
+            .then(() => (tableStore.refreshProcess = true))
             .finally(() => setIsBusy(false));
         })();
       }}

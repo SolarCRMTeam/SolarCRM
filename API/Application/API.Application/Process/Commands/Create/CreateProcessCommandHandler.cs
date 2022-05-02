@@ -1,4 +1,5 @@
-﻿using API.Contract;
+﻿using API.Application.Process.Commands.GenerateIdentifier;
+using API.Contract;
 using API.Framework.Context;
 using API.Framework.EventBus;
 using AutoMapper;
@@ -11,23 +12,27 @@ namespace API.Application.Process.Commands.Create
     public class CreateProcessCommandHandler : ICommandHandler<CreateProcessCommand, Guid>
     {
         private readonly IMapper _mapper;
+        private readonly IInternalBus _internalBus;
         private readonly IProcessRepository _processRepository;
         private readonly IClientRepository _clientRepository;
         private readonly RequestContext _requestContext;
         public CreateProcessCommandHandler(IMapper mapper,
             IProcessRepository processRepository,
             IClientRepository clientRepository,
-            RequestContext requestContext)
+            RequestContext requestContext,
+            IInternalBus internalBus)
         {
             _mapper = mapper;
             _processRepository = processRepository;
             _clientRepository = clientRepository;
             _requestContext = requestContext;
+            _internalBus = internalBus;
         }
         public async Task<Guid> Handle(CreateProcessCommand request, CancellationToken cancellationToken)
         {
             var newProcessModel = _mapper.Map<Domain.Models.Process>(request);
             newProcessModel.Created = DateTime.Now;
+            newProcessModel.Identifier = await _internalBus.SendCommandAsync(new GenerateIdentifierCommand());
             newProcessModel.RepresentativeId = _requestContext.RepresentativeId;
             var process = await _processRepository.AddAsync(newProcessModel, cancellationToken);
 

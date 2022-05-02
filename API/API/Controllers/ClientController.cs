@@ -81,7 +81,7 @@ namespace API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Update([FromBody] UpdateClientCommand command)
+        public async Task<IActionResult> UpdateClient([FromBody] UpdateClientCommand command)
         {
             await _internalBus.SendCommandAsync(command);
             return Ok();
@@ -89,7 +89,7 @@ namespace API.Controllers
 
         [HttpDelete("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> DeleteClient(Guid id)
         {
             var command = new DeleteClientCommand
             {
@@ -105,7 +105,7 @@ namespace API.Controllers
         [DisableRequestSizeLimit]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Import([FromForm] ImportClientCommand command)
+        public async Task<IActionResult> ImportClient([FromForm] ImportClientCommand command)
         {
             await _internalBus.SendCommandAsync(command);
 
