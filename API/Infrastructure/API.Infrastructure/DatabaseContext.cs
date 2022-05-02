@@ -9,5 +9,6 @@ namespace API.Infrastructure
         public DbSet<Client> Clients { get; set; }
         public DbSet<Representative> Representatives { get; set; }
         public DbSet<Process> Process { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

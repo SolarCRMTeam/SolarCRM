@@ -13,6 +13,9 @@ namespace API.Infrastructure
                 .HasOne(process => process.Client);
             modelBuilder.Entity<Process>()
                 .HasOne(process => process.Representative);
+            modelBuilder.Entity<Process>()
+                .HasMany(process => process.Events)
+                .WithOne(e => e.Process);
         }
     }
 }

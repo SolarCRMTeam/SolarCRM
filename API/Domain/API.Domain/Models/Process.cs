@@ -1,5 +1,6 @@
 ﻿using API.Domain.Enums;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Domain.Models
@@ -30,5 +31,7 @@ namespace API.Domain.Models
         public Guid ClientId { get; set; }
         [ForeignKey("ClientId")]
         public Client Client { get; set; }
+
+        public ICollection<Event> Events { get; set; }
     }
 }
