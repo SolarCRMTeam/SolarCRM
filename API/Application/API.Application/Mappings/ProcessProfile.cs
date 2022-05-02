@@ -13,7 +13,8 @@ namespace API.Application.Mappings
                 .ForMember(x => x.ClientNumber, src => src.MapFrom(x => x.Client.Identifier));
 
             CreateMap<CreateProcessCommand, Domain.Models.Process>()
-                .ForMember(dest => dest.Id, src => src.MapFrom(x => Guid.NewGuid()));
+                .ForMember(dest => dest.Id, src => src.MapFrom(x => Guid.NewGuid()))
+                .ForMember(dest => dest.Status, src => src.MapFrom(x => "Nowe"));
         }
     }
 }
