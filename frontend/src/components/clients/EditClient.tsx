@@ -1,7 +1,7 @@
 import { Button, Modal } from "antd";
 import { Fragment, useEffect, useState } from "react";
 import {
-  CreateResponse,
+  CreateClientResponse,
   UpdateClientCommand,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
@@ -19,7 +19,7 @@ export const EditClient = (props: IProps) => {
   const [client, setClient] = useState<UpdateClientCommand>();
   const [isBusy, setIsBusy] = useState<boolean>();
 
-  const onSubmit = async (): Promise<CreateResponse> => {
+  const onSubmit = async (): Promise<CreateClientResponse> => {
     const api = await getAPI();
     const result = await api.update({ body: client });
 

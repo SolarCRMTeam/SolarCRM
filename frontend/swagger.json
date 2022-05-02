@@ -58,6 +58,29 @@
         }
       }
     },
+    "/Client/all": {
+      "get": {
+        "tags": [
+          "Client"
+        ],
+        "operationId": "GetAllClients",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ClientDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Client": {
       "get": {
         "tags": [
@@ -121,7 +144,7 @@
         "tags": [
           "Client"
         ],
-        "operationId": "Create",
+        "operationId": "CreateClient",
         "requestBody": {
           "content": {
             "application/json": {
@@ -297,6 +320,34 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Process"
+        ],
+        "operationId": "CreateProcess",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProcessCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/Representative/{id}": {
@@ -415,7 +466,7 @@
         "tags": [
           "Representative"
         ],
-        "operationId": "Create",
+        "operationId": "CreateRepresentative",
         "requestBody": {
           "content": {
             "application/json": {
@@ -777,12 +828,117 @@
         },
         "additionalProperties": false
       },
+      "ProcessKind": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Meeting": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Audit": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "OperatorRequest": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "ProcessDto": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "updated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "identifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ProcessKind"
+          },
+          "meeting": {
+            "$ref": "#/components/schemas/Meeting"
+          },
+          "offerValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "installationSize": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "advance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "audit": {
+            "$ref": "#/components/schemas/Audit"
+          },
+          "projectAccepted": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "assembly": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "operatorRequest": {
+            "$ref": "#/components/schemas/OperatorRequest"
+          },
+          "finalInvoice": {
+            "type": "string",
+            "nullable": true
+          },
+          "finalBilling": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "application": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "clientNumber": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -831,6 +987,23 @@
             "type": "integer",
             "format": "int32",
             "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateProcessCommand": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ProcessKind"
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -374,6 +374,120 @@ export const ProcessDto: msRest.CompositeMapper = {
         type: {
           name: "Uuid"
         }
+      },
+      created: {
+        serializedName: "created",
+        type: {
+          name: "DateTime"
+        }
+      },
+      status: {
+        serializedName: "status",
+        type: {
+          name: "String"
+        }
+      },
+      updated: {
+        serializedName: "updated",
+        type: {
+          name: "DateTime"
+        }
+      },
+      identifier: {
+        serializedName: "identifier",
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      kind: {
+        serializedName: "kind",
+        type: {
+          name: "Number"
+        }
+      },
+      meeting: {
+        serializedName: "meeting",
+        type: {
+          name: "Number"
+        }
+      },
+      offerValue: {
+        nullable: true,
+        serializedName: "offerValue",
+        type: {
+          name: "Number"
+        }
+      },
+      installationSize: {
+        nullable: true,
+        serializedName: "installationSize",
+        type: {
+          name: "Number"
+        }
+      },
+      advance: {
+        nullable: true,
+        serializedName: "advance",
+        type: {
+          name: "Number"
+        }
+      },
+      audit: {
+        serializedName: "audit",
+        type: {
+          name: "Number"
+        }
+      },
+      projectAccepted: {
+        nullable: true,
+        serializedName: "projectAccepted",
+        type: {
+          name: "Boolean"
+        }
+      },
+      assembly: {
+        nullable: true,
+        serializedName: "assembly",
+        type: {
+          name: "Boolean"
+        }
+      },
+      operatorRequest: {
+        serializedName: "operatorRequest",
+        type: {
+          name: "Number"
+        }
+      },
+      finalInvoice: {
+        serializedName: "finalInvoice",
+        type: {
+          name: "String"
+        }
+      },
+      finalBilling: {
+        serializedName: "finalBilling",
+        type: {
+          name: "DateTime"
+        }
+      },
+      application: {
+        nullable: true,
+        serializedName: "application",
+        type: {
+          name: "Boolean"
+        }
+      },
+      clientNumber: {
+        serializedName: "clientNumber",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -448,6 +562,34 @@ export const ProcessDtoPagedResult: msRest.CompositeMapper = {
         serializedName: "lastRowOnPage",
         type: {
           name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const CreateProcessCommand: msRest.CompositeMapper = {
+  serializedName: "CreateProcessCommand",
+  type: {
+    name: "Composite",
+    className: "CreateProcessCommand",
+    modelProperties: {
+      clientId: {
+        serializedName: "clientId",
+        type: {
+          name: "Uuid"
+        }
+      },
+      kind: {
+        serializedName: "kind",
+        type: {
+          name: "Number"
+        }
+      },
+      comments: {
+        serializedName: "comments",
+        type: {
+          name: "String"
         }
       }
     }

@@ -76,6 +76,29 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
+   * @returns Promise<Models.GetAllClientsResponse>
+   */
+  getAllClients(options?: msRest.RequestOptionsBase): Promise<Models.GetAllClientsResponse>;
+  /**
+   * @param callback The callback
+   */
+  getAllClients(callback: msRest.ServiceCallback<Models.ClientDto[]>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  getAllClients(options: msRest.RequestOptionsBase, callback: msRest.ServiceCallback<Models.ClientDto[]>): void;
+  getAllClients(options?: msRest.RequestOptionsBase | msRest.ServiceCallback<Models.ClientDto[]>, callback?: msRest.ServiceCallback<Models.ClientDto[]>): Promise<Models.GetAllClientsResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      getAllClientsOperationSpec,
+      callback) as Promise<Models.GetAllClientsResponse>;
+  }
+
+  /**
+   * @param [options] The optional parameters
    * @returns Promise<Models.GetClientsResponse>
    */
   getClients(options?: Models.APIGetClientsOptionalParams): Promise<Models.GetClientsResponse>;
@@ -99,25 +122,25 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.CreateResponse>
+   * @returns Promise<Models.CreateClientResponse>
    */
-  create(options?: Models.APICreateOptionalParams): Promise<Models.CreateResponse>;
+  createClient(options?: Models.APICreateClientOptionalParams): Promise<Models.CreateClientResponse>;
   /**
    * @param callback The callback
    */
-  create(callback: msRest.ServiceCallback<string>): void;
+  createClient(callback: msRest.ServiceCallback<string>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  create(options: Models.APICreateOptionalParams, callback: msRest.ServiceCallback<string>): void;
-  create(options?: Models.APICreateOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateResponse> {
+  createClient(options: Models.APICreateClientOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  createClient(options?: Models.APICreateClientOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateClientResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      createOperationSpec,
-      callback) as Promise<Models.CreateResponse>;
+      createClientOperationSpec,
+      callback) as Promise<Models.CreateClientResponse>;
   }
 
   /**
@@ -217,6 +240,29 @@ class API extends APIContext {
   }
 
   /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.CreateProcessResponse>
+   */
+  createProcess(options?: Models.APICreateProcessOptionalParams): Promise<Models.CreateProcessResponse>;
+  /**
+   * @param callback The callback
+   */
+  createProcess(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  createProcess(options: Models.APICreateProcessOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  createProcess(options?: Models.APICreateProcessOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateProcessResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      createProcessOperationSpec,
+      callback) as Promise<Models.CreateProcessResponse>;
+  }
+
+  /**
    * @param id
    * @param [options] The optional parameters
    * @returns Promise<Models.GetRepresentativeByIdResponse>
@@ -295,25 +341,25 @@ class API extends APIContext {
 
   /**
    * @param [options] The optional parameters
-   * @returns Promise<Models.Create1Response>
+   * @returns Promise<Models.CreateRepresentativeResponse>
    */
-  create1(options?: Models.APICreate1OptionalParams): Promise<Models.Create1Response>;
+  createRepresentative(options?: Models.APICreateRepresentativeOptionalParams): Promise<Models.CreateRepresentativeResponse>;
   /**
    * @param callback The callback
    */
-  create1(callback: msRest.ServiceCallback<string>): void;
+  createRepresentative(callback: msRest.ServiceCallback<string>): void;
   /**
    * @param options The optional parameters
    * @param callback The callback
    */
-  create1(options: Models.APICreate1OptionalParams, callback: msRest.ServiceCallback<string>): void;
-  create1(options?: Models.APICreate1OptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.Create1Response> {
+  createRepresentative(options: Models.APICreateRepresentativeOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  createRepresentative(options?: Models.APICreateRepresentativeOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateRepresentativeResponse> {
     return this.sendOperationRequest(
       {
         options
       },
-      create1OperationSpec,
-      callback) as Promise<Models.Create1Response>;
+      createRepresentativeOperationSpec,
+      callback) as Promise<Models.CreateRepresentativeResponse>;
   }
 
   /**
@@ -416,6 +462,29 @@ const deleteMethodOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
+const getAllClientsOperationSpec: msRest.OperationSpec = {
+  httpMethod: "GET",
+  path: "Client/all",
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ClientDto"
+            }
+          }
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
 const getClientsOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Client",
@@ -434,7 +503,7 @@ const getClientsOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const createOperationSpec: msRest.OperationSpec = {
+const createClientOperationSpec: msRest.OperationSpec = {
   httpMethod: "POST",
   path: "Client",
   requestBody: {
@@ -529,6 +598,30 @@ const getProcessesOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
+const createProcessOperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Process",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.CreateProcessCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
 const getRepresentativeByIdOperationSpec: msRest.OperationSpec = {
   httpMethod: "GET",
   path: "Representative/{id}",
@@ -575,7 +668,7 @@ const getRepresentativesOperationSpec: msRest.OperationSpec = {
   serializer
 };
 
-const create1OperationSpec: msRest.OperationSpec = {
+const createRepresentativeOperationSpec: msRest.OperationSpec = {
   httpMethod: "POST",
   path: "Representative",
   requestBody: {

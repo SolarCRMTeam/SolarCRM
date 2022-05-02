@@ -1,7 +1,7 @@
 import { Button, Modal } from "antd";
 import { Fragment, useEffect, useState } from "react";
 import {
-  CreateResponse,
+  CreateRepresentativeResponse,
   UpdateRepresentativeCommand,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
@@ -20,7 +20,7 @@ export const EditRepresentative = (props: IProps) => {
     useState<UpdateRepresentativeCommand>();
   const [isBusy, setIsBusy] = useState<boolean>();
 
-  const onSubmit = async (): Promise<CreateResponse> => {
+  const onSubmit = async (): Promise<CreateRepresentativeResponse> => {
     const api = await getAPI();
     const result = await api.update1({ body: representative });
 

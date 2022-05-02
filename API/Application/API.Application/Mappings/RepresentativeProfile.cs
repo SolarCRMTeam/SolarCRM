@@ -12,7 +12,9 @@ namespace API.Application.Mappings
         {
             CreateMap<Domain.Models.Representative, RepresentativeDto>();
             CreateMap<CreateRepresentativeCommand, Domain.Models.Representative>()
-                .ForMember(dest => dest.Id, src => src.MapFrom(x => Guid.NewGuid()));
+                .ForMember(dest => dest.Id, src => src.MapFrom(x => Guid.NewGuid()))
+                .ForMember(dest => dest.Login, src => src.MapFrom(x => x.Mail))
+                .ForMember(dest => dest.Password, src => src.MapFrom(x => "admin"));
 
             CreateMap<UpdateRepresentativeCommand, Domain.Models.Representative>()
                 .ForMember(dest => dest.Id, src => src.Ignore());

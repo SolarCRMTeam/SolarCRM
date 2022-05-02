@@ -1,7 +1,7 @@
 import { Space } from "antd";
 import React from "react";
 import { NewProcess } from "./NewProcess";
-import { ProcessTable } from "./ProcessTable";
+import ProcessTable from "./ProcessTable";
 
 export const Process = () => {
   return (

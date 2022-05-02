@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { AppstoreAddOutlined } from "@ant-design/icons";
 import {
   CreateClientCommand,
-  CreateResponse,
+  CreateClientResponse,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
@@ -17,9 +17,9 @@ export const NewClient = (props: IProps) => {
   const [client, setClient] = useState<CreateClientCommand>();
   const [isBusy, setIsBusy] = useState<boolean>();
 
-  const onSubmit = async (): Promise<CreateResponse> => {
+  const onSubmit = async (): Promise<CreateClientResponse> => {
     const api = await getAPI();
-    const result = await api.create({ body: client });
+    const result = await api.createClient({ body: client });
 
     return result;
   };

@@ -41,7 +41,17 @@ namespace API.Controllers
 
             return Ok(result);
         }
+        [HttpGet("all")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(ClientDto[]), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetAllClients()
+        {
+            var query = new GetAllClientsQuery();
 
+            var result = await _internalBus.ExecuteQueryAsync(query);
+
+            return Ok(result);
+        }
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(PagedResult<ClientDto>), (int)HttpStatusCode.OK)]
@@ -61,7 +71,7 @@ namespace API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Create([FromBody] CreateClientCommand command)
+        public async Task<IActionResult> CreateClient([FromBody] CreateClientCommand command)
         {
             var id = await _internalBus.SendCommandAsync(command);
             return Ok(id);

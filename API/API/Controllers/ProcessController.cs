@@ -58,7 +58,7 @@ namespace API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Create([FromBody] CreateProcessCommand command)
+        public async Task<IActionResult> CreateProcess([FromBody] CreateProcessCommand command)
         {
             var id = await _internalBus.SendCommandAsync(command);
             return Ok(id);

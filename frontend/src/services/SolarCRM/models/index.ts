@@ -101,6 +101,24 @@ export interface UpdateClientCommand {
  */
 export interface ProcessDto {
   id?: string;
+  created?: Date;
+  status?: string;
+  updated?: Date;
+  identifier?: string;
+  name?: string;
+  kind?: number;
+  meeting?: number;
+  offerValue?: number;
+  installationSize?: number;
+  advance?: number;
+  audit?: number;
+  projectAccepted?: boolean;
+  assembly?: boolean;
+  operatorRequest?: number;
+  finalInvoice?: string;
+  finalBilling?: Date;
+  application?: boolean;
+  clientNumber?: string;
 }
 
 /**
@@ -131,6 +149,15 @@ export interface ProcessDtoPagedResult {
    * **NOTE: This property will not be serialized. It can only be populated by the server.**
    */
   readonly lastRowOnPage?: number;
+}
+
+/**
+ * An interface representing CreateProcessCommand.
+ */
+export interface CreateProcessCommand {
+  clientId?: string;
+  kind?: number;
+  comments?: string;
 }
 
 /**
@@ -244,7 +271,7 @@ export interface APIGetClientsOptionalParams extends msRest.RequestOptionsBase {
 /**
  * Optional Parameters.
  */
-export interface APICreateOptionalParams extends msRest.RequestOptionsBase {
+export interface APICreateClientOptionalParams extends msRest.RequestOptionsBase {
   body?: CreateClientCommand;
 }
 
@@ -275,6 +302,13 @@ export interface APIGetProcessesOptionalParams extends msRest.RequestOptionsBase
 /**
  * Optional Parameters.
  */
+export interface APICreateProcessOptionalParams extends msRest.RequestOptionsBase {
+  body?: CreateProcessCommand;
+}
+
+/**
+ * Optional Parameters.
+ */
 export interface APIGetRepresentativesOptionalParams extends msRest.RequestOptionsBase {
   filters?: string;
   sorts?: string;
@@ -285,7 +319,7 @@ export interface APIGetRepresentativesOptionalParams extends msRest.RequestOptio
 /**
  * Optional Parameters.
  */
-export interface APICreate1OptionalParams extends msRest.RequestOptionsBase {
+export interface APICreateRepresentativeOptionalParams extends msRest.RequestOptionsBase {
   body?: CreateRepresentativeCommand;
 }
 
@@ -331,6 +365,26 @@ export type GetClientByIdResponse = ClientDto & {
 };
 
 /**
+ * Contains response data for the getAllClients operation.
+ */
+export type GetAllClientsResponse = Array<ClientDto> & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: ClientDto[];
+    };
+};
+
+/**
  * Contains response data for the getClients operation.
  */
 export type GetClientsResponse = ClientDtoPagedResult & {
@@ -351,9 +405,9 @@ export type GetClientsResponse = ClientDtoPagedResult & {
 };
 
 /**
- * Contains response data for the create operation.
+ * Contains response data for the createClient operation.
  */
-export type CreateResponse = {
+export type CreateClientResponse = {
   /**
    * The parsed response body.
    */
@@ -441,6 +495,31 @@ export type GetProcessesResponse = ProcessDtoPagedResult & {
 };
 
 /**
+ * Contains response data for the createProcess operation.
+ */
+export type CreateProcessResponse = {
+  /**
+   * The parsed response body.
+   */
+  body: string;
+
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: string;
+    };
+};
+
+/**
  * Contains response data for the getRepresentativeById operation.
  */
 export type GetRepresentativeByIdResponse = RepresentativeDto & {
@@ -481,9 +560,9 @@ export type GetRepresentativesResponse = RepresentativeDtoPagedResult & {
 };
 
 /**
- * Contains response data for the create1 operation.
+ * Contains response data for the createRepresentative operation.
  */
-export type Create1Response = {
+export type CreateRepresentativeResponse = {
   /**
    * The parsed response body.
    */

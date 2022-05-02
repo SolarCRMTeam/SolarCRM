@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { AppstoreAddOutlined } from "@ant-design/icons";
 import {
   CreateRepresentativeCommand,
-  CreateResponse,
+  CreateRepresentativeResponse,
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
@@ -18,9 +18,9 @@ export const NewRepresentative = (props: IProps) => {
     useState<CreateRepresentativeCommand>();
   const [isBusy, setIsBusy] = useState<boolean>();
 
-  const onSubmit = async (): Promise<CreateResponse> => {
+  const onSubmit = async (): Promise<CreateRepresentativeResponse> => {
     const api = await getAPI();
-    const result = await api.create1({ body: representative });
+    const result = await api.createRepresentative({ body: representative });
 
     return result;
   };

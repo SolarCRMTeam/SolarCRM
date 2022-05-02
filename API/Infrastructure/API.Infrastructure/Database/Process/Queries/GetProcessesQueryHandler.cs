@@ -30,7 +30,7 @@ namespace API.Infrastructure.Database.Process.Queries
         {
             var representativeId = _requestContext.RepresentativeId;
 
-            var data = _databaseContext.Process.Where(x => x.RepresentativeId == representativeId).OrderByDescending(x => x.Created).AsNoTracking();
+            var data = _databaseContext.Process.Include(x => x.Client).Where(x => x.RepresentativeId == representativeId).OrderByDescending(x => x.Created).AsNoTracking();
 
             var rowCount = await _sieveProcessor.Apply(request.Sieve, data, applyPagination: false).CountAsync(cancellationToken);
 

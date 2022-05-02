@@ -54,7 +54,9 @@ namespace API.Application.Representative.Commands.Import
                 Mail = fields[8],
                 PhoneNumber = fields[9],
                 Comments = fields[10],
-                Created = DateTime.Now
+                Created = DateTime.Now,
+                Login = fields[8],
+                Password = "admin"
             };
         }
     }
