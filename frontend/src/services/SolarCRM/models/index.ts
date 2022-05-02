@@ -28,6 +28,13 @@ export interface ClientDto {
 }
 
 /**
+ * An interface representing EventDto.
+ */
+export interface EventDto {
+  id?: string;
+}
+
+/**
  * An interface representing ClientDtoPagedResult.
  */
 export interface ClientDtoPagedResult {
@@ -292,6 +299,13 @@ export interface APIImportClientOptionalParams extends msRest.RequestOptionsBase
 /**
  * Optional Parameters.
  */
+export interface APIGetEventsOptionalParams extends msRest.RequestOptionsBase {
+  processId?: string;
+}
+
+/**
+ * Optional Parameters.
+ */
 export interface APIGetProcessesOptionalParams extends msRest.RequestOptionsBase {
   filters?: string;
   sorts?: string;
@@ -451,6 +465,26 @@ export type UpdateClientResponse = {
        * The response body as parsed JSON or XML
        */
       parsedBody: string;
+    };
+};
+
+/**
+ * Contains response data for the getEvents operation.
+ */
+export type GetEventsResponse = Array<EventDto> & {
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: EventDto[];
     };
 };
 

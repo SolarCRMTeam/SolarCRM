@@ -72,6 +72,18 @@ export const pageSize: msRest.OperationQueryParameter = {
     }
   }
 };
+export const processId: msRest.OperationQueryParameter = {
+  parameterPath: [
+    "options",
+    "processId"
+  ],
+  mapper: {
+    serializedName: "processId",
+    type: {
+      name: "Uuid"
+    }
+  }
+};
 export const sorts: msRest.OperationQueryParameter = {
   parameterPath: [
     "options",

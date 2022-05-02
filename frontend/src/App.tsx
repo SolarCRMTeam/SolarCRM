@@ -6,6 +6,7 @@ import { PrimaryView } from "./components/shared/PrimaryView";
 import { MyAccount } from "./components/account/MyAccount";
 import { Logout } from "./components/account/Logout";
 import { Process } from "./components/handling/Process";
+import { Events } from "./components/events/Events";
 
 function App() {
   return (
@@ -41,6 +42,15 @@ function App() {
         render={(props) => (
           <PrimaryView>
             <Process />
+          </PrimaryView>
+        )}
+      />
+      <Route
+        path="/events/:processId"
+        exact={true}
+        render={(props) => (
+          <PrimaryView>
+            <Events processId={props.match.params.processId} />
           </PrimaryView>
         )}
       />

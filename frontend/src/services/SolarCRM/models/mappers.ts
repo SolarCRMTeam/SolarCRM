@@ -106,6 +106,22 @@ export const ClientDto: msRest.CompositeMapper = {
   }
 };
 
+export const EventDto: msRest.CompositeMapper = {
+  serializedName: "EventDto",
+  type: {
+    name: "Composite",
+    className: "EventDto",
+    modelProperties: {
+      id: {
+        serializedName: "id",
+        type: {
+          name: "Uuid"
+        }
+      }
+    }
+  }
+};
+
 export const ClientDtoPagedResult: msRest.CompositeMapper = {
   serializedName: "ClientDtoPagedResult",
   type: {

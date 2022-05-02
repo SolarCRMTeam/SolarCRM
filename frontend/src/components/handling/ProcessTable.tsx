@@ -10,6 +10,7 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
 import { GetTableActions } from "./TableActions";
+import { useHistory } from "react-router";
 
 interface ISieve {
   pageSize: number;
@@ -20,6 +21,8 @@ interface ISieve {
 }
 
 const ProcessTable = () => {
+  const history = useHistory();
+
   const [sieve, setSieve] = useState<ISieve>({
     current: 1,
     pageSize: 15,
@@ -98,7 +101,7 @@ const ProcessTable = () => {
       title: "Aplikacja",
       dataIndex: "application",
     },
-    GetTableActions()
+    GetTableActions(),
   ];
 
   const [data, setData] = useState<ProcessDto[]>([]);
@@ -141,6 +144,13 @@ const ProcessTable = () => {
         });
       }}
       scroll={{ y: "70vh" }}
+      onRow={(record, rowIndex) => {
+        return {
+          onDoubleClick: (event) => {
+            history.push(`/events/${record.id}`);
+          },
+        };
+      }}
     />
   );
 };

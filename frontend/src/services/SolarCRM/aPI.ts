@@ -190,6 +190,29 @@ class API extends APIContext {
   }
 
   /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.GetEventsResponse>
+   */
+  getEvents(options?: Models.APIGetEventsOptionalParams): Promise<Models.GetEventsResponse>;
+  /**
+   * @param callback The callback
+   */
+  getEvents(callback: msRest.ServiceCallback<Models.EventDto[]>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  getEvents(options: Models.APIGetEventsOptionalParams, callback: msRest.ServiceCallback<Models.EventDto[]>): void;
+  getEvents(options?: Models.APIGetEventsOptionalParams | msRest.ServiceCallback<Models.EventDto[]>, callback?: msRest.ServiceCallback<Models.EventDto[]>): Promise<Models.GetEventsResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      getEventsOperationSpec,
+      callback) as Promise<Models.GetEventsResponse>;
+  }
+
+  /**
    * @param id
    * @param [options] The optional parameters
    * @returns Promise<Models.GetProcessByIdResponse>
@@ -587,6 +610,32 @@ const importClientOperationSpec: msRest.OperationSpec = {
   contentType: "multipart/form-data",
   responses: {
     200: {},
+    default: {}
+  },
+  serializer
+};
+
+const getEventsOperationSpec: msRest.OperationSpec = {
+  httpMethod: "GET",
+  path: "Event/processId",
+  queryParameters: [
+    Parameters.processId
+  ],
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "EventDto"
+            }
+          }
+        }
+      }
+    },
     default: {}
   },
   serializer

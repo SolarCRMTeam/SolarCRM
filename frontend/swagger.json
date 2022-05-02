@@ -231,6 +231,39 @@
         }
       }
     },
+    "/Event/processId": {
+      "get": {
+        "tags": [
+          "Event"
+        ],
+        "operationId": "GetEvents",
+        "parameters": [
+          {
+            "name": "processId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Process/{id}": {
       "get": {
         "tags": [
@@ -846,6 +879,16 @@
           },
           "clientType": {
             "$ref": "#/components/schemas/ClientType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
