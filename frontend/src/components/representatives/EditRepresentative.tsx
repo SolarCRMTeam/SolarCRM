@@ -40,7 +40,7 @@ export const EditRepresentative = (props: IProps) => {
         setRepresentative(result);
       }
     })();
-  }, [props.id]);
+  }, [props.id, isVisible]);
 
   return (
     <Fragment>

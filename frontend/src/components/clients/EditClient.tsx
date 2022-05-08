@@ -39,7 +39,7 @@ export const EditClient = (props: IProps) => {
         setClient(result);
       }
     })();
-  }, [props.id]);
+  }, [props.id, isVisible]);
 
   return (
     <Fragment>

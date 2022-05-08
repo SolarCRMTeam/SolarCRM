@@ -25,6 +25,9 @@ export const Events = (props: IProps) => {
 
   return process ? (
     <Space direction="vertical">
+      {/* Obsługa zlecenia  */}
+      {/* Rodzaj zlecenia */}
+      {/* Nazwa klienta */}
       <Descriptions title={`Zlecenie numer: ${process.identifier}`}>
         <Descriptions.Item label="Nazwa">{process.name}</Descriptions.Item>
         <Descriptions.Item label="Status">{process.status}</Descriptions.Item>
