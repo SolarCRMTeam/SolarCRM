@@ -23,6 +23,7 @@ namespace API.Infrastructure.Database.Event.Queries
             var result = await _databaseContext.Events
                 .Include(x => x.Process)
                 .Where(e => e.Process.Id == request.ProcessId)
+                .OrderByDescending(x => x.Created)
                 .AsNoTracking()
                 .ToListAsync(cancellationToken: cancellationToken);
 

@@ -1,5 +1,6 @@
 ﻿using API.Contract;
 using API.Infrastructure.Database.Client;
+using API.Infrastructure.Database.Event;
 using API.Infrastructure.Database.Process;
 using API.Infrastructure.Database.Representative;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,7 @@ namespace API.Infrastructure.Installers
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<IRepresentativeRepository, RepresentativeRepository>();
             services.AddScoped<IProcessRepository, ProcessRepository>();
+            services.AddScoped<IEventRepository, EventRepository>();
         }
     }
 }

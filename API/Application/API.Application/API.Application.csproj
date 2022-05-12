@@ -18,8 +18,4 @@
     <ProjectReference Include="..\..\Framework\API.Framework\API.Framework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Event\Commands\" />
-  </ItemGroup>
-
 </Project>

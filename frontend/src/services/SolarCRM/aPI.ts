@@ -213,6 +213,29 @@ class API extends APIContext {
   }
 
   /**
+   * @param [options] The optional parameters
+   * @returns Promise<Models.CreateEventResponse>
+   */
+  createEvent(options?: Models.APICreateEventOptionalParams): Promise<Models.CreateEventResponse>;
+  /**
+   * @param callback The callback
+   */
+  createEvent(callback: msRest.ServiceCallback<string>): void;
+  /**
+   * @param options The optional parameters
+   * @param callback The callback
+   */
+  createEvent(options: Models.APICreateEventOptionalParams, callback: msRest.ServiceCallback<string>): void;
+  createEvent(options?: Models.APICreateEventOptionalParams | msRest.ServiceCallback<string>, callback?: msRest.ServiceCallback<string>): Promise<Models.CreateEventResponse> {
+    return this.sendOperationRequest(
+      {
+        options
+      },
+      createEventOperationSpec,
+      callback) as Promise<Models.CreateEventResponse>;
+  }
+
+  /**
    * @param id
    * @param [options] The optional parameters
    * @returns Promise<Models.GetProcessByIdResponse>
@@ -633,6 +656,30 @@ const getEventsOperationSpec: msRest.OperationSpec = {
               className: "EventDto"
             }
           }
+        }
+      }
+    },
+    default: {}
+  },
+  serializer
+};
+
+const createEventOperationSpec: msRest.OperationSpec = {
+  httpMethod: "POST",
+  path: "Event",
+  requestBody: {
+    parameterPath: [
+      "options",
+      "body"
+    ],
+    mapper: Mappers.CreateEventCommand
+  },
+  responses: {
+    200: {
+      bodyMapper: {
+        serializedName: "parsedResponse",
+        type: {
+          name: "Uuid"
         }
       }
     },

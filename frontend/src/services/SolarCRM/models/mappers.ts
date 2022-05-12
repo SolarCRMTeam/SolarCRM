@@ -117,6 +117,18 @@ export const EventDto: msRest.CompositeMapper = {
         type: {
           name: "Uuid"
         }
+      },
+      eventType: {
+        serializedName: "eventType",
+        type: {
+          name: "Number"
+        }
+      },
+      created: {
+        serializedName: "created",
+        type: {
+          name: "DateTime"
+        }
       }
     }
   }
@@ -371,6 +383,22 @@ export const UpdateClientCommand: msRest.CompositeMapper = {
       },
       clientType: {
         serializedName: "clientType",
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
+export const CreateEventCommand: msRest.CompositeMapper = {
+  serializedName: "CreateEventCommand",
+  type: {
+    name: "Composite",
+    className: "CreateEventCommand",
+    modelProperties: {
+      eventType: {
+        serializedName: "eventType",
         type: {
           name: "Number"
         }

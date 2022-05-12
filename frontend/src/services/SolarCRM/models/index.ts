@@ -32,6 +32,8 @@ export interface ClientDto {
  */
 export interface EventDto {
   id?: string;
+  eventType?: number;
+  created?: Date;
 }
 
 /**
@@ -101,6 +103,13 @@ export interface UpdateClientCommand {
   phoneNumber?: string;
   comments?: string;
   clientType?: number;
+}
+
+/**
+ * An interface representing CreateEventCommand.
+ */
+export interface CreateEventCommand {
+  eventType?: number;
 }
 
 /**
@@ -306,6 +315,13 @@ export interface APIGetEventsOptionalParams extends msRest.RequestOptionsBase {
 /**
  * Optional Parameters.
  */
+export interface APICreateEventOptionalParams extends msRest.RequestOptionsBase {
+  body?: CreateEventCommand;
+}
+
+/**
+ * Optional Parameters.
+ */
 export interface APIGetProcessesOptionalParams extends msRest.RequestOptionsBase {
   filters?: string;
   sorts?: string;
@@ -485,6 +501,31 @@ export type GetEventsResponse = Array<EventDto> & {
        * The response body as parsed JSON or XML
        */
       parsedBody: EventDto[];
+    };
+};
+
+/**
+ * Contains response data for the createEvent operation.
+ */
+export type CreateEventResponse = {
+  /**
+   * The parsed response body.
+   */
+  body: string;
+
+  /**
+   * The underlying HTTP response.
+   */
+  _response: msRest.HttpResponse & {
+      /**
+       * The response body as text (string format)
+       */
+      bodyAsText: string;
+
+      /**
+       * The response body as parsed JSON or XML
+       */
+      parsedBody: string;
     };
 };
 

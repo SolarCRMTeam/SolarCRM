@@ -21,7 +21,7 @@ namespace API.Infrastructure.Database.Process.Queries
         }
         public async Task<ProcessDto> Handle(GetProcessQuery request, CancellationToken cancellationToken)
         {
-            var process = await _databaseContext.Process.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+            var process = await _databaseContext.Process.Include(x => x.Client).FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
             if (process == null)
             {

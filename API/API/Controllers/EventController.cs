@@ -1,4 +1,5 @@
 ﻿using API.Application.DTO;
+using API.Application.Event.Commands.Create;
 using API.Application.Event.Queries;
 using API.Framework.EventBus;
 using API.Infrastructure.Attributes;
@@ -34,6 +35,15 @@ namespace API.Controllers
             var result = await _internalBus.ExecuteQueryAsync(query);
 
             return Ok(result);
+        }
+        [HttpPost]
+        [Produces(MediaTypeNames.Application.Json)]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> CreateEvent([FromBody] CreateEventCommand command)
+        {
+            var id = await _internalBus.SendCommandAsync(command);
+            return Ok(id);
         }
     }
 }
