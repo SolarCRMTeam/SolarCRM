@@ -948,15 +948,6 @@
         },
         "additionalProperties": false
       },
-      "CreateEventCommand": {
-        "type": "object",
-        "properties": {
-          "eventType": {
-            "$ref": "#/components/schemas/EventType"
-          }
-        },
-        "additionalProperties": false
-      },
       "ProcessKind": {
         "enum": [
           0,
@@ -964,6 +955,22 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "CreateEventCommand": {
+        "type": "object",
+        "properties": {
+          "processId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventType": {
+            "$ref": "#/components/schemas/EventType"
+          },
+          "processKind": {
+            "$ref": "#/components/schemas/ProcessKind"
+          }
+        },
+        "additionalProperties": false
       },
       "Meeting": {
         "enum": [

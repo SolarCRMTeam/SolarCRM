@@ -1,4 +1,5 @@
 import { Table } from "antd";
+import { ColumnGroupType, ColumnType } from "rc-table/lib/interface";
 import { useEffect, useState } from "react";
 import {
   APIGetEventsOptionalParams,
@@ -6,15 +7,32 @@ import {
 } from "../../services/SolarCRM/models";
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
+import { map } from "../../mappers/EventTypeMapper";
+import { observer } from "mobx-react-lite";
 
 interface IProps {
   processId: string;
 }
 
-export const EventsTable = (props: IProps) => {
+const EventsTable = (props: IProps) => {
   const [events, setEvents] = useState<EventDto[]>([]);
 
-  const columns: any = [];
+  const columns: (ColumnGroupType<EventDto> | ColumnType<EventDto>)[] = [
+    {
+      title: "Rodzaj zdarzenia",
+      dataIndex: "eventType",
+      render: (item: number) => {
+        return map(item);
+      },
+    },
+    {
+      title: "Data zdarzenia",
+      dataIndex: "created",
+      render: (item: Date) => {
+        return <p>{item.toLocaleDateString()} {item.toLocaleTimeString()}</p>
+      }
+    },
+  ];
 
   useEffect(() => {
     (async () => {
@@ -32,7 +50,7 @@ export const EventsTable = (props: IProps) => {
         setEvents(data);
       }
     })();
-  }, [props.processId]);
+  }, [props.processId, tableStore.refreshEvents]);
 
   return (
     <Table
@@ -45,3 +63,5 @@ export const EventsTable = (props: IProps) => {
     />
   );
 };
+
+export default observer(EventsTable);

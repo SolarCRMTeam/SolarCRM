@@ -397,8 +397,20 @@ export const CreateEventCommand: msRest.CompositeMapper = {
     name: "Composite",
     className: "CreateEventCommand",
     modelProperties: {
+      processId: {
+        serializedName: "processId",
+        type: {
+          name: "Uuid"
+        }
+      },
       eventType: {
         serializedName: "eventType",
+        type: {
+          name: "Number"
+        }
+      },
+      processKind: {
+        serializedName: "processKind",
         type: {
           name: "Number"
         }

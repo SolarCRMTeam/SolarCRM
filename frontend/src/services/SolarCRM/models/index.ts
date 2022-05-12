@@ -109,7 +109,9 @@ export interface UpdateClientCommand {
  * An interface representing CreateEventCommand.
  */
 export interface CreateEventCommand {
+  processId?: string;
   eventType?: number;
+  processKind?: number;
 }
 
 /**

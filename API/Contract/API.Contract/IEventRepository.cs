@@ -7,6 +7,7 @@ namespace API.Contract
 {
     public interface IEventRepository
     {
-        Task<Guid> AddAsync(Event model, CancellationToken cancellationToken);
+        Task<Domain.Models.Event> AddAsync(Event model, CancellationToken cancellationToken);
+        Task SaveChanges(CancellationToken cancellationToken);
     }
 }

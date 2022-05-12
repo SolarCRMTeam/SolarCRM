@@ -5,7 +5,7 @@ export class TableStore {
   refreshRepresentatives: boolean = false;
   refreshProcess: boolean = false;
   refreshEvents: boolean = false;
-
+  refreshSingleProcess: boolean = false;
   constructor() {
     makeAutoObservable(this);
   }

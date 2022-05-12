@@ -6,7 +6,7 @@ import { PrimaryView } from "./components/shared/PrimaryView";
 import { MyAccount } from "./components/account/MyAccount";
 import { Logout } from "./components/account/Logout";
 import { Process } from "./components/handling/Process";
-import { Events } from "./components/events/Events";
+import Events from "./components/events/Events";
 
 function App() {
   return (
