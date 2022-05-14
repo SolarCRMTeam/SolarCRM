@@ -27,6 +27,7 @@ export const NewEvent = (props: IProps) => {
 
   const onSubmit = async (): Promise<CreateEventResponse> => {
     const api = await getAPI();
+
     const result = await api.createEvent({ body: event });
 
     return result;
@@ -62,7 +63,7 @@ export const NewEvent = (props: IProps) => {
               tableStore.refreshEvents = true;
               tableStore.refreshSingleProcess = true;
               setIsVisible(false);
-              setEvent(undefined);
+              setEvent({ processId: props.processId });
               notify("Poprawnie dodano nowe zdarzenie.");
             })
             .finally(() => setIsBusy(false));

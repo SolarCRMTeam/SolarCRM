@@ -956,6 +956,19 @@
         "type": "integer",
         "format": "int32"
       },
+      "Meeting": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "CreateEventCommand": {
         "type": "object",
         "properties": {
@@ -968,17 +981,17 @@
           },
           "processKind": {
             "$ref": "#/components/schemas/ProcessKind"
+          },
+          "meeting": {
+            "$ref": "#/components/schemas/Meeting"
+          },
+          "meetingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
-      },
-      "Meeting": {
-        "enum": [
-          0,
-          1
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "Audit": {
         "enum": [

@@ -1,4 +1,5 @@
-﻿using API.Contract;
+﻿using API.Application.Event.EventHandlers;
+using API.Contract;
 using API.Domain.Enums;
 using API.Framework.EventBus;
 using AutoMapper;
@@ -13,11 +14,13 @@ namespace API.Application.Event.Commands.Create
         private readonly IMapper _mapper;
         private readonly IEventRepository _eventRepository;
         private readonly IProcessRepository _processRepository;
-        public CreateEventCommandHandler(IMapper mapper, IEventRepository eventRepository, IProcessRepository processRepository)
+        private readonly IInternalBus _bus;
+        public CreateEventCommandHandler(IMapper mapper, IEventRepository eventRepository, IProcessRepository processRepository, IInternalBus internalBus)
         {
             _mapper = mapper;
             _eventRepository = eventRepository;
-            _processRepository = processRepository; 
+            _processRepository = processRepository;
+            _bus = internalBus;
         }
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
         {
@@ -36,11 +39,29 @@ namespace API.Application.Event.Commands.Create
 
         private async Task SideEffects(EventType eventType, Domain.Models.Event model, CreateEventCommand command)
         {
+
             switch (eventType)
             {
                 case EventType.Rodzaj_zlecenia:
-                    model.Process.Kind = command.ProcessKind;
-                    await _eventRepository.SaveChanges(default);
+                    await _bus.SendCommandAsync(new ProcessKindEvent()
+                    {
+                        Model = model,
+                        ProcessKind = command.ProcessKind,
+                    });
+                    break;
+                case EventType.Spotkanie:
+                    await _bus.SendCommandAsync(new MeetingEvent()
+                    {
+                        Model = model,
+                        Meeting = command.Meeting,
+                        MeetingDate = command.MeetingDate,
+                    });
+                    break;
+                case EventType.Wartość_umowy:
+                    await _bus.SendCommandAsync(new ContractValueEvent());
+                    break;
+                case EventType.Zaliczka:
+                    await _bus.SendCommandAsync(new AdvanceEvent());
                     break;
             }
         }

@@ -9,6 +9,7 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
+import { isPositive } from "../../mappers/MeetingMapper";
 import { GetTableActions } from "./TableActions";
 import { useHistory } from "react-router";
 
@@ -60,6 +61,9 @@ const ProcessTable = () => {
     {
       title: "Spotkanie",
       dataIndex: "meeting",
+      render: (item: number) => {
+        return isPositive(item);
+      },
     },
     {
       title: "Wartość umowy",

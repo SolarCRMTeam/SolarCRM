@@ -112,6 +112,8 @@ export interface CreateEventCommand {
   processId?: string;
   eventType?: number;
   processKind?: number;
+  meeting?: number;
+  meetingDate?: Date;
 }
 
 /**

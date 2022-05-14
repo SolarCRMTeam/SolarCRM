@@ -414,6 +414,18 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      meeting: {
+        serializedName: "meeting",
+        type: {
+          name: "Number"
+        }
+      },
+      meetingDate: {
+        serializedName: "meetingDate",
+        type: {
+          name: "DateTime"
+        }
       }
     }
   }
