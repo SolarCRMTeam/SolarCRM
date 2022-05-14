@@ -440,6 +440,19 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      advanceDate: {
+        serializedName: "advanceDate",
+        type: {
+          name: "DateTime"
+        }
+      },
+      advance: {
+        nullable: true,
+        serializedName: "advance",
+        type: {
+          name: "Number"
+        }
       }
     }
   }

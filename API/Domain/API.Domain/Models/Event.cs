@@ -14,5 +14,9 @@ namespace API.Domain.Models
         public Meeting Meeting { get; set; }
         public DateTime? MeetingDate { get; set; }
         #endregion
+
+        #region Advance
+        public DateTime AdvanceDate { get; set; }
+        #endregion 
     }
 }

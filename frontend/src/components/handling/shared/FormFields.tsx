@@ -47,7 +47,7 @@ export const FormFields = (props: IProps) => {
         >
           {clients?.map((client) => (
             <Select.Option key={client.id} value={client.id!}>
-              {client.name}
+              {client.name} ({client.identifier})
             </Select.Option>
           ))}
         </Select>

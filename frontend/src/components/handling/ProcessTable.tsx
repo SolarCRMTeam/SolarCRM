@@ -79,6 +79,9 @@ const ProcessTable = () => {
     {
       title: "Zaliczka",
       dataIndex: "advance",
+      render: (item: number, record: ProcessDto) => {
+        return `${item ?? 0} (${record.offerValue !== undefined ?  Math.round((100 * item) / record.offerValue) : 0})%`;
+      }
     },
     {
       title: "Audyt",

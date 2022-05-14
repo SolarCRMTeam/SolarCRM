@@ -24,24 +24,7 @@ namespace API.Application.Event.EventHandlers
         public async Task<Unit> Handle(InstallationSizeEvent request, CancellationToken cancellationToken)
         {
             request.Model.Process.InstallationSize = request.InstallationSize;
-
-            decimal vatRate = 0.77m;
-
-            if (request.Model.Process.Client.ClientType == Domain.Enums.ClientType.Prosument)
-            {
-                vatRate = 0.92m;
-            }
-
-            var previousContractValueNetto = request.Model.Process.OfferValue.GetValueOrDefault() * vatRate * request.Model.Process.InstallationSize.GetValueOrDefault();
-
             await _eventRepository.SaveChanges(cancellationToken);
-
-            await _internalBus.SendCommandAsync(new ContractValueEvent()
-            {
-                Model = request.Model,
-                ContractValue = previousContractValueNetto
-            });
-
             return Unit.Value;
         }
     }

@@ -116,6 +116,8 @@ export interface CreateEventCommand {
   meetingDate?: Date;
   contractValue?: number;
   installationSize?: number;
+  advanceDate?: Date;
+  advance?: number;
 }
 
 /**

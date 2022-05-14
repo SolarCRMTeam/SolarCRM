@@ -7,6 +7,7 @@ using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,7 +36,7 @@ namespace NotiWorker
             using IModel channel = connection.CreateModel();
 
             channel.QueueDeclare(queue: _busConfig.MailQueueName,
-                durable: false,
+                durable: true,
                 exclusive: false,
                 autoDelete: false,
                 arguments: null);
@@ -46,19 +47,13 @@ namespace NotiWorker
             consumer.Received += (model, ea) =>
             {
                 var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
+                var rawMessage = Encoding.UTF8.GetString(body);
 
-                _distributionChannel.Handle(new MailMessage
-                {
-                    Body = message,
-                    To = new List<string>()
-                    {
-                        "arkes987@gmail.com"
-                    },
-                    From = "arkadiusz.kina@gmail.com"
-                });
+                var message = JsonSerializer.Deserialize<MailMessage>(rawMessage);
 
-                //Console.WriteLine(" [x] Received {0} {1}", message, DateTimeOffset.Now);
+                _distributionChannel.Handle(message);
+
+                Console.WriteLine(" [x] Received {0} {1}", message, DateTimeOffset.Now);
             };
 
             channel.BasicConsume(queue: _busConfig.MailQueueName,

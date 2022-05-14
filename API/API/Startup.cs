@@ -1,3 +1,4 @@
+using API.Contract;
 using API.Framework.Context;
 using API.Framework.EventBus;
 using API.Infrastructure;
@@ -44,6 +45,7 @@ namespace API
             services.InstallServicesInAssembly(Configuration, Environment, typeof(DatabaseContext).Assembly);
             services.AddScoped<SieveProcessor>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IMailService, MailService>();
 
             var domainAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             services.AddMediatR(domainAssemblies);

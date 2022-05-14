@@ -72,7 +72,12 @@ namespace API.Application.Event.Commands.Create
                     });
                     break;
                 case EventType.Zaliczka:
-                    await _bus.SendCommandAsync(new AdvanceEvent());
+                    await _bus.SendCommandAsync(new AdvanceEvent()
+                    {
+                        Model = model,
+                        Advance = command.Advance.GetValueOrDefault(),
+                        AdvanceDate = command.AdvanceDate.GetValueOrDefault()
+                    });
                     break;
             }
         }

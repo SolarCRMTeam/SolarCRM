@@ -25,5 +25,10 @@ namespace API.Application.Event.Commands.Create
         #region InstallationSize
         public decimal? InstallationSize { get; set; }
         #endregion
+
+        #region Advance
+        public DateTime? AdvanceDate { get; set; }
+        public decimal? Advance { get; set; }
+        #endregion
     }
 }

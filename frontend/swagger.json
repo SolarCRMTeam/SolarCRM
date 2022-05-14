@@ -999,6 +999,16 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          },
+          "advanceDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "advance": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

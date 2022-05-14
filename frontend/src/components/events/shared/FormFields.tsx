@@ -6,6 +6,7 @@ import { ProcessKindFields } from "./ProcessKindFields";
 import { MeetingFields } from "./MeetingFields";
 import { ContractValueFields } from "./ContractValue";
 import { InstallationSizeFields } from "./InstallationSize";
+import { AdvanceFields } from "./Advance";
 
 interface IProps {
   event?: CreateEventCommand;
@@ -31,6 +32,8 @@ const GetFieldsByType = (props: IProps) => {
       return (
         <InstallationSizeFields setEvent={props.setEvent} event={props.event} />
       );
+    case 4:
+      return <AdvanceFields setEvent={props.setEvent} event={props.event} />;
   }
 };
 

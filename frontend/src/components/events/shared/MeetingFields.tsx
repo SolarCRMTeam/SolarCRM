@@ -26,23 +26,28 @@ export const MeetingFields = (props: IProps) => {
         <Radio value={0}>Nie</Radio>
         <Radio value={1}>Tak</Radio>
       </Radio.Group>
-      <Label>Status spotkania</Label>
-      <Select
-        defaultValue={props.event?.meeting}
-        style={{ width: "350px" }}
-        onChange={(value) => {
-          props.setEvent({
-            ...props.event,
-            meeting: value,
-          });
-        }}
-      >
-        {Array.from(meeting ? positiveMap : negativeMap)?.map((item) => (
-          <Select.Option key={item[0]} value={item[0]}>
-            {item[1]}
-          </Select.Option>
-        ))}
-      </Select>
+      {meeting !== undefined && (
+        <Space direction="vertical">
+          <Label>Status spotkania</Label>
+          <Select
+            defaultValue={props.event?.meeting}
+            style={{ width: "350px" }}
+            onChange={(value) => {
+              props.setEvent({
+                ...props.event,
+                meeting: value,
+              });
+            }}
+          >
+            {Array.from(meeting ? positiveMap : negativeMap)?.map((item) => (
+              <Select.Option key={item[0]} value={item[0]}>
+                {item[1]}
+              </Select.Option>
+            ))}
+          </Select>
+        </Space>
+      )}
+
       {(props.event?.meeting === 5 || props.event?.meeting === 6) && (
         <Space direction="vertical">
           <Label>Data</Label>
