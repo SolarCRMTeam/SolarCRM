@@ -21,7 +21,14 @@ namespace API.Application.Event.EventHandlers
         }
         public async Task<Unit> Handle(ContractValueEvent request, CancellationToken cancellationToken)
         {
-            request.Model.Process.OfferValue = request.ContractValue;
+            decimal vatRate = 1.23m;
+
+            if(request.Model.Process.Client.ClientType == Domain.Enums.ClientType.Prosument)
+            {
+                vatRate = 1.08m;
+            }
+
+            request.Model.Process.OfferValue = request.ContractValue * vatRate * request.Model.Process.InstallationSize;
 
             await _eventRepository.SaveChanges(cancellationToken);
 

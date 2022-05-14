@@ -114,6 +114,8 @@ export interface CreateEventCommand {
   processKind?: number;
   meeting?: number;
   meetingDate?: Date;
+  contractValue?: number;
+  installationSize?: number;
 }
 
 /**

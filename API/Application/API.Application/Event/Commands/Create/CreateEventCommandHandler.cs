@@ -31,13 +31,13 @@ namespace API.Application.Event.Commands.Create
 
             var model = await _eventRepository.AddAsync(mappedEvent, cancellationToken);
 
-            await SideEffects(mappedEvent.EventType, model, request);
+            await ProcessEventByType(mappedEvent.EventType, model, request);
 
             return model.Id;
 
         }
 
-        private async Task SideEffects(EventType eventType, Domain.Models.Event model, CreateEventCommand command)
+        private async Task ProcessEventByType(EventType eventType, Domain.Models.Event model, CreateEventCommand command)
         {
 
             switch (eventType)
@@ -46,19 +46,30 @@ namespace API.Application.Event.Commands.Create
                     await _bus.SendCommandAsync(new ProcessKindEvent()
                     {
                         Model = model,
-                        ProcessKind = command.ProcessKind,
+                        ProcessKind = command.ProcessKind.GetValueOrDefault(),
                     });
                     break;
                 case EventType.Spotkanie:
                     await _bus.SendCommandAsync(new MeetingEvent()
                     {
                         Model = model,
-                        Meeting = command.Meeting,
+                        Meeting = command.Meeting.GetValueOrDefault(),
                         MeetingDate = command.MeetingDate,
                     });
                     break;
                 case EventType.Wartość_umowy:
-                    await _bus.SendCommandAsync(new ContractValueEvent());
+                    await _bus.SendCommandAsync(new ContractValueEvent()
+                    {
+                        Model = model,
+                        ContractValue = command.ContractValue.GetValueOrDefault()
+                    });
+                    break;
+                case EventType.Wielkość_instalacji_ilość_kWp:
+                    await _bus.SendCommandAsync(new InstallationSizeEvent()
+                    {
+                        Model = model,
+                        InstallationSize = command.InstallationSize.GetValueOrDefault()
+                    });
                     break;
                 case EventType.Zaliczka:
                     await _bus.SendCommandAsync(new AdvanceEvent());

@@ -67,11 +67,14 @@ const ProcessTable = () => {
     },
     {
       title: "Wartość umowy",
-      dataIndex: "meeting",
+      dataIndex: "offerValue",
+      render: (item: number) => {
+        return item?.toFixed(2);
+      }
     },
     {
       title: "Wielkość instalacji Ilość kWp",
-      dataIndex: "offerValue",
+      dataIndex: "installationSize",
     },
     {
       title: "Zaliczka",

@@ -10,12 +10,20 @@ namespace API.Application.Event.Commands.Create
         public EventType EventType { get; set; }
 
         #region ProcessKind
-        public ProcessKind ProcessKind { get; set; }
+        public ProcessKind? ProcessKind { get; set; }
         #endregion
 
         #region Meeting
-        public Meeting Meeting { get; set; }
+        public Meeting? Meeting { get; set; }
         public DateTime? MeetingDate { get; set; }
+        #endregion
+
+        #region ContractValue
+        public decimal? ContractValue { get; set; }
+        #endregion
+
+        #region InstallationSize
+        public decimal? InstallationSize { get; set; }
         #endregion
     }
 }

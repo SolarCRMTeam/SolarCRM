@@ -426,6 +426,20 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "DateTime"
         }
+      },
+      contractValue: {
+        nullable: true,
+        serializedName: "contractValue",
+        type: {
+          name: "Number"
+        }
+      },
+      installationSize: {
+        nullable: true,
+        serializedName: "installationSize",
+        type: {
+          name: "Number"
+        }
       }
     }
   }

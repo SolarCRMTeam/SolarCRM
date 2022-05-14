@@ -30,7 +30,7 @@ namespace API.Infrastructure.Database.Process
         }
 
         public async Task<Domain.Models.Process> GetById(Guid id, CancellationToken cancellationToken)
-            => await _databaseContext.Process.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            => await _databaseContext.Process.Include(x => x.Client).FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         public async Task<long> GetCount(CancellationToken cancellationToken)
         {
             var entity = await _databaseContext.Process.AsNoTracking().OrderByDescending(x => x.Created).Select(x => x.Identifier).FirstOrDefaultAsync(cancellationToken: cancellationToken);

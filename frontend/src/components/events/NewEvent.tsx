@@ -34,7 +34,7 @@ export const NewEvent = (props: IProps) => {
   };
 
   const onCancel = (): void => {
-    setEvent(undefined);
+    setEvent({ processId: props.processId });
     setIsVisible(false);
   };
 

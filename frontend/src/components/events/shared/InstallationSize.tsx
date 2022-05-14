@@ -9,17 +9,17 @@ interface IProps {
   >;
 }
 
-export const ContractValueFields = (props: IProps) => {
+export const InstallationSizeFields = (props: IProps) => {
   return (
     <Space direction="vertical">
-      <Label>Wartość netto kWp</Label>
+      <Label>Ilość kWp</Label>
       <InputNumber
         min={1}
         step="0.01"
-        placeholder="Wartość netto kWp"
-        value={props.event?.contractValue}
+        placeholder="Ilość kWp"
+        value={props.event?.installationSize}
         onChange={(value) => {
-          props.setEvent({ ...props.event, contractValue: value });
+          props.setEvent({ ...props.event, installationSize: value });
         }}
       />
     </Space>

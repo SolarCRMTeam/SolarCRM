@@ -57,9 +57,9 @@ const EventsTable = (props: IProps) => {
       columns={columns}
       dataSource={events}
       loading={tableStore.refreshEvents}
-      style={{ width: "99vw" }}
+      style={{ width: "99vw"}}
       pagination={false}
-      scroll={{ y: "70vh" }}
+      scroll={{ y: "40vh" }}
     />
   );
 };

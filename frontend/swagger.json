@@ -989,6 +989,16 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "contractValue": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "installationSize": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -30,7 +30,7 @@ const Events = (props: IProps) => {
   }, [tableStore.refreshSingleProcess]);
 
   return process ? (
-    <>
+    <Space direction="vertical">
       <Card
         title={
           <Space direction="horizontal" size="large">
@@ -49,7 +49,7 @@ const Events = (props: IProps) => {
         <p>Status zlecenia: {process.status}</p>
       </Card>
       <EventsTable processId={props.processId} />
-    </>
+    </Space>
   ) : (
     <></>
   );

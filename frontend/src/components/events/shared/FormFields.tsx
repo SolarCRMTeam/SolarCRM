@@ -4,6 +4,8 @@ import { Label } from "../../shared/Label";
 import { valueMap } from "../../../mappers/EventTypeMapper";
 import { ProcessKindFields } from "./ProcessKindFields";
 import { MeetingFields } from "./MeetingFields";
+import { ContractValueFields } from "./ContractValue";
+import { InstallationSizeFields } from "./InstallationSize";
 
 interface IProps {
   event?: CreateEventCommand;
@@ -20,6 +22,15 @@ const GetFieldsByType = (props: IProps) => {
       );
     case 1:
       return <MeetingFields setEvent={props.setEvent} event={props.event} />;
+    case 2:
+      return (
+        <ContractValueFields setEvent={props.setEvent} event={props.event} />
+      );
+
+    case 3:
+      return (
+        <InstallationSizeFields setEvent={props.setEvent} event={props.event} />
+      );
   }
 };
 
