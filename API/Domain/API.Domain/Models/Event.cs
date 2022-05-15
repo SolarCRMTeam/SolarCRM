@@ -17,6 +17,15 @@ namespace API.Domain.Models
 
         #region Advance
         public DateTime AdvanceDate { get; set; }
-        #endregion 
+        #endregion
+        #region Audit
+        public AuditPlace AuditPlace { get; set; }
+        public AuditOrientation AuditOrientation { get; set; }
+        public AuditShading AuditShading { get; set; }
+        public AuditWorkScope AuditWorkScope { get; set; }
+        public int AuditSurface { get; set; }
+        public decimal AuditElectricBill { get; set; }
+        public string Warnings { get; set; }
+        #endregion
     }
 }

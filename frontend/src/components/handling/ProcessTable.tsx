@@ -10,6 +10,7 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
 import { isPositive } from "../../mappers/MeetingMapper";
+import { map as mapAudit }  from "../../mappers/AuditMapper"; 
 import { GetTableActions } from "./TableActions";
 import { useHistory } from "react-router";
 
@@ -86,6 +87,9 @@ const ProcessTable = () => {
     {
       title: "Audyt",
       dataIndex: "audit",
+      render: (item: number) => {
+        return mapAudit(item);
+      },
     },
     {
       title: "Akceptacja projektu",

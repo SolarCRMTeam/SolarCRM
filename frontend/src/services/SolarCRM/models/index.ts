@@ -118,6 +118,14 @@ export interface CreateEventCommand {
   installationSize?: number;
   advanceDate?: Date;
   advance?: number;
+  audit?: number;
+  auditPlace?: number;
+  auditOrientation?: number;
+  auditShading?: number;
+  auditWorkScope?: number;
+  auditSurface?: number;
+  auditElectricBill?: number;
+  warnings?: string;
 }
 
 /**

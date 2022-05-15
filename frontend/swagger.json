@@ -969,6 +969,48 @@
         "type": "integer",
         "format": "int32"
       },
+      "Audit": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AuditPlace": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AuditOrientation": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AuditShading": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "AuditWorkScope": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "CreateEventCommand": {
         "type": "object",
         "properties": {
@@ -1009,17 +1051,36 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          },
+          "audit": {
+            "$ref": "#/components/schemas/Audit"
+          },
+          "auditPlace": {
+            "$ref": "#/components/schemas/AuditPlace"
+          },
+          "auditOrientation": {
+            "$ref": "#/components/schemas/AuditOrientation"
+          },
+          "auditShading": {
+            "$ref": "#/components/schemas/AuditShading"
+          },
+          "auditWorkScope": {
+            "$ref": "#/components/schemas/AuditWorkScope"
+          },
+          "auditSurface": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "auditElectricBill": {
+            "type": "number",
+            "format": "double"
+          },
+          "warnings": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
-      },
-      "Audit": {
-        "enum": [
-          0,
-          1
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "OperatorRequest": {
         "enum": [

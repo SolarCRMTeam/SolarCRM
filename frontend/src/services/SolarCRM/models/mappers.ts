@@ -453,6 +453,54 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      audit: {
+        serializedName: "audit",
+        type: {
+          name: "Number"
+        }
+      },
+      auditPlace: {
+        serializedName: "auditPlace",
+        type: {
+          name: "Number"
+        }
+      },
+      auditOrientation: {
+        serializedName: "auditOrientation",
+        type: {
+          name: "Number"
+        }
+      },
+      auditShading: {
+        serializedName: "auditShading",
+        type: {
+          name: "Number"
+        }
+      },
+      auditWorkScope: {
+        serializedName: "auditWorkScope",
+        type: {
+          name: "Number"
+        }
+      },
+      auditSurface: {
+        serializedName: "auditSurface",
+        type: {
+          name: "Number"
+        }
+      },
+      auditElectricBill: {
+        serializedName: "auditElectricBill",
+        type: {
+          name: "Number"
+        }
+      },
+      warnings: {
+        serializedName: "warnings",
+        type: {
+          name: "String"
+        }
       }
     }
   }

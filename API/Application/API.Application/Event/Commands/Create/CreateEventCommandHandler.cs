@@ -79,6 +79,20 @@ namespace API.Application.Event.Commands.Create
                         AdvanceDate = command.AdvanceDate.GetValueOrDefault()
                     });
                     break;
+                case EventType.Audyt:
+                    await _bus.SendCommandAsync(new AuditEvent
+                    {
+                        Model = model,
+                        Audit = command.Audit,
+                        AuditPlace = command.AuditPlace,
+                        AuditOrientation = command.AuditOrientation,
+                        AuditShading = command.AuditShading,
+                        AuditWorkScope = command.AuditWorkScope,
+                        AuditSurface = command.AuditSurface,
+                        AuditElectricBill = command.AuditElectricBill,
+                        Warnings = command.Warnings,
+                    });
+                    break;
             }
         }
     }

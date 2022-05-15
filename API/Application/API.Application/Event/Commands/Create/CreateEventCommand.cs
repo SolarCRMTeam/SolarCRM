@@ -30,5 +30,16 @@ namespace API.Application.Event.Commands.Create
         public DateTime? AdvanceDate { get; set; }
         public decimal? Advance { get; set; }
         #endregion
+
+        #region Audit
+        public Audit Audit { get; set; }
+        public AuditPlace AuditPlace { get; set; }
+        public AuditOrientation AuditOrientation { get; set; }
+        public AuditShading AuditShading { get; set; }
+        public AuditWorkScope AuditWorkScope { get; set; }
+        public int AuditSurface { get; set; }
+        public decimal AuditElectricBill { get; set; }
+        public string Warnings { get; set; }
+        #endregion
     }
 }

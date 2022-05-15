@@ -7,6 +7,7 @@ import { MeetingFields } from "./MeetingFields";
 import { ContractValueFields } from "./ContractValue";
 import { InstallationSizeFields } from "./InstallationSize";
 import { AdvanceFields } from "./Advance";
+import { AuditFields } from "./Audit";
 
 interface IProps {
   event?: CreateEventCommand;
@@ -34,6 +35,8 @@ const GetFieldsByType = (props: IProps) => {
       );
     case 4:
       return <AdvanceFields setEvent={props.setEvent} event={props.event} />;
+    case 5:
+      return <AuditFields setEvent={props.setEvent} event={props.event} />;
   }
 };
 
