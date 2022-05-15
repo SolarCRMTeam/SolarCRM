@@ -41,5 +41,9 @@ namespace API.Application.Event.Commands.Create
         public decimal AuditElectricBill { get; set; }
         public string Warnings { get; set; }
         #endregion
+
+        #region ProjectAccept
+        public ProjectAccept ProjectAccept { get; set; }
+        #endregion
     }
 }

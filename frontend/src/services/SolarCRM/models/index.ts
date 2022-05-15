@@ -126,6 +126,7 @@ export interface CreateEventCommand {
   auditSurface?: number;
   auditElectricBill?: number;
   warnings?: string;
+  projectAccept?: number;
 }
 
 /**
@@ -144,7 +145,7 @@ export interface ProcessDto {
   installationSize?: number;
   advance?: number;
   audit?: number;
-  projectAccepted?: boolean;
+  projectAccepted?: number;
   assembly?: boolean;
   operatorRequest?: number;
   finalInvoice?: string;

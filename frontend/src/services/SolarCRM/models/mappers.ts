@@ -501,6 +501,12 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      projectAccept: {
+        serializedName: "projectAccept",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -588,10 +594,9 @@ export const ProcessDto: msRest.CompositeMapper = {
         }
       },
       projectAccepted: {
-        nullable: true,
         serializedName: "projectAccepted",
         type: {
-          name: "Boolean"
+          name: "Number"
         }
       },
       assembly: {

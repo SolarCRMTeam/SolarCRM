@@ -10,7 +10,8 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
 import { isPositive } from "../../mappers/MeetingMapper";
-import { map as mapAudit }  from "../../mappers/AuditMapper"; 
+import { map as mapAudit } from "../../mappers/AuditMapper";
+import { map as mapProjectAccept } from "../../mappers/ProjectAcceptMapper";
 import { GetTableActions } from "./TableActions";
 import { useHistory } from "react-router";
 
@@ -71,7 +72,7 @@ const ProcessTable = () => {
       dataIndex: "offerValue",
       render: (item: number) => {
         return item?.toFixed(2);
-      }
+      },
     },
     {
       title: "Wielkość instalacji Ilość kWp",
@@ -81,8 +82,12 @@ const ProcessTable = () => {
       title: "Zaliczka",
       dataIndex: "advance",
       render: (item: number, record: ProcessDto) => {
-        return `${item ?? 0} (${record.offerValue !== undefined ?  Math.round((100 * item) / record.offerValue) : 0})%`;
-      }
+        return `${item ?? 0} (${
+          record.offerValue !== undefined
+            ? Math.round((100 * item) / record.offerValue)
+            : 0
+        })%`;
+      },
     },
     {
       title: "Audyt",
@@ -94,6 +99,9 @@ const ProcessTable = () => {
     {
       title: "Akceptacja projektu",
       dataIndex: "projectAccepted",
+      render: (item: number) => {
+        return mapProjectAccept(item);
+      },
     },
     {
       title: "Montaż",

@@ -1011,6 +1011,16 @@
         "type": "integer",
         "format": "int32"
       },
+      "ProjectAccept": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "CreateEventCommand": {
         "type": "object",
         "properties": {
@@ -1078,6 +1088,9 @@
           "warnings": {
             "type": "string",
             "nullable": true
+          },
+          "projectAccept": {
+            "$ref": "#/components/schemas/ProjectAccept"
           }
         },
         "additionalProperties": false
@@ -1143,8 +1156,7 @@
             "$ref": "#/components/schemas/Audit"
           },
           "projectAccepted": {
-            "type": "boolean",
-            "nullable": true
+            "$ref": "#/components/schemas/ProjectAccept"
           },
           "assembly": {
             "type": "boolean",

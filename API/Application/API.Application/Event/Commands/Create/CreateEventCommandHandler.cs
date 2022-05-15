@@ -93,6 +93,13 @@ namespace API.Application.Event.Commands.Create
                         Warnings = command.Warnings,
                     });
                     break;
+                case EventType.Akceptacja_projektu:
+                    await _bus.SendCommandAsync(new ProjectAcceptEvent()
+                    {
+                        Model = model,
+                        ProjectAccept = command.ProjectAccept
+                    });
+                    break;
             }
         }
     }
