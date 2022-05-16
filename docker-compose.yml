@@ -9,6 +9,9 @@ services:
       dockerfile: API/API/Dockerfile
     environment:
       - ASPNETCORE_ConnectionStrings__SolarCRM_Main=server=mysql;port=3306;database=solardb;uid=solaruser;pwd=hT4sR8Kja!*h
+      - BusConfig__HostName=rabbit
+      - BusConfig__Port=5672
+      - BusConfig__MailQueueName=EMAIL_BUS
     networks:
       - solar-network
     ports:
