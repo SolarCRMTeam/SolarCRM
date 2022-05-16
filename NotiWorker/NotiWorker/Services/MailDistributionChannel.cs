@@ -15,7 +15,7 @@ namespace NotiWorker.Services
             _configuration = configuration;
         }
 
-        public Task Handle(IMessage message)
+        public async Task Handle(IMessage message)
         {
             MailMessage mailMessage = new(message.From, message.To[0])
             {
@@ -42,14 +42,12 @@ namespace NotiWorker.Services
 
             try
             {
-                client.Send(mailMessage);
+                await client.SendMailAsync(mailMessage);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught in CreateTestMessage2(): {0}", ex.ToString());
             }
-
-            return Task.CompletedTask;
         }
     }
 }
