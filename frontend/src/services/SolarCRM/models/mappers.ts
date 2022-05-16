@@ -513,6 +513,12 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      operatorRequest: {
+        serializedName: "operatorRequest",
+        type: {
+          name: "Number"
+        }
       }
     }
   }

@@ -128,6 +128,7 @@ export interface CreateEventCommand {
   warnings?: string;
   projectAccept?: number;
   installation?: number;
+  operatorRequest?: number;
 }
 
 /**

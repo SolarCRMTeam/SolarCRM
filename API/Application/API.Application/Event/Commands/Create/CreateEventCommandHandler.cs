@@ -106,6 +106,13 @@ namespace API.Application.Event.Commands.Create
                         Installation = command.Installation.GetValueOrDefault(),
                     });
                     break;
+                case EventType.Wniosek_do_operatora:
+                    await _bus.SendCommandAsync(new OperatorRequestEvent()
+                    {
+                        Model = model,
+                        OperatorRequest = command.OperatorRequest.GetValueOrDefault()
+                    });
+                    break;
             }
         }
     }

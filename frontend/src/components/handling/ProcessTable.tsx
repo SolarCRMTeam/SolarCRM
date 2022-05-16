@@ -9,6 +9,7 @@ import {
 import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
+import { map as operatorRequestMap } from "../../mappers/OperatorRequestMapper";
 import { isPositive } from "../../mappers/MeetingMapper";
 import { isPositive as isPositiveInstallation } from "../../mappers/InstallationMapper";
 import { map as mapAudit } from "../../mappers/AuditMapper";
@@ -114,6 +115,9 @@ const ProcessTable = () => {
     {
       title: "Wniosek do operatora",
       dataIndex: "operatorRequest",
+      render: (item: number) => {
+        return operatorRequestMap(item);
+      },
     },
     {
       title: "Faktura końcowa",

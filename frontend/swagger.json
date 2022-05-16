@@ -1034,6 +1034,14 @@
         "type": "integer",
         "format": "int32"
       },
+      "OperatorRequest": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "CreateEventCommand": {
         "type": "object",
         "properties": {
@@ -1107,17 +1115,12 @@
           },
           "installation": {
             "$ref": "#/components/schemas/Installation"
+          },
+          "operatorRequest": {
+            "$ref": "#/components/schemas/OperatorRequest"
           }
         },
         "additionalProperties": false
-      },
-      "OperatorRequest": {
-        "enum": [
-          0,
-          1
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "ProcessDto": {
         "type": "object",

@@ -49,5 +49,10 @@ namespace API.Application.Event.Commands.Create
         #region Installation
         public Installation? Installation { get; set; }
         #endregion
+
+        #region OperatorRequest
+
+        public OperatorRequest? OperatorRequest { get; set; }
+        #endregion
     }
 }
