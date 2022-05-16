@@ -11,6 +11,7 @@ import { AuditFields } from "./Audit";
 import { ProjectAcceptFields } from "./ProjectAccept";
 import { InstallationFields } from "./Installation";
 import { OperatorRequestFields } from "./OperatorRequest";
+import { FinalInvoiceFields } from "./FinalInvoice";
 
 interface IProps {
   event?: CreateEventCommand;
@@ -51,6 +52,10 @@ const GetFieldsByType = (props: IProps) => {
     case 8:
       return (
         <OperatorRequestFields setEvent={props.setEvent} event={props.event} />
+      );
+    case 9:
+      return (
+        <FinalInvoiceFields setEvent={props.setEvent} event={props.event} />
       );
   }
 };

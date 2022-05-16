@@ -129,6 +129,7 @@ export interface CreateEventCommand {
   projectAccept?: number;
   installation?: number;
   operatorRequest?: number;
+  finalInvoice?: string;
 }
 
 /**

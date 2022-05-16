@@ -519,6 +519,12 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      finalInvoice: {
+        serializedName: "finalInvoice",
+        type: {
+          name: "String"
+        }
       }
     }
   }

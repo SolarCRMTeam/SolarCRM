@@ -51,8 +51,11 @@ namespace API.Application.Event.Commands.Create
         #endregion
 
         #region OperatorRequest
-
         public OperatorRequest? OperatorRequest { get; set; }
+        #endregion
+
+        #region FinalInvoice
+        public string FinalInvoice { get; set; }
         #endregion
     }
 }

@@ -1118,6 +1118,10 @@
           },
           "operatorRequest": {
             "$ref": "#/components/schemas/OperatorRequest"
+          },
+          "finalInvoice": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

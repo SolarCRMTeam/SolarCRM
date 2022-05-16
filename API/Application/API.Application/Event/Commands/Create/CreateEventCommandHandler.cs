@@ -113,6 +113,13 @@ namespace API.Application.Event.Commands.Create
                         OperatorRequest = command.OperatorRequest.GetValueOrDefault()
                     });
                     break;
+                case EventType.Faktura_końcowa:
+                    await _bus.SendCommandAsync(new FinalInvoiceEvent()
+                    {
+                        Model = model,
+                        FinalInvoice = command.FinalInvoice
+                    });
+                    break;
             }
         }
     }
