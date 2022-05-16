@@ -10,6 +10,7 @@ import { getAPI } from "../../services/SolarCRM/SolarAPI";
 import { tableStore } from "../../stores/TableStore";
 import { map } from "../../mappers/ProcessKindMapper";
 import { isPositive } from "../../mappers/MeetingMapper";
+import { isPositive as isPositiveInstallation } from "../../mappers/InstallationMapper";
 import { map as mapAudit } from "../../mappers/AuditMapper";
 import { map as mapProjectAccept } from "../../mappers/ProjectAcceptMapper";
 import { GetTableActions } from "./TableActions";
@@ -105,7 +106,10 @@ const ProcessTable = () => {
     },
     {
       title: "Montaż",
-      dataIndex: "assembly",
+      dataIndex: "installation",
+      render: (item: number) => {
+        return isPositiveInstallation(item);
+      },
     },
     {
       title: "Wniosek do operatora",

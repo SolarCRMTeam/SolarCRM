@@ -2959,12 +2959,63 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "445",
+     "isReadOnly": false,
+     "realPath": [
+      "installation"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "446",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "447",
+      "fixed": false
+     },
+     "extensions": {
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1.0"
+       ],
+       "filename": [
+        "mem:///115?oai3.shaken.json"
+       ],
+       "name": "Installation",
+       "originalLocations": [
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Installation"
+       ]
+      }
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "448",
+      "fixed": false,
+      "raw": "installation"
+     },
+     "serializedName": "installation",
+     "modelType": {
+      "$id": "449",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "450",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "CreateEventCommand",
    "containsConstantProperties": false,
    "name": {
-    "$id": "445",
+    "$id": "451",
     "fixed": false,
     "raw": "CreateEventCommand"
    },
@@ -2985,51 +3036,14 @@
    "deprecated": false
   },
   {
-   "$id": "446",
+   "$id": "452",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "447",
-     "isReadOnly": false,
-     "realPath": [
-      "id"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "448",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "449",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "450",
-      "fixed": false,
-      "raw": "id"
-     },
-     "serializedName": "id",
-     "modelType": {
-      "$id": "451",
-      "$type": "PrimaryType",
-      "format": "uuid",
-      "knownPrimaryType": "uuid",
-      "name": {
-       "$id": "452",
-       "fixed": false,
-       "raw": "Uuid"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "453",
      "isReadOnly": false,
      "realPath": [
-      "created"
+      "id"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3046,18 +3060,18 @@
      "name": {
       "$id": "456",
       "fixed": false,
-      "raw": "created"
+      "raw": "id"
      },
-     "serializedName": "created",
+     "serializedName": "id",
      "modelType": {
       "$id": "457",
       "$type": "PrimaryType",
-      "format": "date-time",
-      "knownPrimaryType": "dateTime",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
       "name": {
        "$id": "458",
        "fixed": false,
-       "raw": "DateTime"
+       "raw": "Uuid"
       },
       "deprecated": false
      }
@@ -3066,7 +3080,7 @@
      "$id": "459",
      "isReadOnly": false,
      "realPath": [
-      "status"
+      "created"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3083,17 +3097,18 @@
      "name": {
       "$id": "462",
       "fixed": false,
-      "raw": "status"
+      "raw": "created"
      },
-     "serializedName": "status",
+     "serializedName": "created",
      "modelType": {
       "$id": "463",
       "$type": "PrimaryType",
-      "knownPrimaryType": "string",
+      "format": "date-time",
+      "knownPrimaryType": "dateTime",
       "name": {
        "$id": "464",
        "fixed": false,
-       "raw": "String"
+       "raw": "DateTime"
       },
       "deprecated": false
      }
@@ -3102,7 +3117,7 @@
      "$id": "465",
      "isReadOnly": false,
      "realPath": [
-      "updated"
+      "status"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3119,18 +3134,17 @@
      "name": {
       "$id": "468",
       "fixed": false,
-      "raw": "updated"
+      "raw": "status"
      },
-     "serializedName": "updated",
+     "serializedName": "status",
      "modelType": {
       "$id": "469",
       "$type": "PrimaryType",
-      "format": "date-time",
-      "knownPrimaryType": "dateTime",
+      "knownPrimaryType": "string",
       "name": {
        "$id": "470",
        "fixed": false,
-       "raw": "DateTime"
+       "raw": "String"
       },
       "deprecated": false
      }
@@ -3139,7 +3153,7 @@
      "$id": "471",
      "isReadOnly": false,
      "realPath": [
-      "identifier"
+      "updated"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3156,17 +3170,18 @@
      "name": {
       "$id": "474",
       "fixed": false,
-      "raw": "identifier"
+      "raw": "updated"
      },
-     "serializedName": "identifier",
+     "serializedName": "updated",
      "modelType": {
       "$id": "475",
       "$type": "PrimaryType",
-      "knownPrimaryType": "string",
+      "format": "date-time",
+      "knownPrimaryType": "dateTime",
       "name": {
        "$id": "476",
        "fixed": false,
-       "raw": "String"
+       "raw": "DateTime"
       },
       "deprecated": false
      }
@@ -3175,7 +3190,7 @@
      "$id": "477",
      "isReadOnly": false,
      "realPath": [
-      "name"
+      "identifier"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3192,9 +3207,9 @@
      "name": {
       "$id": "480",
       "fixed": false,
-      "raw": "name"
+      "raw": "identifier"
      },
-     "serializedName": "name",
+     "serializedName": "identifier",
      "modelType": {
       "$id": "481",
       "$type": "PrimaryType",
@@ -3211,7 +3226,7 @@
      "$id": "483",
      "isReadOnly": false,
      "realPath": [
-      "kind"
+      "name"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3223,37 +3238,22 @@
       "$id": "485",
       "fixed": false
      },
-     "extensions": {
-      "x-ms-metadata": {
-       "apiVersions": [
-        "v1.0"
-       ],
-       "filename": [
-        "mem:///115?oai3.shaken.json"
-       ],
-       "name": "ProcessKind",
-       "originalLocations": [
-        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/ProcessKind"
-       ]
-      }
-     },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "486",
       "fixed": false,
-      "raw": "kind"
+      "raw": "name"
      },
-     "serializedName": "kind",
+     "serializedName": "name",
      "modelType": {
       "$id": "487",
       "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "knownPrimaryType": "string",
       "name": {
        "$id": "488",
        "fixed": false,
-       "raw": "Int"
+       "raw": "String"
       },
       "deprecated": false
      }
@@ -3262,7 +3262,7 @@
      "$id": "489",
      "isReadOnly": false,
      "realPath": [
-      "meeting"
+      "kind"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3282,9 +3282,9 @@
        "filename": [
         "mem:///115?oai3.shaken.json"
        ],
-       "name": "Meeting",
+       "name": "ProcessKind",
        "originalLocations": [
-        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Meeting"
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/ProcessKind"
        ]
       }
      },
@@ -3293,9 +3293,9 @@
      "name": {
       "$id": "492",
       "fixed": false,
-      "raw": "meeting"
+      "raw": "kind"
      },
-     "serializedName": "meeting",
+     "serializedName": "kind",
      "modelType": {
       "$id": "493",
       "$type": "PrimaryType",
@@ -3313,7 +3313,7 @@
      "$id": "495",
      "isReadOnly": false,
      "realPath": [
-      "offerValue"
+      "meeting"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3326,25 +3326,36 @@
       "fixed": false
      },
      "extensions": {
-      "x-nullable": true
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1.0"
+       ],
+       "filename": [
+        "mem:///115?oai3.shaken.json"
+       ],
+       "name": "Meeting",
+       "originalLocations": [
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Meeting"
+       ]
+      }
      },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "498",
       "fixed": false,
-      "raw": "offerValue"
+      "raw": "meeting"
      },
-     "serializedName": "offerValue",
+     "serializedName": "meeting",
      "modelType": {
       "$id": "499",
       "$type": "PrimaryType",
-      "format": "double",
-      "knownPrimaryType": "double",
+      "format": "int32",
+      "knownPrimaryType": "int",
       "name": {
        "$id": "500",
        "fixed": false,
-       "raw": "Double"
+       "raw": "Int"
       },
       "deprecated": false
      }
@@ -3353,7 +3364,7 @@
      "$id": "501",
      "isReadOnly": false,
      "realPath": [
-      "installationSize"
+      "offerValue"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3373,9 +3384,9 @@
      "name": {
       "$id": "504",
       "fixed": false,
-      "raw": "installationSize"
+      "raw": "offerValue"
      },
-     "serializedName": "installationSize",
+     "serializedName": "offerValue",
      "modelType": {
       "$id": "505",
       "$type": "PrimaryType",
@@ -3393,7 +3404,7 @@
      "$id": "507",
      "isReadOnly": false,
      "realPath": [
-      "advance"
+      "installationSize"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3413,9 +3424,9 @@
      "name": {
       "$id": "510",
       "fixed": false,
-      "raw": "advance"
+      "raw": "installationSize"
      },
-     "serializedName": "advance",
+     "serializedName": "installationSize",
      "modelType": {
       "$id": "511",
       "$type": "PrimaryType",
@@ -3433,7 +3444,7 @@
      "$id": "513",
      "isReadOnly": false,
      "realPath": [
-      "audit"
+      "advance"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3446,36 +3457,25 @@
       "fixed": false
      },
      "extensions": {
-      "x-ms-metadata": {
-       "apiVersions": [
-        "v1.0"
-       ],
-       "filename": [
-        "mem:///115?oai3.shaken.json"
-       ],
-       "name": "Audit",
-       "originalLocations": [
-        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Audit"
-       ]
-      }
+      "x-nullable": true
      },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "516",
       "fixed": false,
-      "raw": "audit"
+      "raw": "advance"
      },
-     "serializedName": "audit",
+     "serializedName": "advance",
      "modelType": {
       "$id": "517",
       "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "format": "double",
+      "knownPrimaryType": "double",
       "name": {
        "$id": "518",
        "fixed": false,
-       "raw": "Int"
+       "raw": "Double"
       },
       "deprecated": false
      }
@@ -3484,7 +3484,7 @@
      "$id": "519",
      "isReadOnly": false,
      "realPath": [
-      "projectAccepted"
+      "audit"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3504,9 +3504,9 @@
        "filename": [
         "mem:///115?oai3.shaken.json"
        ],
-       "name": "ProjectAccept",
+       "name": "Audit",
        "originalLocations": [
-        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/ProjectAccept"
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Audit"
        ]
       }
      },
@@ -3515,9 +3515,9 @@
      "name": {
       "$id": "522",
       "fixed": false,
-      "raw": "projectAccepted"
+      "raw": "audit"
      },
-     "serializedName": "projectAccepted",
+     "serializedName": "audit",
      "modelType": {
       "$id": "523",
       "$type": "PrimaryType",
@@ -3535,7 +3535,7 @@
      "$id": "525",
      "isReadOnly": false,
      "realPath": [
-      "assembly"
+      "projectAccepted"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3548,24 +3548,36 @@
       "fixed": false
      },
      "extensions": {
-      "x-nullable": true
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1.0"
+       ],
+       "filename": [
+        "mem:///115?oai3.shaken.json"
+       ],
+       "name": "ProjectAccept",
+       "originalLocations": [
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/ProjectAccept"
+       ]
+      }
      },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "528",
       "fixed": false,
-      "raw": "assembly"
+      "raw": "projectAccepted"
      },
-     "serializedName": "assembly",
+     "serializedName": "projectAccepted",
      "modelType": {
       "$id": "529",
       "$type": "PrimaryType",
-      "knownPrimaryType": "boolean",
+      "format": "int32",
+      "knownPrimaryType": "int",
       "name": {
        "$id": "530",
        "fixed": false,
-       "raw": "Boolean"
+       "raw": "Int"
       },
       "deprecated": false
      }
@@ -3574,7 +3586,7 @@
      "$id": "531",
      "isReadOnly": false,
      "realPath": [
-      "operatorRequest"
+      "installation"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3594,9 +3606,9 @@
        "filename": [
         "mem:///115?oai3.shaken.json"
        ],
-       "name": "OperatorRequest",
+       "name": "Installation",
        "originalLocations": [
-        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/OperatorRequest"
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/Installation"
        ]
       }
      },
@@ -3605,9 +3617,9 @@
      "name": {
       "$id": "534",
       "fixed": false,
-      "raw": "operatorRequest"
+      "raw": "installation"
      },
-     "serializedName": "operatorRequest",
+     "serializedName": "installation",
      "modelType": {
       "$id": "535",
       "$type": "PrimaryType",
@@ -3625,7 +3637,7 @@
      "$id": "537",
      "isReadOnly": false,
      "realPath": [
-      "finalInvoice"
+      "operatorRequest"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3637,22 +3649,37 @@
       "$id": "539",
       "fixed": false
      },
+     "extensions": {
+      "x-ms-metadata": {
+       "apiVersions": [
+        "v1.0"
+       ],
+       "filename": [
+        "mem:///115?oai3.shaken.json"
+       ],
+       "name": "OperatorRequest",
+       "originalLocations": [
+        "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/schemas/OperatorRequest"
+       ]
+      }
+     },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "540",
       "fixed": false,
-      "raw": "finalInvoice"
+      "raw": "operatorRequest"
      },
-     "serializedName": "finalInvoice",
+     "serializedName": "operatorRequest",
      "modelType": {
       "$id": "541",
       "$type": "PrimaryType",
-      "knownPrimaryType": "string",
+      "format": "int32",
+      "knownPrimaryType": "int",
       "name": {
        "$id": "542",
        "fixed": false,
-       "raw": "String"
+       "raw": "Int"
       },
       "deprecated": false
      }
@@ -3661,7 +3688,7 @@
      "$id": "543",
      "isReadOnly": false,
      "realPath": [
-      "finalBilling"
+      "finalInvoice"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3678,18 +3705,17 @@
      "name": {
       "$id": "546",
       "fixed": false,
-      "raw": "finalBilling"
+      "raw": "finalInvoice"
      },
-     "serializedName": "finalBilling",
+     "serializedName": "finalInvoice",
      "modelType": {
       "$id": "547",
       "$type": "PrimaryType",
-      "format": "date-time",
-      "knownPrimaryType": "dateTime",
+      "knownPrimaryType": "string",
       "name": {
        "$id": "548",
        "fixed": false,
-       "raw": "DateTime"
+       "raw": "String"
       },
       "deprecated": false
      }
@@ -3698,7 +3724,7 @@
      "$id": "549",
      "isReadOnly": false,
      "realPath": [
-      "application"
+      "finalBilling"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3710,25 +3736,23 @@
       "$id": "551",
       "fixed": false
      },
-     "extensions": {
-      "x-nullable": true
-     },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "552",
       "fixed": false,
-      "raw": "application"
+      "raw": "finalBilling"
      },
-     "serializedName": "application",
+     "serializedName": "finalBilling",
      "modelType": {
       "$id": "553",
       "$type": "PrimaryType",
-      "knownPrimaryType": "boolean",
+      "format": "date-time",
+      "knownPrimaryType": "dateTime",
       "name": {
        "$id": "554",
        "fixed": false,
-       "raw": "Boolean"
+       "raw": "DateTime"
       },
       "deprecated": false
      }
@@ -3737,7 +3761,7 @@
      "$id": "555",
      "isReadOnly": false,
      "realPath": [
-      "clientNumber"
+      "application"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3749,20 +3773,59 @@
       "$id": "557",
       "fixed": false
      },
+     "extensions": {
+      "x-nullable": true
+     },
      "isRequired": false,
      "isConstant": false,
      "name": {
       "$id": "558",
       "fixed": false,
+      "raw": "application"
+     },
+     "serializedName": "application",
+     "modelType": {
+      "$id": "559",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "boolean",
+      "name": {
+       "$id": "560",
+       "fixed": false,
+       "raw": "Boolean"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "561",
+     "isReadOnly": false,
+     "realPath": [
+      "clientNumber"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "562",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "563",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "564",
+      "fixed": false,
       "raw": "clientNumber"
      },
      "serializedName": "clientNumber",
      "modelType": {
-      "$id": "559",
+      "$id": "565",
       "$type": "PrimaryType",
       "knownPrimaryType": "string",
       "name": {
-       "$id": "560",
+       "$id": "566",
        "fixed": false,
        "raw": "String"
       },
@@ -3773,7 +3836,7 @@
    "serializedName": "ProcessDto",
    "containsConstantProperties": false,
    "name": {
-    "$id": "561",
+    "$id": "567",
     "fixed": false,
     "raw": "ProcessDto"
    },
@@ -3794,51 +3857,14 @@
    "deprecated": false
   },
   {
-   "$id": "562",
+   "$id": "568",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "563",
-     "isReadOnly": false,
-     "realPath": [
-      "results"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "564",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "565",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "566",
-      "fixed": false,
-      "raw": "results"
-     },
-     "serializedName": "results",
-     "modelType": {
-      "$id": "567",
-      "$type": "SequenceType",
-      "elementType": {
-       "$ref": "446"
-      },
-      "name": {
-       "$id": "568",
-       "fixed": false
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "569",
      "isReadOnly": false,
      "realPath": [
-      "rowCount"
+      "results"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3855,18 +3881,18 @@
      "name": {
       "$id": "572",
       "fixed": false,
-      "raw": "rowCount"
+      "raw": "results"
      },
-     "serializedName": "rowCount",
+     "serializedName": "results",
      "modelType": {
       "$id": "573",
-      "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "$type": "SequenceType",
+      "elementType": {
+       "$ref": "452"
+      },
       "name": {
        "$id": "574",
-       "fixed": false,
-       "raw": "Int"
+       "fixed": false
       },
       "deprecated": false
      }
@@ -3875,7 +3901,7 @@
      "$id": "575",
      "isReadOnly": false,
      "realPath": [
-      "pageSize"
+      "rowCount"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3892,9 +3918,9 @@
      "name": {
       "$id": "578",
       "fixed": false,
-      "raw": "pageSize"
+      "raw": "rowCount"
      },
-     "serializedName": "pageSize",
+     "serializedName": "rowCount",
      "modelType": {
       "$id": "579",
       "$type": "PrimaryType",
@@ -3912,7 +3938,7 @@
      "$id": "581",
      "isReadOnly": false,
      "realPath": [
-      "currentPage"
+      "pageSize"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3929,9 +3955,9 @@
      "name": {
       "$id": "584",
       "fixed": false,
-      "raw": "currentPage"
+      "raw": "pageSize"
      },
-     "serializedName": "currentPage",
+     "serializedName": "pageSize",
      "modelType": {
       "$id": "585",
       "$type": "PrimaryType",
@@ -3947,9 +3973,9 @@
     },
     {
      "$id": "587",
-     "isReadOnly": true,
+     "isReadOnly": false,
      "realPath": [
-      "totalPagesNumber"
+      "currentPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -3966,9 +3992,9 @@
      "name": {
       "$id": "590",
       "fixed": false,
-      "raw": "totalPagesNumber"
+      "raw": "currentPage"
      },
-     "serializedName": "totalPagesNumber",
+     "serializedName": "currentPage",
      "modelType": {
       "$id": "591",
       "$type": "PrimaryType",
@@ -3986,7 +4012,7 @@
      "$id": "593",
      "isReadOnly": true,
      "realPath": [
-      "hasPreviousPage"
+      "totalPagesNumber"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4003,17 +4029,18 @@
      "name": {
       "$id": "596",
       "fixed": false,
-      "raw": "hasPreviousPage"
+      "raw": "totalPagesNumber"
      },
-     "serializedName": "hasPreviousPage",
+     "serializedName": "totalPagesNumber",
      "modelType": {
       "$id": "597",
       "$type": "PrimaryType",
-      "knownPrimaryType": "boolean",
+      "format": "int32",
+      "knownPrimaryType": "int",
       "name": {
        "$id": "598",
        "fixed": false,
-       "raw": "Boolean"
+       "raw": "Int"
       },
       "deprecated": false
      }
@@ -4022,7 +4049,7 @@
      "$id": "599",
      "isReadOnly": true,
      "realPath": [
-      "hasNextPage"
+      "hasPreviousPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4039,9 +4066,9 @@
      "name": {
       "$id": "602",
       "fixed": false,
-      "raw": "hasNextPage"
+      "raw": "hasPreviousPage"
      },
-     "serializedName": "hasNextPage",
+     "serializedName": "hasPreviousPage",
      "modelType": {
       "$id": "603",
       "$type": "PrimaryType",
@@ -4058,7 +4085,7 @@
      "$id": "605",
      "isReadOnly": true,
      "realPath": [
-      "firstRowOnPage"
+      "hasNextPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4075,18 +4102,17 @@
      "name": {
       "$id": "608",
       "fixed": false,
-      "raw": "firstRowOnPage"
+      "raw": "hasNextPage"
      },
-     "serializedName": "firstRowOnPage",
+     "serializedName": "hasNextPage",
      "modelType": {
       "$id": "609",
       "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "knownPrimaryType": "boolean",
       "name": {
        "$id": "610",
        "fixed": false,
-       "raw": "Int"
+       "raw": "Boolean"
       },
       "deprecated": false
      }
@@ -4095,7 +4121,7 @@
      "$id": "611",
      "isReadOnly": true,
      "realPath": [
-      "lastRowOnPage"
+      "firstRowOnPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4112,9 +4138,9 @@
      "name": {
       "$id": "614",
       "fixed": false,
-      "raw": "lastRowOnPage"
+      "raw": "firstRowOnPage"
      },
-     "serializedName": "lastRowOnPage",
+     "serializedName": "firstRowOnPage",
      "modelType": {
       "$id": "615",
       "$type": "PrimaryType",
@@ -4127,12 +4153,49 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "617",
+     "isReadOnly": true,
+     "realPath": [
+      "lastRowOnPage"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "618",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "619",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "620",
+      "fixed": false,
+      "raw": "lastRowOnPage"
+     },
+     "serializedName": "lastRowOnPage",
+     "modelType": {
+      "$id": "621",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "622",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "ProcessDtoPagedResult",
    "containsConstantProperties": false,
    "name": {
-    "$id": "617",
+    "$id": "623",
     "fixed": false,
     "raw": "ProcessDtoPagedResult"
    },
@@ -4153,51 +4216,14 @@
    "deprecated": false
   },
   {
-   "$id": "618",
+   "$id": "624",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "619",
-     "isReadOnly": false,
-     "realPath": [
-      "clientId"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "620",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "621",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "622",
-      "fixed": false,
-      "raw": "clientId"
-     },
-     "serializedName": "clientId",
-     "modelType": {
-      "$id": "623",
-      "$type": "PrimaryType",
-      "format": "uuid",
-      "knownPrimaryType": "uuid",
-      "name": {
-       "$id": "624",
-       "fixed": false,
-       "raw": "Uuid"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "625",
      "isReadOnly": false,
      "realPath": [
-      "kind"
+      "clientId"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4207,6 +4233,43 @@
      "deprecated": false,
      "documentation": {
       "$id": "627",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "628",
+      "fixed": false,
+      "raw": "clientId"
+     },
+     "serializedName": "clientId",
+     "modelType": {
+      "$id": "629",
+      "$type": "PrimaryType",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
+      "name": {
+       "$id": "630",
+       "fixed": false,
+       "raw": "Uuid"
+      },
+      "deprecated": false
+     }
+    },
+    {
+     "$id": "631",
+     "isReadOnly": false,
+     "realPath": [
+      "kind"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "632",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "633",
       "fixed": false
      },
      "extensions": {
@@ -4226,18 +4289,18 @@
      "isRequired": false,
      "isConstant": false,
      "name": {
-      "$id": "628",
+      "$id": "634",
       "fixed": false,
       "raw": "kind"
      },
      "serializedName": "kind",
      "modelType": {
-      "$id": "629",
+      "$id": "635",
       "$type": "PrimaryType",
       "format": "int32",
       "knownPrimaryType": "int",
       "name": {
-       "$id": "630",
+       "$id": "636",
        "fixed": false,
        "raw": "Int"
       },
@@ -4245,35 +4308,35 @@
      }
     },
     {
-     "$id": "631",
+     "$id": "637",
      "isReadOnly": false,
      "realPath": [
       "comments"
      ],
      "collectionFormat": "none",
      "defaultValue": {
-      "$id": "632",
+      "$id": "638",
       "fixed": false
      },
      "deprecated": false,
      "documentation": {
-      "$id": "633",
+      "$id": "639",
       "fixed": false
      },
      "isRequired": false,
      "isConstant": false,
      "name": {
-      "$id": "634",
+      "$id": "640",
       "fixed": false,
       "raw": "comments"
      },
      "serializedName": "comments",
      "modelType": {
-      "$id": "635",
+      "$id": "641",
       "$type": "PrimaryType",
       "knownPrimaryType": "string",
       "name": {
-       "$id": "636",
+       "$id": "642",
        "fixed": false,
        "raw": "String"
       },
@@ -4284,7 +4347,7 @@
    "serializedName": "CreateProcessCommand",
    "containsConstantProperties": false,
    "name": {
-    "$id": "637",
+    "$id": "643",
     "fixed": false,
     "raw": "CreateProcessCommand"
    },
@@ -4305,51 +4368,14 @@
    "deprecated": false
   },
   {
-   "$id": "638",
+   "$id": "644",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "639",
-     "isReadOnly": false,
-     "realPath": [
-      "id"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "640",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "641",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "642",
-      "fixed": false,
-      "raw": "id"
-     },
-     "serializedName": "id",
-     "modelType": {
-      "$id": "643",
-      "$type": "PrimaryType",
-      "format": "uuid",
-      "knownPrimaryType": "uuid",
-      "name": {
-       "$id": "644",
-       "fixed": false,
-       "raw": "Uuid"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "645",
      "isReadOnly": false,
      "realPath": [
-      "name"
+      "id"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4366,17 +4392,18 @@
      "name": {
       "$id": "648",
       "fixed": false,
-      "raw": "name"
+      "raw": "id"
      },
-     "serializedName": "name",
+     "serializedName": "id",
      "modelType": {
       "$id": "649",
       "$type": "PrimaryType",
-      "knownPrimaryType": "string",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
       "name": {
        "$id": "650",
        "fixed": false,
-       "raw": "String"
+       "raw": "Uuid"
       },
       "deprecated": false
      }
@@ -4385,7 +4412,7 @@
      "$id": "651",
      "isReadOnly": false,
      "realPath": [
-      "surname"
+      "name"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4402,9 +4429,9 @@
      "name": {
       "$id": "654",
       "fixed": false,
-      "raw": "surname"
+      "raw": "name"
      },
-     "serializedName": "surname",
+     "serializedName": "name",
      "modelType": {
       "$id": "655",
       "$type": "PrimaryType",
@@ -4421,7 +4448,7 @@
      "$id": "657",
      "isReadOnly": false,
      "realPath": [
-      "street"
+      "surname"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4438,9 +4465,9 @@
      "name": {
       "$id": "660",
       "fixed": false,
-      "raw": "street"
+      "raw": "surname"
      },
-     "serializedName": "street",
+     "serializedName": "surname",
      "modelType": {
       "$id": "661",
       "$type": "PrimaryType",
@@ -4457,7 +4484,7 @@
      "$id": "663",
      "isReadOnly": false,
      "realPath": [
-      "postalCode"
+      "street"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4474,9 +4501,9 @@
      "name": {
       "$id": "666",
       "fixed": false,
-      "raw": "postalCode"
+      "raw": "street"
      },
-     "serializedName": "postalCode",
+     "serializedName": "street",
      "modelType": {
       "$id": "667",
       "$type": "PrimaryType",
@@ -4493,7 +4520,7 @@
      "$id": "669",
      "isReadOnly": false,
      "realPath": [
-      "place"
+      "postalCode"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4510,9 +4537,9 @@
      "name": {
       "$id": "672",
       "fixed": false,
-      "raw": "place"
+      "raw": "postalCode"
      },
-     "serializedName": "place",
+     "serializedName": "postalCode",
      "modelType": {
       "$id": "673",
       "$type": "PrimaryType",
@@ -4529,7 +4556,7 @@
      "$id": "675",
      "isReadOnly": false,
      "realPath": [
-      "address"
+      "place"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4546,9 +4573,9 @@
      "name": {
       "$id": "678",
       "fixed": false,
-      "raw": "address"
+      "raw": "place"
      },
-     "serializedName": "address",
+     "serializedName": "place",
      "modelType": {
       "$id": "679",
       "$type": "PrimaryType",
@@ -4565,7 +4592,7 @@
      "$id": "681",
      "isReadOnly": false,
      "realPath": [
-      "voivodeship"
+      "address"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4582,9 +4609,9 @@
      "name": {
       "$id": "684",
       "fixed": false,
-      "raw": "voivodeship"
+      "raw": "address"
      },
-     "serializedName": "voivodeship",
+     "serializedName": "address",
      "modelType": {
       "$id": "685",
       "$type": "PrimaryType",
@@ -4601,7 +4628,7 @@
      "$id": "687",
      "isReadOnly": false,
      "realPath": [
-      "district"
+      "voivodeship"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4618,9 +4645,9 @@
      "name": {
       "$id": "690",
       "fixed": false,
-      "raw": "district"
+      "raw": "voivodeship"
      },
-     "serializedName": "district",
+     "serializedName": "voivodeship",
      "modelType": {
       "$id": "691",
       "$type": "PrimaryType",
@@ -4637,7 +4664,7 @@
      "$id": "693",
      "isReadOnly": false,
      "realPath": [
-      "mail"
+      "district"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4654,9 +4681,9 @@
      "name": {
       "$id": "696",
       "fixed": false,
-      "raw": "mail"
+      "raw": "district"
      },
-     "serializedName": "mail",
+     "serializedName": "district",
      "modelType": {
       "$id": "697",
       "$type": "PrimaryType",
@@ -4673,7 +4700,7 @@
      "$id": "699",
      "isReadOnly": false,
      "realPath": [
-      "phoneNumber"
+      "mail"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4690,9 +4717,9 @@
      "name": {
       "$id": "702",
       "fixed": false,
-      "raw": "phoneNumber"
+      "raw": "mail"
      },
-     "serializedName": "phoneNumber",
+     "serializedName": "mail",
      "modelType": {
       "$id": "703",
       "$type": "PrimaryType",
@@ -4709,7 +4736,7 @@
      "$id": "705",
      "isReadOnly": false,
      "realPath": [
-      "comments"
+      "phoneNumber"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4726,9 +4753,9 @@
      "name": {
       "$id": "708",
       "fixed": false,
-      "raw": "comments"
+      "raw": "phoneNumber"
      },
-     "serializedName": "comments",
+     "serializedName": "phoneNumber",
      "modelType": {
       "$id": "709",
       "$type": "PrimaryType",
@@ -4740,12 +4767,48 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "711",
+     "isReadOnly": false,
+     "realPath": [
+      "comments"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "712",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "713",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "714",
+      "fixed": false,
+      "raw": "comments"
+     },
+     "serializedName": "comments",
+     "modelType": {
+      "$id": "715",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "716",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "RepresentativeDto",
    "containsConstantProperties": false,
    "name": {
-    "$id": "711",
+    "$id": "717",
     "fixed": false,
     "raw": "RepresentativeDto"
    },
@@ -4766,51 +4829,14 @@
    "deprecated": false
   },
   {
-   "$id": "712",
+   "$id": "718",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "713",
-     "isReadOnly": false,
-     "realPath": [
-      "results"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "714",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "715",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "716",
-      "fixed": false,
-      "raw": "results"
-     },
-     "serializedName": "results",
-     "modelType": {
-      "$id": "717",
-      "$type": "SequenceType",
-      "elementType": {
-       "$ref": "638"
-      },
-      "name": {
-       "$id": "718",
-       "fixed": false
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "719",
      "isReadOnly": false,
      "realPath": [
-      "rowCount"
+      "results"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4827,18 +4853,18 @@
      "name": {
       "$id": "722",
       "fixed": false,
-      "raw": "rowCount"
+      "raw": "results"
      },
-     "serializedName": "rowCount",
+     "serializedName": "results",
      "modelType": {
       "$id": "723",
-      "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "$type": "SequenceType",
+      "elementType": {
+       "$ref": "644"
+      },
       "name": {
        "$id": "724",
-       "fixed": false,
-       "raw": "Int"
+       "fixed": false
       },
       "deprecated": false
      }
@@ -4847,7 +4873,7 @@
      "$id": "725",
      "isReadOnly": false,
      "realPath": [
-      "pageSize"
+      "rowCount"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4864,9 +4890,9 @@
      "name": {
       "$id": "728",
       "fixed": false,
-      "raw": "pageSize"
+      "raw": "rowCount"
      },
-     "serializedName": "pageSize",
+     "serializedName": "rowCount",
      "modelType": {
       "$id": "729",
       "$type": "PrimaryType",
@@ -4884,7 +4910,7 @@
      "$id": "731",
      "isReadOnly": false,
      "realPath": [
-      "currentPage"
+      "pageSize"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4901,9 +4927,9 @@
      "name": {
       "$id": "734",
       "fixed": false,
-      "raw": "currentPage"
+      "raw": "pageSize"
      },
-     "serializedName": "currentPage",
+     "serializedName": "pageSize",
      "modelType": {
       "$id": "735",
       "$type": "PrimaryType",
@@ -4919,9 +4945,9 @@
     },
     {
      "$id": "737",
-     "isReadOnly": true,
+     "isReadOnly": false,
      "realPath": [
-      "totalPagesNumber"
+      "currentPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4938,9 +4964,9 @@
      "name": {
       "$id": "740",
       "fixed": false,
-      "raw": "totalPagesNumber"
+      "raw": "currentPage"
      },
-     "serializedName": "totalPagesNumber",
+     "serializedName": "currentPage",
      "modelType": {
       "$id": "741",
       "$type": "PrimaryType",
@@ -4958,7 +4984,7 @@
      "$id": "743",
      "isReadOnly": true,
      "realPath": [
-      "hasPreviousPage"
+      "totalPagesNumber"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -4975,17 +5001,18 @@
      "name": {
       "$id": "746",
       "fixed": false,
-      "raw": "hasPreviousPage"
+      "raw": "totalPagesNumber"
      },
-     "serializedName": "hasPreviousPage",
+     "serializedName": "totalPagesNumber",
      "modelType": {
       "$id": "747",
       "$type": "PrimaryType",
-      "knownPrimaryType": "boolean",
+      "format": "int32",
+      "knownPrimaryType": "int",
       "name": {
        "$id": "748",
        "fixed": false,
-       "raw": "Boolean"
+       "raw": "Int"
       },
       "deprecated": false
      }
@@ -4994,7 +5021,7 @@
      "$id": "749",
      "isReadOnly": true,
      "realPath": [
-      "hasNextPage"
+      "hasPreviousPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5011,9 +5038,9 @@
      "name": {
       "$id": "752",
       "fixed": false,
-      "raw": "hasNextPage"
+      "raw": "hasPreviousPage"
      },
-     "serializedName": "hasNextPage",
+     "serializedName": "hasPreviousPage",
      "modelType": {
       "$id": "753",
       "$type": "PrimaryType",
@@ -5030,7 +5057,7 @@
      "$id": "755",
      "isReadOnly": true,
      "realPath": [
-      "firstRowOnPage"
+      "hasNextPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5047,18 +5074,17 @@
      "name": {
       "$id": "758",
       "fixed": false,
-      "raw": "firstRowOnPage"
+      "raw": "hasNextPage"
      },
-     "serializedName": "firstRowOnPage",
+     "serializedName": "hasNextPage",
      "modelType": {
       "$id": "759",
       "$type": "PrimaryType",
-      "format": "int32",
-      "knownPrimaryType": "int",
+      "knownPrimaryType": "boolean",
       "name": {
        "$id": "760",
        "fixed": false,
-       "raw": "Int"
+       "raw": "Boolean"
       },
       "deprecated": false
      }
@@ -5067,7 +5093,7 @@
      "$id": "761",
      "isReadOnly": true,
      "realPath": [
-      "lastRowOnPage"
+      "firstRowOnPage"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5084,9 +5110,9 @@
      "name": {
       "$id": "764",
       "fixed": false,
-      "raw": "lastRowOnPage"
+      "raw": "firstRowOnPage"
      },
-     "serializedName": "lastRowOnPage",
+     "serializedName": "firstRowOnPage",
      "modelType": {
       "$id": "765",
       "$type": "PrimaryType",
@@ -5099,12 +5125,49 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "767",
+     "isReadOnly": true,
+     "realPath": [
+      "lastRowOnPage"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "768",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "769",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "770",
+      "fixed": false,
+      "raw": "lastRowOnPage"
+     },
+     "serializedName": "lastRowOnPage",
+     "modelType": {
+      "$id": "771",
+      "$type": "PrimaryType",
+      "format": "int32",
+      "knownPrimaryType": "int",
+      "name": {
+       "$id": "772",
+       "fixed": false,
+       "raw": "Int"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "RepresentativeDtoPagedResult",
    "containsConstantProperties": false,
    "name": {
-    "$id": "767",
+    "$id": "773",
     "fixed": false,
     "raw": "RepresentativeDtoPagedResult"
    },
@@ -5125,50 +5188,14 @@
    "deprecated": false
   },
   {
-   "$id": "768",
+   "$id": "774",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "769",
-     "isReadOnly": false,
-     "realPath": [
-      "name"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "770",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "771",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "772",
-      "fixed": false,
-      "raw": "name"
-     },
-     "serializedName": "name",
-     "modelType": {
-      "$id": "773",
-      "$type": "PrimaryType",
-      "knownPrimaryType": "string",
-      "name": {
-       "$id": "774",
-       "fixed": false,
-       "raw": "String"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "775",
      "isReadOnly": false,
      "realPath": [
-      "surname"
+      "name"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5185,9 +5212,9 @@
      "name": {
       "$id": "778",
       "fixed": false,
-      "raw": "surname"
+      "raw": "name"
      },
-     "serializedName": "surname",
+     "serializedName": "name",
      "modelType": {
       "$id": "779",
       "$type": "PrimaryType",
@@ -5204,7 +5231,7 @@
      "$id": "781",
      "isReadOnly": false,
      "realPath": [
-      "street"
+      "surname"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5221,9 +5248,9 @@
      "name": {
       "$id": "784",
       "fixed": false,
-      "raw": "street"
+      "raw": "surname"
      },
-     "serializedName": "street",
+     "serializedName": "surname",
      "modelType": {
       "$id": "785",
       "$type": "PrimaryType",
@@ -5240,7 +5267,7 @@
      "$id": "787",
      "isReadOnly": false,
      "realPath": [
-      "postalCode"
+      "street"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5257,9 +5284,9 @@
      "name": {
       "$id": "790",
       "fixed": false,
-      "raw": "postalCode"
+      "raw": "street"
      },
-     "serializedName": "postalCode",
+     "serializedName": "street",
      "modelType": {
       "$id": "791",
       "$type": "PrimaryType",
@@ -5276,7 +5303,7 @@
      "$id": "793",
      "isReadOnly": false,
      "realPath": [
-      "address"
+      "postalCode"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5293,9 +5320,9 @@
      "name": {
       "$id": "796",
       "fixed": false,
-      "raw": "address"
+      "raw": "postalCode"
      },
-     "serializedName": "address",
+     "serializedName": "postalCode",
      "modelType": {
       "$id": "797",
       "$type": "PrimaryType",
@@ -5312,7 +5339,7 @@
      "$id": "799",
      "isReadOnly": false,
      "realPath": [
-      "place"
+      "address"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5329,9 +5356,9 @@
      "name": {
       "$id": "802",
       "fixed": false,
-      "raw": "place"
+      "raw": "address"
      },
-     "serializedName": "place",
+     "serializedName": "address",
      "modelType": {
       "$id": "803",
       "$type": "PrimaryType",
@@ -5348,7 +5375,7 @@
      "$id": "805",
      "isReadOnly": false,
      "realPath": [
-      "voivodeship"
+      "place"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5365,9 +5392,9 @@
      "name": {
       "$id": "808",
       "fixed": false,
-      "raw": "voivodeship"
+      "raw": "place"
      },
-     "serializedName": "voivodeship",
+     "serializedName": "place",
      "modelType": {
       "$id": "809",
       "$type": "PrimaryType",
@@ -5384,7 +5411,7 @@
      "$id": "811",
      "isReadOnly": false,
      "realPath": [
-      "district"
+      "voivodeship"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5401,9 +5428,9 @@
      "name": {
       "$id": "814",
       "fixed": false,
-      "raw": "district"
+      "raw": "voivodeship"
      },
-     "serializedName": "district",
+     "serializedName": "voivodeship",
      "modelType": {
       "$id": "815",
       "$type": "PrimaryType",
@@ -5420,7 +5447,7 @@
      "$id": "817",
      "isReadOnly": false,
      "realPath": [
-      "mail"
+      "district"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5437,9 +5464,9 @@
      "name": {
       "$id": "820",
       "fixed": false,
-      "raw": "mail"
+      "raw": "district"
      },
-     "serializedName": "mail",
+     "serializedName": "district",
      "modelType": {
       "$id": "821",
       "$type": "PrimaryType",
@@ -5456,7 +5483,7 @@
      "$id": "823",
      "isReadOnly": false,
      "realPath": [
-      "phoneNumber"
+      "mail"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5473,9 +5500,9 @@
      "name": {
       "$id": "826",
       "fixed": false,
-      "raw": "phoneNumber"
+      "raw": "mail"
      },
-     "serializedName": "phoneNumber",
+     "serializedName": "mail",
      "modelType": {
       "$id": "827",
       "$type": "PrimaryType",
@@ -5492,7 +5519,7 @@
      "$id": "829",
      "isReadOnly": false,
      "realPath": [
-      "comments"
+      "phoneNumber"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5509,9 +5536,9 @@
      "name": {
       "$id": "832",
       "fixed": false,
-      "raw": "comments"
+      "raw": "phoneNumber"
      },
-     "serializedName": "comments",
+     "serializedName": "phoneNumber",
      "modelType": {
       "$id": "833",
       "$type": "PrimaryType",
@@ -5523,12 +5550,48 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "835",
+     "isReadOnly": false,
+     "realPath": [
+      "comments"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "836",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "837",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "838",
+      "fixed": false,
+      "raw": "comments"
+     },
+     "serializedName": "comments",
+     "modelType": {
+      "$id": "839",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "840",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "CreateRepresentativeCommand",
    "containsConstantProperties": false,
    "name": {
-    "$id": "835",
+    "$id": "841",
     "fixed": false,
     "raw": "CreateRepresentativeCommand"
    },
@@ -5549,51 +5612,14 @@
    "deprecated": false
   },
   {
-   "$id": "836",
+   "$id": "842",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "837",
-     "isReadOnly": false,
-     "realPath": [
-      "id"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "838",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "839",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "840",
-      "fixed": false,
-      "raw": "id"
-     },
-     "serializedName": "id",
-     "modelType": {
-      "$id": "841",
-      "$type": "PrimaryType",
-      "format": "uuid",
-      "knownPrimaryType": "uuid",
-      "name": {
-       "$id": "842",
-       "fixed": false,
-       "raw": "Uuid"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "843",
      "isReadOnly": false,
      "realPath": [
-      "name"
+      "id"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5610,17 +5636,18 @@
      "name": {
       "$id": "846",
       "fixed": false,
-      "raw": "name"
+      "raw": "id"
      },
-     "serializedName": "name",
+     "serializedName": "id",
      "modelType": {
       "$id": "847",
       "$type": "PrimaryType",
-      "knownPrimaryType": "string",
+      "format": "uuid",
+      "knownPrimaryType": "uuid",
       "name": {
        "$id": "848",
        "fixed": false,
-       "raw": "String"
+       "raw": "Uuid"
       },
       "deprecated": false
      }
@@ -5629,7 +5656,7 @@
      "$id": "849",
      "isReadOnly": false,
      "realPath": [
-      "surname"
+      "name"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5646,9 +5673,9 @@
      "name": {
       "$id": "852",
       "fixed": false,
-      "raw": "surname"
+      "raw": "name"
      },
-     "serializedName": "surname",
+     "serializedName": "name",
      "modelType": {
       "$id": "853",
       "$type": "PrimaryType",
@@ -5665,7 +5692,7 @@
      "$id": "855",
      "isReadOnly": false,
      "realPath": [
-      "street"
+      "surname"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5682,9 +5709,9 @@
      "name": {
       "$id": "858",
       "fixed": false,
-      "raw": "street"
+      "raw": "surname"
      },
-     "serializedName": "street",
+     "serializedName": "surname",
      "modelType": {
       "$id": "859",
       "$type": "PrimaryType",
@@ -5701,7 +5728,7 @@
      "$id": "861",
      "isReadOnly": false,
      "realPath": [
-      "address"
+      "street"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5718,9 +5745,9 @@
      "name": {
       "$id": "864",
       "fixed": false,
-      "raw": "address"
+      "raw": "street"
      },
-     "serializedName": "address",
+     "serializedName": "street",
      "modelType": {
       "$id": "865",
       "$type": "PrimaryType",
@@ -5737,7 +5764,7 @@
      "$id": "867",
      "isReadOnly": false,
      "realPath": [
-      "postalCode"
+      "address"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5754,9 +5781,9 @@
      "name": {
       "$id": "870",
       "fixed": false,
-      "raw": "postalCode"
+      "raw": "address"
      },
-     "serializedName": "postalCode",
+     "serializedName": "address",
      "modelType": {
       "$id": "871",
       "$type": "PrimaryType",
@@ -5773,7 +5800,7 @@
      "$id": "873",
      "isReadOnly": false,
      "realPath": [
-      "place"
+      "postalCode"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5790,9 +5817,9 @@
      "name": {
       "$id": "876",
       "fixed": false,
-      "raw": "place"
+      "raw": "postalCode"
      },
-     "serializedName": "place",
+     "serializedName": "postalCode",
      "modelType": {
       "$id": "877",
       "$type": "PrimaryType",
@@ -5809,7 +5836,7 @@
      "$id": "879",
      "isReadOnly": false,
      "realPath": [
-      "voivodeship"
+      "place"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5826,9 +5853,9 @@
      "name": {
       "$id": "882",
       "fixed": false,
-      "raw": "voivodeship"
+      "raw": "place"
      },
-     "serializedName": "voivodeship",
+     "serializedName": "place",
      "modelType": {
       "$id": "883",
       "$type": "PrimaryType",
@@ -5845,7 +5872,7 @@
      "$id": "885",
      "isReadOnly": false,
      "realPath": [
-      "district"
+      "voivodeship"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5862,9 +5889,9 @@
      "name": {
       "$id": "888",
       "fixed": false,
-      "raw": "district"
+      "raw": "voivodeship"
      },
-     "serializedName": "district",
+     "serializedName": "voivodeship",
      "modelType": {
       "$id": "889",
       "$type": "PrimaryType",
@@ -5881,7 +5908,7 @@
      "$id": "891",
      "isReadOnly": false,
      "realPath": [
-      "mail"
+      "district"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5898,9 +5925,9 @@
      "name": {
       "$id": "894",
       "fixed": false,
-      "raw": "mail"
+      "raw": "district"
      },
-     "serializedName": "mail",
+     "serializedName": "district",
      "modelType": {
       "$id": "895",
       "$type": "PrimaryType",
@@ -5917,7 +5944,7 @@
      "$id": "897",
      "isReadOnly": false,
      "realPath": [
-      "phoneNumber"
+      "mail"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5934,9 +5961,9 @@
      "name": {
       "$id": "900",
       "fixed": false,
-      "raw": "phoneNumber"
+      "raw": "mail"
      },
-     "serializedName": "phoneNumber",
+     "serializedName": "mail",
      "modelType": {
       "$id": "901",
       "$type": "PrimaryType",
@@ -5953,7 +5980,7 @@
      "$id": "903",
      "isReadOnly": false,
      "realPath": [
-      "comments"
+      "phoneNumber"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -5970,9 +5997,9 @@
      "name": {
       "$id": "906",
       "fixed": false,
-      "raw": "comments"
+      "raw": "phoneNumber"
      },
-     "serializedName": "comments",
+     "serializedName": "phoneNumber",
      "modelType": {
       "$id": "907",
       "$type": "PrimaryType",
@@ -5984,12 +6011,48 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "909",
+     "isReadOnly": false,
+     "realPath": [
+      "comments"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "910",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "911",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "912",
+      "fixed": false,
+      "raw": "comments"
+     },
+     "serializedName": "comments",
+     "modelType": {
+      "$id": "913",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "914",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "UpdateRepresentativeCommand",
    "containsConstantProperties": false,
    "name": {
-    "$id": "909",
+    "$id": "915",
     "fixed": false,
     "raw": "UpdateRepresentativeCommand"
    },
@@ -6010,50 +6073,14 @@
    "deprecated": false
   },
   {
-   "$id": "910",
+   "$id": "916",
    "$type": "CompositeType",
    "properties": [
-    {
-     "$id": "911",
-     "isReadOnly": false,
-     "realPath": [
-      "login"
-     ],
-     "collectionFormat": "none",
-     "defaultValue": {
-      "$id": "912",
-      "fixed": false
-     },
-     "deprecated": false,
-     "documentation": {
-      "$id": "913",
-      "fixed": false
-     },
-     "isRequired": false,
-     "isConstant": false,
-     "name": {
-      "$id": "914",
-      "fixed": false,
-      "raw": "login"
-     },
-     "serializedName": "login",
-     "modelType": {
-      "$id": "915",
-      "$type": "PrimaryType",
-      "knownPrimaryType": "string",
-      "name": {
-       "$id": "916",
-       "fixed": false,
-       "raw": "String"
-      },
-      "deprecated": false
-     }
-    },
     {
      "$id": "917",
      "isReadOnly": false,
      "realPath": [
-      "password"
+      "login"
      ],
      "collectionFormat": "none",
      "defaultValue": {
@@ -6070,9 +6097,9 @@
      "name": {
       "$id": "920",
       "fixed": false,
-      "raw": "password"
+      "raw": "login"
      },
-     "serializedName": "password",
+     "serializedName": "login",
      "modelType": {
       "$id": "921",
       "$type": "PrimaryType",
@@ -6084,12 +6111,48 @@
       },
       "deprecated": false
      }
+    },
+    {
+     "$id": "923",
+     "isReadOnly": false,
+     "realPath": [
+      "password"
+     ],
+     "collectionFormat": "none",
+     "defaultValue": {
+      "$id": "924",
+      "fixed": false
+     },
+     "deprecated": false,
+     "documentation": {
+      "$id": "925",
+      "fixed": false
+     },
+     "isRequired": false,
+     "isConstant": false,
+     "name": {
+      "$id": "926",
+      "fixed": false,
+      "raw": "password"
+     },
+     "serializedName": "password",
+     "modelType": {
+      "$id": "927",
+      "$type": "PrimaryType",
+      "knownPrimaryType": "string",
+      "name": {
+       "$id": "928",
+       "fixed": false,
+       "raw": "String"
+      },
+      "deprecated": false
+     }
     }
    ],
    "serializedName": "AuthenticateDto",
    "containsConstantProperties": false,
    "name": {
-    "$id": "923",
+    "$id": "929",
     "fixed": false,
     "raw": "AuthenticateDto"
    },
@@ -6117,58 +6180,6 @@
  "baseUrl": "http://localhost",
  "properties": [
   {
-   "$id": "924",
-   "isReadOnly": false,
-   "realPath": [
-    "id"
-   ],
-   "collectionFormat": "none",
-   "defaultValue": {
-    "$id": "925",
-    "fixed": false
-   },
-   "deprecated": false,
-   "documentation": {
-    "$id": "926",
-    "fixed": false
-   },
-   "extensions": {
-    "x-ms-metadata": {
-     "apiVersions": [
-      "v1.0"
-     ],
-     "filename": [
-      "mem:///115?oai3.shaken.json"
-     ],
-     "name": "paths·client-id·get·parameters·0",
-     "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client-id·get·parameters·0"
-     ]
-    },
-    "x-ms-parameter-location": "method"
-   },
-   "isRequired": true,
-   "isConstant": false,
-   "name": {
-    "$id": "927",
-    "fixed": false,
-    "raw": "id"
-   },
-   "serializedName": "id",
-   "modelType": {
-    "$id": "928",
-    "$type": "PrimaryType",
-    "format": "uuid",
-    "knownPrimaryType": "uuid",
-    "name": {
-     "$id": "929",
-     "fixed": false,
-     "raw": "Uuid"
-    },
-    "deprecated": false
-   }
-  },
-  {
    "$id": "930",
    "isReadOnly": false,
    "realPath": [
@@ -6192,9 +6203,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·client-id·delete·parameters·0",
+     "name": "paths·client-id·get·parameters·0",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client-id·delete·parameters·0"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -6204,7 +6215,7 @@
    "name": {
     "$id": "933",
     "fixed": false,
-    "raw": "Id1"
+    "raw": "id"
    },
    "serializedName": "id",
    "modelType": {
@@ -6224,7 +6235,7 @@
    "$id": "936",
    "isReadOnly": false,
    "realPath": [
-    "Filters"
+    "id"
    ],
    "collectionFormat": "none",
    "defaultValue": {
@@ -6234,6 +6245,58 @@
    "deprecated": false,
    "documentation": {
     "$id": "938",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·client-id·delete·parameters·0",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client-id·delete·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": true,
+   "isConstant": false,
+   "name": {
+    "$id": "939",
+    "fixed": false,
+    "raw": "Id1"
+   },
+   "serializedName": "id",
+   "modelType": {
+    "$id": "940",
+    "$type": "PrimaryType",
+    "format": "uuid",
+    "knownPrimaryType": "uuid",
+    "name": {
+     "$id": "941",
+     "fixed": false,
+     "raw": "Uuid"
+    },
+    "deprecated": false
+   }
+  },
+  {
+   "$id": "942",
+   "isReadOnly": false,
+   "realPath": [
+    "Filters"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "943",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "944",
     "fixed": false
    },
    "extensions": {
@@ -6254,17 +6317,17 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "939",
+    "$id": "945",
     "fixed": false,
     "raw": "Filters"
    },
    "serializedName": "Filters",
    "modelType": {
-    "$id": "940",
+    "$id": "946",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "941",
+     "$id": "947",
      "fixed": false,
      "raw": "String"
     },
@@ -6272,19 +6335,19 @@
    }
   },
   {
-   "$id": "942",
+   "$id": "948",
    "isReadOnly": false,
    "realPath": [
     "Sorts"
    ],
    "collectionFormat": "none",
    "defaultValue": {
-    "$id": "943",
+    "$id": "949",
     "fixed": false
    },
    "deprecated": false,
    "documentation": {
-    "$id": "944",
+    "$id": "950",
     "fixed": false
    },
    "extensions": {
@@ -6305,75 +6368,19 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "945",
+    "$id": "951",
     "fixed": false,
     "raw": "Sorts"
    },
    "serializedName": "Sorts",
    "modelType": {
-    "$id": "946",
+    "$id": "952",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "947",
-     "fixed": false,
-     "raw": "String"
-    },
-    "deprecated": false
-   }
-  },
-  {
-   "$id": "948",
-   "isReadOnly": false,
-   "realPath": [
-    "Page"
-   ],
-   "collectionFormat": "none",
-   "constraints": {
-    "InclusiveMaximum": "2147483647",
-    "InclusiveMinimum": "1"
-   },
-   "defaultValue": {
-    "$id": "949",
-    "fixed": false
-   },
-   "deprecated": false,
-   "documentation": {
-    "$id": "950",
-    "fixed": false
-   },
-   "extensions": {
-    "x-ms-metadata": {
-     "apiVersions": [
-      "v1.0"
-     ],
-     "filename": [
-      "mem:///115?oai3.shaken.json"
-     ],
-     "name": "paths·client·get·parameters·2",
-     "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·2"
-     ]
-    },
-    "x-ms-parameter-location": "method"
-   },
-   "isRequired": false,
-   "isConstant": false,
-   "name": {
-    "$id": "951",
-    "fixed": false,
-    "raw": "Page"
-   },
-   "serializedName": "Page",
-   "modelType": {
-    "$id": "952",
-    "$type": "PrimaryType",
-    "format": "int32",
-    "knownPrimaryType": "int",
-    "name": {
      "$id": "953",
      "fixed": false,
-     "raw": "Int"
+     "raw": "String"
     },
     "deprecated": false
    }
@@ -6382,7 +6389,7 @@
    "$id": "954",
    "isReadOnly": false,
    "realPath": [
-    "PageSize"
+    "Page"
    ],
    "collectionFormat": "none",
    "constraints": {
@@ -6406,9 +6413,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·client·get·parameters·3",
+     "name": "paths·client·get·parameters·2",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·3"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -6418,9 +6425,9 @@
    "name": {
     "$id": "957",
     "fixed": false,
-    "raw": "PageSize"
+    "raw": "Page"
    },
-   "serializedName": "PageSize",
+   "serializedName": "Page",
    "modelType": {
     "$id": "958",
     "$type": "PrimaryType",
@@ -6438,9 +6445,13 @@
    "$id": "960",
    "isReadOnly": false,
    "realPath": [
-    "processId"
+    "PageSize"
    ],
    "collectionFormat": "none",
+   "constraints": {
+    "InclusiveMaximum": "2147483647",
+    "InclusiveMinimum": "1"
+   },
    "defaultValue": {
     "$id": "961",
     "fixed": false
@@ -6448,6 +6459,58 @@
    "deprecated": false,
    "documentation": {
     "$id": "962",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·client·get·parameters·3",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·3"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": false,
+   "isConstant": false,
+   "name": {
+    "$id": "963",
+    "fixed": false,
+    "raw": "PageSize"
+   },
+   "serializedName": "PageSize",
+   "modelType": {
+    "$id": "964",
+    "$type": "PrimaryType",
+    "format": "int32",
+    "knownPrimaryType": "int",
+    "name": {
+     "$id": "965",
+     "fixed": false,
+     "raw": "Int"
+    },
+    "deprecated": false
+   }
+  },
+  {
+   "$id": "966",
+   "isReadOnly": false,
+   "realPath": [
+    "processId"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "967",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "968",
     "fixed": false
    },
    "extensions": {
@@ -6468,63 +6531,11 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "963",
+    "$id": "969",
     "fixed": false,
     "raw": "processId"
    },
    "serializedName": "processId",
-   "modelType": {
-    "$id": "964",
-    "$type": "PrimaryType",
-    "format": "uuid",
-    "knownPrimaryType": "uuid",
-    "name": {
-     "$id": "965",
-     "fixed": false,
-     "raw": "Uuid"
-    },
-    "deprecated": false
-   }
-  },
-  {
-   "$id": "966",
-   "isReadOnly": false,
-   "realPath": [
-    "id"
-   ],
-   "collectionFormat": "none",
-   "defaultValue": {
-    "$id": "967",
-    "fixed": false
-   },
-   "deprecated": false,
-   "documentation": {
-    "$id": "968",
-    "fixed": false
-   },
-   "extensions": {
-    "x-ms-metadata": {
-     "apiVersions": [
-      "v1.0"
-     ],
-     "filename": [
-      "mem:///115?oai3.shaken.json"
-     ],
-     "name": "paths·process-id·get·parameters·0",
-     "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process-id·get·parameters·0"
-     ]
-    },
-    "x-ms-parameter-location": "method"
-   },
-   "isRequired": true,
-   "isConstant": false,
-   "name": {
-    "$id": "969",
-    "fixed": false,
-    "raw": "Id2"
-   },
-   "serializedName": "id",
    "modelType": {
     "$id": "970",
     "$type": "PrimaryType",
@@ -6562,9 +6573,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·process-id·delete·parameters·0",
+     "name": "paths·process-id·get·parameters·0",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process-id·delete·parameters·0"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -6574,7 +6585,7 @@
    "name": {
     "$id": "975",
     "fixed": false,
-    "raw": "Id3"
+    "raw": "Id2"
    },
    "serializedName": "id",
    "modelType": {
@@ -6594,7 +6605,7 @@
    "$id": "978",
    "isReadOnly": false,
    "realPath": [
-    "Filters"
+    "id"
    ],
    "collectionFormat": "none",
    "defaultValue": {
@@ -6604,6 +6615,58 @@
    "deprecated": false,
    "documentation": {
     "$id": "980",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·process-id·delete·parameters·0",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process-id·delete·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": true,
+   "isConstant": false,
+   "name": {
+    "$id": "981",
+    "fixed": false,
+    "raw": "Id3"
+   },
+   "serializedName": "id",
+   "modelType": {
+    "$id": "982",
+    "$type": "PrimaryType",
+    "format": "uuid",
+    "knownPrimaryType": "uuid",
+    "name": {
+     "$id": "983",
+     "fixed": false,
+     "raw": "Uuid"
+    },
+    "deprecated": false
+   }
+  },
+  {
+   "$id": "984",
+   "isReadOnly": false,
+   "realPath": [
+    "Filters"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "985",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "986",
     "fixed": false
    },
    "extensions": {
@@ -6624,17 +6687,17 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "981",
+    "$id": "987",
     "fixed": false,
     "raw": "Filters1"
    },
    "serializedName": "Filters",
    "modelType": {
-    "$id": "982",
+    "$id": "988",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "983",
+     "$id": "989",
      "fixed": false,
      "raw": "String"
     },
@@ -6642,19 +6705,19 @@
    }
   },
   {
-   "$id": "984",
+   "$id": "990",
    "isReadOnly": false,
    "realPath": [
     "Sorts"
    ],
    "collectionFormat": "none",
    "defaultValue": {
-    "$id": "985",
+    "$id": "991",
     "fixed": false
    },
    "deprecated": false,
    "documentation": {
-    "$id": "986",
+    "$id": "992",
     "fixed": false
    },
    "extensions": {
@@ -6675,75 +6738,19 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "987",
+    "$id": "993",
     "fixed": false,
     "raw": "Sorts1"
    },
    "serializedName": "Sorts",
    "modelType": {
-    "$id": "988",
+    "$id": "994",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "989",
-     "fixed": false,
-     "raw": "String"
-    },
-    "deprecated": false
-   }
-  },
-  {
-   "$id": "990",
-   "isReadOnly": false,
-   "realPath": [
-    "Page"
-   ],
-   "collectionFormat": "none",
-   "constraints": {
-    "InclusiveMaximum": "2147483647",
-    "InclusiveMinimum": "1"
-   },
-   "defaultValue": {
-    "$id": "991",
-    "fixed": false
-   },
-   "deprecated": false,
-   "documentation": {
-    "$id": "992",
-    "fixed": false
-   },
-   "extensions": {
-    "x-ms-metadata": {
-     "apiVersions": [
-      "v1.0"
-     ],
-     "filename": [
-      "mem:///115?oai3.shaken.json"
-     ],
-     "name": "paths·process·get·parameters·2",
-     "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·2"
-     ]
-    },
-    "x-ms-parameter-location": "method"
-   },
-   "isRequired": false,
-   "isConstant": false,
-   "name": {
-    "$id": "993",
-    "fixed": false,
-    "raw": "Page1"
-   },
-   "serializedName": "Page",
-   "modelType": {
-    "$id": "994",
-    "$type": "PrimaryType",
-    "format": "int32",
-    "knownPrimaryType": "int",
-    "name": {
      "$id": "995",
      "fixed": false,
-     "raw": "Int"
+     "raw": "String"
     },
     "deprecated": false
    }
@@ -6752,7 +6759,7 @@
    "$id": "996",
    "isReadOnly": false,
    "realPath": [
-    "PageSize"
+    "Page"
    ],
    "collectionFormat": "none",
    "constraints": {
@@ -6776,9 +6783,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·process·get·parameters·3",
+     "name": "paths·process·get·parameters·2",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·3"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -6788,9 +6795,9 @@
    "name": {
     "$id": "999",
     "fixed": false,
-    "raw": "PageSize1"
+    "raw": "Page1"
    },
-   "serializedName": "PageSize",
+   "serializedName": "Page",
    "modelType": {
     "$id": "1000",
     "$type": "PrimaryType",
@@ -6808,9 +6815,13 @@
    "$id": "1002",
    "isReadOnly": false,
    "realPath": [
-    "id"
+    "PageSize"
    ],
    "collectionFormat": "none",
+   "constraints": {
+    "InclusiveMaximum": "2147483647",
+    "InclusiveMinimum": "1"
+   },
    "defaultValue": {
     "$id": "1003",
     "fixed": false
@@ -6828,30 +6839,30 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·representative-id·get·parameters·0",
+     "name": "paths·process·get·parameters·3",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative-id·get·parameters·0"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·3"
      ]
     },
     "x-ms-parameter-location": "method"
    },
-   "isRequired": true,
+   "isRequired": false,
    "isConstant": false,
    "name": {
     "$id": "1005",
     "fixed": false,
-    "raw": "Id4"
+    "raw": "PageSize1"
    },
-   "serializedName": "id",
+   "serializedName": "PageSize",
    "modelType": {
     "$id": "1006",
     "$type": "PrimaryType",
-    "format": "uuid",
-    "knownPrimaryType": "uuid",
+    "format": "int32",
+    "knownPrimaryType": "int",
     "name": {
      "$id": "1007",
      "fixed": false,
-     "raw": "Uuid"
+     "raw": "Int"
     },
     "deprecated": false
    }
@@ -6880,9 +6891,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·representative-id·delete·parameters·0",
+     "name": "paths·representative-id·get·parameters·0",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative-id·delete·parameters·0"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative-id·get·parameters·0"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -6892,7 +6903,7 @@
    "name": {
     "$id": "1011",
     "fixed": false,
-    "raw": "Id5"
+    "raw": "Id4"
    },
    "serializedName": "id",
    "modelType": {
@@ -6912,7 +6923,7 @@
    "$id": "1014",
    "isReadOnly": false,
    "realPath": [
-    "Filters"
+    "id"
    ],
    "collectionFormat": "none",
    "defaultValue": {
@@ -6922,6 +6933,58 @@
    "deprecated": false,
    "documentation": {
     "$id": "1016",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·representative-id·delete·parameters·0",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative-id·delete·parameters·0"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": true,
+   "isConstant": false,
+   "name": {
+    "$id": "1017",
+    "fixed": false,
+    "raw": "Id5"
+   },
+   "serializedName": "id",
+   "modelType": {
+    "$id": "1018",
+    "$type": "PrimaryType",
+    "format": "uuid",
+    "knownPrimaryType": "uuid",
+    "name": {
+     "$id": "1019",
+     "fixed": false,
+     "raw": "Uuid"
+    },
+    "deprecated": false
+   }
+  },
+  {
+   "$id": "1020",
+   "isReadOnly": false,
+   "realPath": [
+    "Filters"
+   ],
+   "collectionFormat": "none",
+   "defaultValue": {
+    "$id": "1021",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "1022",
     "fixed": false
    },
    "extensions": {
@@ -6942,17 +7005,17 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "1017",
+    "$id": "1023",
     "fixed": false,
     "raw": "Filters2"
    },
    "serializedName": "Filters",
    "modelType": {
-    "$id": "1018",
+    "$id": "1024",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "1019",
+     "$id": "1025",
      "fixed": false,
      "raw": "String"
     },
@@ -6960,19 +7023,19 @@
    }
   },
   {
-   "$id": "1020",
+   "$id": "1026",
    "isReadOnly": false,
    "realPath": [
     "Sorts"
    ],
    "collectionFormat": "none",
    "defaultValue": {
-    "$id": "1021",
+    "$id": "1027",
     "fixed": false
    },
    "deprecated": false,
    "documentation": {
-    "$id": "1022",
+    "$id": "1028",
     "fixed": false
    },
    "extensions": {
@@ -6993,75 +7056,19 @@
    "isRequired": false,
    "isConstant": false,
    "name": {
-    "$id": "1023",
+    "$id": "1029",
     "fixed": false,
     "raw": "Sorts2"
    },
    "serializedName": "Sorts",
    "modelType": {
-    "$id": "1024",
+    "$id": "1030",
     "$type": "PrimaryType",
     "knownPrimaryType": "string",
     "name": {
-     "$id": "1025",
-     "fixed": false,
-     "raw": "String"
-    },
-    "deprecated": false
-   }
-  },
-  {
-   "$id": "1026",
-   "isReadOnly": false,
-   "realPath": [
-    "Page"
-   ],
-   "collectionFormat": "none",
-   "constraints": {
-    "InclusiveMaximum": "2147483647",
-    "InclusiveMinimum": "1"
-   },
-   "defaultValue": {
-    "$id": "1027",
-    "fixed": false
-   },
-   "deprecated": false,
-   "documentation": {
-    "$id": "1028",
-    "fixed": false
-   },
-   "extensions": {
-    "x-ms-metadata": {
-     "apiVersions": [
-      "v1.0"
-     ],
-     "filename": [
-      "mem:///115?oai3.shaken.json"
-     ],
-     "name": "paths·representative·get·parameters·2",
-     "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·2"
-     ]
-    },
-    "x-ms-parameter-location": "method"
-   },
-   "isRequired": false,
-   "isConstant": false,
-   "name": {
-    "$id": "1029",
-    "fixed": false,
-    "raw": "Page2"
-   },
-   "serializedName": "Page",
-   "modelType": {
-    "$id": "1030",
-    "$type": "PrimaryType",
-    "format": "int32",
-    "knownPrimaryType": "int",
-    "name": {
      "$id": "1031",
      "fixed": false,
-     "raw": "Int"
+     "raw": "String"
     },
     "deprecated": false
    }
@@ -7070,7 +7077,7 @@
    "$id": "1032",
    "isReadOnly": false,
    "realPath": [
-    "PageSize"
+    "Page"
    ],
    "collectionFormat": "none",
    "constraints": {
@@ -7094,9 +7101,9 @@
      "filename": [
       "mem:///115?oai3.shaken.json"
      ],
-     "name": "paths·representative·get·parameters·3",
+     "name": "paths·representative·get·parameters·2",
      "originalLocations": [
-      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·3"
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·2"
      ]
     },
     "x-ms-parameter-location": "method"
@@ -7106,9 +7113,9 @@
    "name": {
     "$id": "1035",
     "fixed": false,
-    "raw": "PageSize2"
+    "raw": "Page2"
    },
-   "serializedName": "PageSize",
+   "serializedName": "Page",
    "modelType": {
     "$id": "1036",
     "$type": "PrimaryType",
@@ -7121,29 +7128,85 @@
     },
     "deprecated": false
    }
+  },
+  {
+   "$id": "1038",
+   "isReadOnly": false,
+   "realPath": [
+    "PageSize"
+   ],
+   "collectionFormat": "none",
+   "constraints": {
+    "InclusiveMaximum": "2147483647",
+    "InclusiveMinimum": "1"
+   },
+   "defaultValue": {
+    "$id": "1039",
+    "fixed": false
+   },
+   "deprecated": false,
+   "documentation": {
+    "$id": "1040",
+    "fixed": false
+   },
+   "extensions": {
+    "x-ms-metadata": {
+     "apiVersions": [
+      "v1.0"
+     ],
+     "filename": [
+      "mem:///115?oai3.shaken.json"
+     ],
+     "name": "paths·representative·get·parameters·3",
+     "originalLocations": [
+      "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·3"
+     ]
+    },
+    "x-ms-parameter-location": "method"
+   },
+   "isRequired": false,
+   "isConstant": false,
+   "name": {
+    "$id": "1041",
+    "fixed": false,
+    "raw": "PageSize2"
+   },
+   "serializedName": "PageSize",
+   "modelType": {
+    "$id": "1042",
+    "$type": "PrimaryType",
+    "format": "int32",
+    "knownPrimaryType": "int",
+    "name": {
+     "$id": "1043",
+     "fixed": false,
+     "raw": "Int"
+    },
+    "deprecated": false
+   }
   }
  ],
  "operations": [
   {
-   "$id": "1038",
+   "$id": "1044",
    "methods": [
     {
-     "$id": "1039",
+     "$id": "1045",
      "parameters": [
       {
-       "$id": "1040",
+       "$id": "1046",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1041",
+        "$id": "1047",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1042",
+        "$id": "1048",
         "fixed": false
        },
        "extensions": {
@@ -7164,18 +7227,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1043",
+        "$id": "1049",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1044",
+        "$id": "1050",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1045",
+         "$id": "1051",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -7184,12 +7247,12 @@
       }
      ],
      "name": {
-      "$id": "1046",
+      "$id": "1052",
       "fixed": false,
       "raw": "GetClientById"
      },
      "group": {
-      "$id": "1047",
+      "$id": "1053",
       "fixed": false,
       "raw": ""
      },
@@ -7199,12 +7262,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1048",
+       "$id": "1054",
        "body": {
         "$ref": "2"
        },
        "extensions": {
-        "$id": "1049",
+        "$id": "1055",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7222,11 +7285,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1050",
+      "$id": "1056",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1051",
+      "$id": "1057",
       "body": {
        "$ref": "2"
       },
@@ -7243,22 +7306,22 @@
      "hidden": false
     },
     {
-     "$id": "1052",
+     "$id": "1058",
      "parameters": [
       {
-       "$id": "1053",
+       "$id": "1059",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1054",
+        "$id": "1060",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1055",
+        "$id": "1061",
         "fixed": false
        },
        "extensions": {
@@ -7279,18 +7342,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1056",
+        "$id": "1062",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1057",
+        "$id": "1063",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1058",
+         "$id": "1064",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -7299,12 +7362,12 @@
       }
      ],
      "name": {
-      "$id": "1059",
+      "$id": "1065",
       "fixed": false,
       "raw": "DeleteClient"
      },
      "group": {
-      "$id": "1060",
+      "$id": "1066",
       "fixed": false,
       "raw": ""
      },
@@ -7314,9 +7377,9 @@
      "httpMethod": "delete",
      "responses": {
       "OK": {
-       "$id": "1061",
+       "$id": "1067",
        "extensions": {
-        "$id": "1062",
+        "$id": "1068",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7334,11 +7397,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1063",
+      "$id": "1069",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1064",
+      "$id": "1070",
       "isNullable": true
      },
      "requestContentType": "application/json; charset=utf-8",
@@ -7352,14 +7415,14 @@
      "hidden": false
     },
     {
-     "$id": "1065",
+     "$id": "1071",
      "name": {
-      "$id": "1066",
+      "$id": "1072",
       "fixed": false,
       "raw": "GetAllClients"
      },
      "group": {
-      "$id": "1067",
+      "$id": "1073",
       "fixed": false,
       "raw": ""
      },
@@ -7369,21 +7432,21 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1068",
+       "$id": "1074",
        "body": {
-        "$id": "1069",
+        "$id": "1075",
         "$type": "SequenceType",
         "elementType": {
          "$ref": "2"
         },
         "name": {
-         "$id": "1070",
+         "$id": "1076",
          "fixed": false
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1071",
+        "$id": "1077",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7401,13 +7464,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1072",
+      "$id": "1078",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1073",
+      "$id": "1079",
       "body": {
-       "$ref": "1069"
+       "$ref": "1075"
       },
       "isNullable": true
      },
@@ -7422,59 +7485,8 @@
      "hidden": false
     },
     {
-     "$id": "1074",
+     "$id": "1080",
      "parameters": [
-      {
-       "$id": "1075",
-       "clientProperty": {
-        "$ref": "936"
-       },
-       "location": "query",
-       "collectionFormat": "none",
-       "defaultValue": {
-        "$id": "1076",
-        "fixed": false
-       },
-       "deprecated": false,
-       "documentation": {
-        "$id": "1077",
-        "fixed": false
-       },
-       "extensions": {
-        "x-ms-metadata": {
-         "apiVersions": [
-          "v1.0"
-         ],
-         "filename": [
-          "mem:///115?oai3.shaken.json"
-         ],
-         "name": "paths·client·get·parameters·0",
-         "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·0"
-         ]
-        },
-        "x-ms-parameter-location": "method"
-       },
-       "isRequired": false,
-       "isConstant": false,
-       "name": {
-        "$id": "1078",
-        "fixed": false,
-        "raw": "Filters"
-       },
-       "serializedName": "Filters",
-       "modelType": {
-        "$id": "1079",
-        "$type": "PrimaryType",
-        "knownPrimaryType": "string",
-        "name": {
-         "$id": "1080",
-         "fixed": false,
-         "raw": "String"
-        },
-        "deprecated": false
-       }
-      },
       {
        "$id": "1081",
        "clientProperty": {
@@ -7499,9 +7511,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·client·get·parameters·1",
+         "name": "paths·client·get·parameters·0",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·1"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -7511,9 +7523,9 @@
        "name": {
         "$id": "1084",
         "fixed": false,
-        "raw": "Sorts"
+        "raw": "Filters"
        },
-       "serializedName": "Sorts",
+       "serializedName": "Filters",
        "modelType": {
         "$id": "1085",
         "$type": "PrimaryType",
@@ -7533,10 +7545,6 @@
        },
        "location": "query",
        "collectionFormat": "none",
-       "constraints": {
-        "InclusiveMaximum": "2147483647",
-        "InclusiveMinimum": "1"
-       },
        "defaultValue": {
         "$id": "1088",
         "fixed": false
@@ -7554,9 +7562,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·client·get·parameters·2",
+         "name": "paths·client·get·parameters·1",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·2"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -7566,18 +7574,17 @@
        "name": {
         "$id": "1090",
         "fixed": false,
-        "raw": "Page"
+        "raw": "Sorts"
        },
-       "serializedName": "Page",
+       "serializedName": "Sorts",
        "modelType": {
         "$id": "1091",
         "$type": "PrimaryType",
-        "format": "int32",
-        "knownPrimaryType": "int",
+        "knownPrimaryType": "string",
         "name": {
          "$id": "1092",
          "fixed": false,
-         "raw": "Int"
+         "raw": "String"
         },
         "deprecated": false
        }
@@ -7610,9 +7617,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·client·get·parameters·3",
+         "name": "paths·client·get·parameters·2",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·3"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -7622,9 +7629,9 @@
        "name": {
         "$id": "1096",
         "fixed": false,
-        "raw": "PageSize"
+        "raw": "Page"
        },
-       "serializedName": "PageSize",
+       "serializedName": "Page",
        "modelType": {
         "$id": "1097",
         "$type": "PrimaryType",
@@ -7637,15 +7644,71 @@
         },
         "deprecated": false
        }
+      },
+      {
+       "$id": "1099",
+       "clientProperty": {
+        "$ref": "960"
+       },
+       "location": "query",
+       "collectionFormat": "none",
+       "constraints": {
+        "InclusiveMaximum": "2147483647",
+        "InclusiveMinimum": "1"
+       },
+       "defaultValue": {
+        "$id": "1100",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "1101",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·client·get·parameters·3",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·client·get·parameters·3"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "1102",
+        "fixed": false,
+        "raw": "PageSize"
+       },
+       "serializedName": "PageSize",
+       "modelType": {
+        "$id": "1103",
+        "$type": "PrimaryType",
+        "format": "int32",
+        "knownPrimaryType": "int",
+        "name": {
+         "$id": "1104",
+         "fixed": false,
+         "raw": "Int"
+        },
+        "deprecated": false
+       }
       }
      ],
      "name": {
-      "$id": "1099",
+      "$id": "1105",
       "fixed": false,
       "raw": "GetClients"
      },
      "group": {
-      "$id": "1100",
+      "$id": "1106",
       "fixed": false,
       "raw": ""
      },
@@ -7655,12 +7718,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1101",
+       "$id": "1107",
        "body": {
         "$ref": "114"
        },
        "extensions": {
-        "$id": "1102",
+        "$id": "1108",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7678,11 +7741,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1103",
+      "$id": "1109",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1104",
+      "$id": "1110",
       "body": {
        "$ref": "114"
       },
@@ -7699,25 +7762,25 @@
      "hidden": false
     },
     {
-     "$id": "1105",
+     "$id": "1111",
      "parameters": [
       {
-       "$id": "1106",
+       "$id": "1112",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1107",
+        "$id": "1113",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1108",
+        "$id": "1114",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1109",
+        "$id": "1115",
         "fixed": false,
         "raw": "body"
        },
@@ -7728,12 +7791,12 @@
       }
      ],
      "name": {
-      "$id": "1110",
+      "$id": "1116",
       "fixed": false,
       "raw": "CreateClient"
      },
      "group": {
-      "$id": "1111",
+      "$id": "1117",
       "fixed": false,
       "raw": ""
      },
@@ -7743,21 +7806,21 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1112",
+       "$id": "1118",
        "body": {
-        "$id": "1113",
+        "$id": "1119",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1114",
+         "$id": "1120",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1115",
+        "$id": "1121",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7775,13 +7838,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1116",
+      "$id": "1122",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1117",
+      "$id": "1123",
       "body": {
-       "$ref": "1113"
+       "$ref": "1119"
       },
       "isNullable": true
      },
@@ -7796,25 +7859,25 @@
      "hidden": false
     },
     {
-     "$id": "1118",
+     "$id": "1124",
      "parameters": [
       {
-       "$id": "1119",
+       "$id": "1125",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1120",
+        "$id": "1126",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1121",
+        "$id": "1127",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1122",
+        "$id": "1128",
         "fixed": false,
         "raw": "body"
        },
@@ -7825,12 +7888,12 @@
       }
      ],
      "name": {
-      "$id": "1123",
+      "$id": "1129",
       "fixed": false,
       "raw": "UpdateClient"
      },
      "group": {
-      "$id": "1124",
+      "$id": "1130",
       "fixed": false,
       "raw": ""
      },
@@ -7840,21 +7903,21 @@
      "httpMethod": "put",
      "responses": {
       "OK": {
-       "$id": "1125",
+       "$id": "1131",
        "body": {
-        "$id": "1126",
+        "$id": "1132",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1127",
+         "$id": "1133",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1128",
+        "$id": "1134",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7872,13 +7935,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1129",
+      "$id": "1135",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1130",
+      "$id": "1136",
       "body": {
-       "$ref": "1126"
+       "$ref": "1132"
       },
       "isNullable": true
      },
@@ -7893,36 +7956,36 @@
      "hidden": false
     },
     {
-     "$id": "1131",
+     "$id": "1137",
      "parameters": [
       {
-       "$id": "1132",
+       "$id": "1138",
        "location": "formData",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1133",
+        "$id": "1139",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1134",
+        "$id": "1140",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1135",
+        "$id": "1141",
         "fixed": false,
         "raw": "File"
        },
        "serializedName": "File",
        "modelType": {
-        "$id": "1136",
+        "$id": "1142",
         "$type": "PrimaryType",
         "format": "binary",
         "knownPrimaryType": "stream",
         "name": {
-         "$id": "1137",
+         "$id": "1143",
          "fixed": false,
          "raw": "Stream"
         },
@@ -7931,12 +7994,12 @@
       }
      ],
      "name": {
-      "$id": "1138",
+      "$id": "1144",
       "fixed": false,
       "raw": "ImportClient"
      },
      "group": {
-      "$id": "1139",
+      "$id": "1145",
       "fixed": false,
       "raw": ""
      },
@@ -7946,9 +8009,9 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1140",
+       "$id": "1146",
        "extensions": {
-        "$id": "1141",
+        "$id": "1147",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -7966,11 +8029,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1142",
+      "$id": "1148",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1143",
+      "$id": "1149",
       "isNullable": true
      },
      "requestContentType": "multipart/form-data",
@@ -7984,22 +8047,22 @@
      "hidden": false
     },
     {
-     "$id": "1144",
+     "$id": "1150",
      "parameters": [
       {
-       "$id": "1145",
+       "$id": "1151",
        "clientProperty": {
-        "$ref": "960"
+        "$ref": "966"
        },
        "location": "query",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1146",
+        "$id": "1152",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1147",
+        "$id": "1153",
         "fixed": false
        },
        "extensions": {
@@ -8020,18 +8083,18 @@
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1148",
+        "$id": "1154",
         "fixed": false,
         "raw": "processId"
        },
        "serializedName": "processId",
        "modelType": {
-        "$id": "1149",
+        "$id": "1155",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1150",
+         "$id": "1156",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -8040,12 +8103,12 @@
       }
      ],
      "name": {
-      "$id": "1151",
+      "$id": "1157",
       "fixed": false,
       "raw": "GetEvents"
      },
      "group": {
-      "$id": "1152",
+      "$id": "1158",
       "fixed": false,
       "raw": ""
      },
@@ -8055,21 +8118,21 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1153",
+       "$id": "1159",
        "body": {
-        "$id": "1154",
+        "$id": "1160",
         "$type": "SequenceType",
         "elementType": {
          "$ref": "94"
         },
         "name": {
-         "$id": "1155",
+         "$id": "1161",
          "fixed": false
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1156",
+        "$id": "1162",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8087,13 +8150,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1157",
+      "$id": "1163",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1158",
+      "$id": "1164",
       "body": {
-       "$ref": "1154"
+       "$ref": "1160"
       },
       "isNullable": true
      },
@@ -8108,25 +8171,25 @@
      "hidden": false
     },
     {
-     "$id": "1159",
+     "$id": "1165",
      "parameters": [
       {
-       "$id": "1160",
+       "$id": "1166",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1161",
+        "$id": "1167",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1162",
+        "$id": "1168",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1163",
+        "$id": "1169",
         "fixed": false,
         "raw": "body"
        },
@@ -8137,12 +8200,12 @@
       }
      ],
      "name": {
-      "$id": "1164",
+      "$id": "1170",
       "fixed": false,
       "raw": "CreateEvent"
      },
      "group": {
-      "$id": "1165",
+      "$id": "1171",
       "fixed": false,
       "raw": ""
      },
@@ -8152,21 +8215,21 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1166",
+       "$id": "1172",
        "body": {
-        "$id": "1167",
+        "$id": "1173",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1168",
+         "$id": "1174",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1169",
+        "$id": "1175",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8184,13 +8247,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1170",
+      "$id": "1176",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1171",
+      "$id": "1177",
       "body": {
-       "$ref": "1167"
+       "$ref": "1173"
       },
       "isNullable": true
      },
@@ -8205,22 +8268,22 @@
      "hidden": false
     },
     {
-     "$id": "1172",
+     "$id": "1178",
      "parameters": [
       {
-       "$id": "1173",
+       "$id": "1179",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1174",
+        "$id": "1180",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1175",
+        "$id": "1181",
         "fixed": false
        },
        "extensions": {
@@ -8241,18 +8304,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1176",
+        "$id": "1182",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1177",
+        "$id": "1183",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1178",
+         "$id": "1184",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -8261,12 +8324,12 @@
       }
      ],
      "name": {
-      "$id": "1179",
+      "$id": "1185",
       "fixed": false,
       "raw": "GetProcessById"
      },
      "group": {
-      "$id": "1180",
+      "$id": "1186",
       "fixed": false,
       "raw": ""
      },
@@ -8276,12 +8339,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1181",
+       "$id": "1187",
        "body": {
-        "$ref": "446"
+        "$ref": "452"
        },
        "extensions": {
-        "$id": "1182",
+        "$id": "1188",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8299,13 +8362,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1183",
+      "$id": "1189",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1184",
+      "$id": "1190",
       "body": {
-       "$ref": "446"
+       "$ref": "452"
       },
       "isNullable": true
      },
@@ -8320,22 +8383,22 @@
      "hidden": false
     },
     {
-     "$id": "1185",
+     "$id": "1191",
      "parameters": [
       {
-       "$id": "1186",
+       "$id": "1192",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1187",
+        "$id": "1193",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1188",
+        "$id": "1194",
         "fixed": false
        },
        "extensions": {
@@ -8356,18 +8419,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1189",
+        "$id": "1195",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1190",
+        "$id": "1196",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1191",
+         "$id": "1197",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -8376,12 +8439,12 @@
       }
      ],
      "name": {
-      "$id": "1192",
+      "$id": "1198",
       "fixed": false,
       "raw": "DeleteProcess"
      },
      "group": {
-      "$id": "1193",
+      "$id": "1199",
       "fixed": false,
       "raw": ""
      },
@@ -8391,9 +8454,9 @@
      "httpMethod": "delete",
      "responses": {
       "OK": {
-       "$id": "1194",
+       "$id": "1200",
        "extensions": {
-        "$id": "1195",
+        "$id": "1201",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8411,11 +8474,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1196",
+      "$id": "1202",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1197",
+      "$id": "1203",
       "isNullable": true
      },
      "requestContentType": "application/json; charset=utf-8",
@@ -8429,59 +8492,8 @@
      "hidden": false
     },
     {
-     "$id": "1198",
+     "$id": "1204",
      "parameters": [
-      {
-       "$id": "1199",
-       "clientProperty": {
-        "$ref": "936"
-       },
-       "location": "query",
-       "collectionFormat": "none",
-       "defaultValue": {
-        "$id": "1200",
-        "fixed": false
-       },
-       "deprecated": false,
-       "documentation": {
-        "$id": "1201",
-        "fixed": false
-       },
-       "extensions": {
-        "x-ms-metadata": {
-         "apiVersions": [
-          "v1.0"
-         ],
-         "filename": [
-          "mem:///115?oai3.shaken.json"
-         ],
-         "name": "paths·process·get·parameters·0",
-         "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·0"
-         ]
-        },
-        "x-ms-parameter-location": "method"
-       },
-       "isRequired": false,
-       "isConstant": false,
-       "name": {
-        "$id": "1202",
-        "fixed": false,
-        "raw": "Filters"
-       },
-       "serializedName": "Filters",
-       "modelType": {
-        "$id": "1203",
-        "$type": "PrimaryType",
-        "knownPrimaryType": "string",
-        "name": {
-         "$id": "1204",
-         "fixed": false,
-         "raw": "String"
-        },
-        "deprecated": false
-       }
-      },
       {
        "$id": "1205",
        "clientProperty": {
@@ -8506,9 +8518,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·process·get·parameters·1",
+         "name": "paths·process·get·parameters·0",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·1"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -8518,9 +8530,9 @@
        "name": {
         "$id": "1208",
         "fixed": false,
-        "raw": "Sorts"
+        "raw": "Filters"
        },
-       "serializedName": "Sorts",
+       "serializedName": "Filters",
        "modelType": {
         "$id": "1209",
         "$type": "PrimaryType",
@@ -8540,10 +8552,6 @@
        },
        "location": "query",
        "collectionFormat": "none",
-       "constraints": {
-        "InclusiveMaximum": "2147483647",
-        "InclusiveMinimum": "1"
-       },
        "defaultValue": {
         "$id": "1212",
         "fixed": false
@@ -8561,9 +8569,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·process·get·parameters·2",
+         "name": "paths·process·get·parameters·1",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·2"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -8573,18 +8581,17 @@
        "name": {
         "$id": "1214",
         "fixed": false,
-        "raw": "Page"
+        "raw": "Sorts"
        },
-       "serializedName": "Page",
+       "serializedName": "Sorts",
        "modelType": {
         "$id": "1215",
         "$type": "PrimaryType",
-        "format": "int32",
-        "knownPrimaryType": "int",
+        "knownPrimaryType": "string",
         "name": {
          "$id": "1216",
          "fixed": false,
-         "raw": "Int"
+         "raw": "String"
         },
         "deprecated": false
        }
@@ -8617,9 +8624,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·process·get·parameters·3",
+         "name": "paths·process·get·parameters·2",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·3"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -8629,9 +8636,9 @@
        "name": {
         "$id": "1220",
         "fixed": false,
-        "raw": "PageSize"
+        "raw": "Page"
        },
-       "serializedName": "PageSize",
+       "serializedName": "Page",
        "modelType": {
         "$id": "1221",
         "$type": "PrimaryType",
@@ -8644,15 +8651,71 @@
         },
         "deprecated": false
        }
+      },
+      {
+       "$id": "1223",
+       "clientProperty": {
+        "$ref": "960"
+       },
+       "location": "query",
+       "collectionFormat": "none",
+       "constraints": {
+        "InclusiveMaximum": "2147483647",
+        "InclusiveMinimum": "1"
+       },
+       "defaultValue": {
+        "$id": "1224",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "1225",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·process·get·parameters·3",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·process·get·parameters·3"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "1226",
+        "fixed": false,
+        "raw": "PageSize"
+       },
+       "serializedName": "PageSize",
+       "modelType": {
+        "$id": "1227",
+        "$type": "PrimaryType",
+        "format": "int32",
+        "knownPrimaryType": "int",
+        "name": {
+         "$id": "1228",
+         "fixed": false,
+         "raw": "Int"
+        },
+        "deprecated": false
+       }
       }
      ],
      "name": {
-      "$id": "1223",
+      "$id": "1229",
       "fixed": false,
       "raw": "GetProcesses"
      },
      "group": {
-      "$id": "1224",
+      "$id": "1230",
       "fixed": false,
       "raw": ""
      },
@@ -8662,12 +8725,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1225",
+       "$id": "1231",
        "body": {
-        "$ref": "562"
+        "$ref": "568"
        },
        "extensions": {
-        "$id": "1226",
+        "$id": "1232",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8685,13 +8748,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1227",
+      "$id": "1233",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1228",
+      "$id": "1234",
       "body": {
-       "$ref": "562"
+       "$ref": "568"
       },
       "isNullable": true
      },
@@ -8706,41 +8769,41 @@
      "hidden": false
     },
     {
-     "$id": "1229",
+     "$id": "1235",
      "parameters": [
       {
-       "$id": "1230",
+       "$id": "1236",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1231",
+        "$id": "1237",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1232",
+        "$id": "1238",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1233",
+        "$id": "1239",
         "fixed": false,
         "raw": "body"
        },
        "serializedName": "body",
        "modelType": {
-        "$ref": "618"
+        "$ref": "624"
        }
       }
      ],
      "name": {
-      "$id": "1234",
+      "$id": "1240",
       "fixed": false,
       "raw": "CreateProcess"
      },
      "group": {
-      "$id": "1235",
+      "$id": "1241",
       "fixed": false,
       "raw": ""
      },
@@ -8750,21 +8813,21 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1236",
+       "$id": "1242",
        "body": {
-        "$id": "1237",
+        "$id": "1243",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1238",
+         "$id": "1244",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1239",
+        "$id": "1245",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8782,13 +8845,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1240",
+      "$id": "1246",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1241",
+      "$id": "1247",
       "body": {
-       "$ref": "1237"
+       "$ref": "1243"
       },
       "isNullable": true
      },
@@ -8803,22 +8866,22 @@
      "hidden": false
     },
     {
-     "$id": "1242",
+     "$id": "1248",
      "parameters": [
       {
-       "$id": "1243",
+       "$id": "1249",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1244",
+        "$id": "1250",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1245",
+        "$id": "1251",
         "fixed": false
        },
        "extensions": {
@@ -8839,18 +8902,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1246",
+        "$id": "1252",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1247",
+        "$id": "1253",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1248",
+         "$id": "1254",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -8859,12 +8922,12 @@
       }
      ],
      "name": {
-      "$id": "1249",
+      "$id": "1255",
       "fixed": false,
       "raw": "GetRepresentativeById"
      },
      "group": {
-      "$id": "1250",
+      "$id": "1256",
       "fixed": false,
       "raw": ""
      },
@@ -8874,12 +8937,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1251",
+       "$id": "1257",
        "body": {
-        "$ref": "638"
+        "$ref": "644"
        },
        "extensions": {
-        "$id": "1252",
+        "$id": "1258",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -8897,13 +8960,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1253",
+      "$id": "1259",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1254",
+      "$id": "1260",
       "body": {
-       "$ref": "638"
+       "$ref": "644"
       },
       "isNullable": true
      },
@@ -8918,22 +8981,22 @@
      "hidden": false
     },
     {
-     "$id": "1255",
+     "$id": "1261",
      "parameters": [
       {
-       "$id": "1256",
+       "$id": "1262",
        "clientProperty": {
-        "$ref": "924"
+        "$ref": "930"
        },
        "location": "path",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1257",
+        "$id": "1263",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1258",
+        "$id": "1264",
         "fixed": false
        },
        "extensions": {
@@ -8954,18 +9017,18 @@
        "isRequired": true,
        "isConstant": false,
        "name": {
-        "$id": "1259",
+        "$id": "1265",
         "fixed": false,
         "raw": "id"
        },
        "serializedName": "id",
        "modelType": {
-        "$id": "1260",
+        "$id": "1266",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1261",
+         "$id": "1267",
          "fixed": false,
          "raw": "Uuid"
         },
@@ -8974,12 +9037,12 @@
       }
      ],
      "name": {
-      "$id": "1262",
+      "$id": "1268",
       "fixed": false,
       "raw": "DeleteRepresentative"
      },
      "group": {
-      "$id": "1263",
+      "$id": "1269",
       "fixed": false,
       "raw": ""
      },
@@ -8989,9 +9052,9 @@
      "httpMethod": "delete",
      "responses": {
       "OK": {
-       "$id": "1264",
+       "$id": "1270",
        "extensions": {
-        "$id": "1265",
+        "$id": "1271",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9009,11 +9072,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1266",
+      "$id": "1272",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1267",
+      "$id": "1273",
       "isNullable": true
      },
      "requestContentType": "application/json; charset=utf-8",
@@ -9027,59 +9090,8 @@
      "hidden": false
     },
     {
-     "$id": "1268",
+     "$id": "1274",
      "parameters": [
-      {
-       "$id": "1269",
-       "clientProperty": {
-        "$ref": "936"
-       },
-       "location": "query",
-       "collectionFormat": "none",
-       "defaultValue": {
-        "$id": "1270",
-        "fixed": false
-       },
-       "deprecated": false,
-       "documentation": {
-        "$id": "1271",
-        "fixed": false
-       },
-       "extensions": {
-        "x-ms-metadata": {
-         "apiVersions": [
-          "v1.0"
-         ],
-         "filename": [
-          "mem:///115?oai3.shaken.json"
-         ],
-         "name": "paths·representative·get·parameters·0",
-         "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·0"
-         ]
-        },
-        "x-ms-parameter-location": "method"
-       },
-       "isRequired": false,
-       "isConstant": false,
-       "name": {
-        "$id": "1272",
-        "fixed": false,
-        "raw": "Filters"
-       },
-       "serializedName": "Filters",
-       "modelType": {
-        "$id": "1273",
-        "$type": "PrimaryType",
-        "knownPrimaryType": "string",
-        "name": {
-         "$id": "1274",
-         "fixed": false,
-         "raw": "String"
-        },
-        "deprecated": false
-       }
-      },
       {
        "$id": "1275",
        "clientProperty": {
@@ -9104,9 +9116,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·representative·get·parameters·1",
+         "name": "paths·representative·get·parameters·0",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·1"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·0"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -9116,9 +9128,9 @@
        "name": {
         "$id": "1278",
         "fixed": false,
-        "raw": "Sorts"
+        "raw": "Filters"
        },
-       "serializedName": "Sorts",
+       "serializedName": "Filters",
        "modelType": {
         "$id": "1279",
         "$type": "PrimaryType",
@@ -9138,10 +9150,6 @@
        },
        "location": "query",
        "collectionFormat": "none",
-       "constraints": {
-        "InclusiveMaximum": "2147483647",
-        "InclusiveMinimum": "1"
-       },
        "defaultValue": {
         "$id": "1282",
         "fixed": false
@@ -9159,9 +9167,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·representative·get·parameters·2",
+         "name": "paths·representative·get·parameters·1",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·2"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·1"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -9171,18 +9179,17 @@
        "name": {
         "$id": "1284",
         "fixed": false,
-        "raw": "Page"
+        "raw": "Sorts"
        },
-       "serializedName": "Page",
+       "serializedName": "Sorts",
        "modelType": {
         "$id": "1285",
         "$type": "PrimaryType",
-        "format": "int32",
-        "knownPrimaryType": "int",
+        "knownPrimaryType": "string",
         "name": {
          "$id": "1286",
          "fixed": false,
-         "raw": "Int"
+         "raw": "String"
         },
         "deprecated": false
        }
@@ -9215,9 +9222,9 @@
          "filename": [
           "mem:///115?oai3.shaken.json"
          ],
-         "name": "paths·representative·get·parameters·3",
+         "name": "paths·representative·get·parameters·2",
          "originalLocations": [
-          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·3"
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·2"
          ]
         },
         "x-ms-parameter-location": "method"
@@ -9227,9 +9234,9 @@
        "name": {
         "$id": "1290",
         "fixed": false,
-        "raw": "PageSize"
+        "raw": "Page"
        },
-       "serializedName": "PageSize",
+       "serializedName": "Page",
        "modelType": {
         "$id": "1291",
         "$type": "PrimaryType",
@@ -9242,15 +9249,71 @@
         },
         "deprecated": false
        }
+      },
+      {
+       "$id": "1293",
+       "clientProperty": {
+        "$ref": "960"
+       },
+       "location": "query",
+       "collectionFormat": "none",
+       "constraints": {
+        "InclusiveMaximum": "2147483647",
+        "InclusiveMinimum": "1"
+       },
+       "defaultValue": {
+        "$id": "1294",
+        "fixed": false
+       },
+       "deprecated": false,
+       "documentation": {
+        "$id": "1295",
+        "fixed": false
+       },
+       "extensions": {
+        "x-ms-metadata": {
+         "apiVersions": [
+          "v1.0"
+         ],
+         "filename": [
+          "mem:///115?oai3.shaken.json"
+         ],
+         "name": "paths·representative·get·parameters·3",
+         "originalLocations": [
+          "file:///C:/Users/akina/SolarCRM/frontend/swagger.json#/components/parameters/paths·representative·get·parameters·3"
+         ]
+        },
+        "x-ms-parameter-location": "method"
+       },
+       "isRequired": false,
+       "isConstant": false,
+       "name": {
+        "$id": "1296",
+        "fixed": false,
+        "raw": "PageSize"
+       },
+       "serializedName": "PageSize",
+       "modelType": {
+        "$id": "1297",
+        "$type": "PrimaryType",
+        "format": "int32",
+        "knownPrimaryType": "int",
+        "name": {
+         "$id": "1298",
+         "fixed": false,
+         "raw": "Int"
+        },
+        "deprecated": false
+       }
       }
      ],
      "name": {
-      "$id": "1293",
+      "$id": "1299",
       "fixed": false,
       "raw": "GetRepresentatives"
      },
      "group": {
-      "$id": "1294",
+      "$id": "1300",
       "fixed": false,
       "raw": ""
      },
@@ -9260,12 +9323,12 @@
      "httpMethod": "get",
      "responses": {
       "OK": {
-       "$id": "1295",
+       "$id": "1301",
        "body": {
-        "$ref": "712"
+        "$ref": "718"
        },
        "extensions": {
-        "$id": "1296",
+        "$id": "1302",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9283,13 +9346,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1297",
+      "$id": "1303",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1298",
+      "$id": "1304",
       "body": {
-       "$ref": "712"
+       "$ref": "718"
       },
       "isNullable": true
      },
@@ -9304,41 +9367,41 @@
      "hidden": false
     },
     {
-     "$id": "1299",
+     "$id": "1305",
      "parameters": [
       {
-       "$id": "1300",
+       "$id": "1306",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1301",
+        "$id": "1307",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1302",
+        "$id": "1308",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1303",
+        "$id": "1309",
         "fixed": false,
         "raw": "body"
        },
        "serializedName": "body",
        "modelType": {
-        "$ref": "768"
+        "$ref": "774"
        }
       }
      ],
      "name": {
-      "$id": "1304",
+      "$id": "1310",
       "fixed": false,
       "raw": "CreateRepresentative"
      },
      "group": {
-      "$id": "1305",
+      "$id": "1311",
       "fixed": false,
       "raw": ""
      },
@@ -9348,21 +9411,21 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1306",
+       "$id": "1312",
        "body": {
-        "$id": "1307",
+        "$id": "1313",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1308",
+         "$id": "1314",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1309",
+        "$id": "1315",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9380,13 +9443,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1310",
+      "$id": "1316",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1311",
+      "$id": "1317",
       "body": {
-       "$ref": "1307"
+       "$ref": "1313"
       },
       "isNullable": true
      },
@@ -9401,41 +9464,41 @@
      "hidden": false
     },
     {
-     "$id": "1312",
+     "$id": "1318",
      "parameters": [
       {
-       "$id": "1313",
+       "$id": "1319",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1314",
+        "$id": "1320",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1315",
+        "$id": "1321",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1316",
+        "$id": "1322",
         "fixed": false,
         "raw": "body"
        },
        "serializedName": "body",
        "modelType": {
-        "$ref": "836"
+        "$ref": "842"
        }
       }
      ],
      "name": {
-      "$id": "1317",
+      "$id": "1323",
       "fixed": false,
       "raw": "UpdateRepresentative"
      },
      "group": {
-      "$id": "1318",
+      "$id": "1324",
       "fixed": false,
       "raw": ""
      },
@@ -9445,21 +9508,21 @@
      "httpMethod": "put",
      "responses": {
       "OK": {
-       "$id": "1319",
+       "$id": "1325",
        "body": {
-        "$id": "1320",
+        "$id": "1326",
         "$type": "PrimaryType",
         "format": "uuid",
         "knownPrimaryType": "uuid",
         "name": {
-         "$id": "1321",
+         "$id": "1327",
          "fixed": false,
          "raw": "Uuid"
         },
         "deprecated": false
        },
        "extensions": {
-        "$id": "1322",
+        "$id": "1328",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9477,13 +9540,13 @@
       }
      },
      "defaultResponse": {
-      "$id": "1323",
+      "$id": "1329",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1324",
+      "$id": "1330",
       "body": {
-       "$ref": "1320"
+       "$ref": "1326"
       },
       "isNullable": true
      },
@@ -9498,36 +9561,36 @@
      "hidden": false
     },
     {
-     "$id": "1325",
+     "$id": "1331",
      "parameters": [
       {
-       "$id": "1326",
+       "$id": "1332",
        "location": "formData",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1327",
+        "$id": "1333",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1328",
+        "$id": "1334",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1329",
+        "$id": "1335",
         "fixed": false,
         "raw": "File"
        },
        "serializedName": "File",
        "modelType": {
-        "$id": "1330",
+        "$id": "1336",
         "$type": "PrimaryType",
         "format": "binary",
         "knownPrimaryType": "stream",
         "name": {
-         "$id": "1331",
+         "$id": "1337",
          "fixed": false,
          "raw": "Stream"
         },
@@ -9536,12 +9599,12 @@
       }
      ],
      "name": {
-      "$id": "1332",
+      "$id": "1338",
       "fixed": false,
       "raw": "ImportRepresentative"
      },
      "group": {
-      "$id": "1333",
+      "$id": "1339",
       "fixed": false,
       "raw": ""
      },
@@ -9551,9 +9614,9 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1334",
+       "$id": "1340",
        "extensions": {
-        "$id": "1335",
+        "$id": "1341",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9571,11 +9634,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1336",
+      "$id": "1342",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1337",
+      "$id": "1343",
       "isNullable": true
      },
      "requestContentType": "multipart/form-data",
@@ -9589,41 +9652,41 @@
      "hidden": false
     },
     {
-     "$id": "1338",
+     "$id": "1344",
      "parameters": [
       {
-       "$id": "1339",
+       "$id": "1345",
        "location": "body",
        "collectionFormat": "none",
        "defaultValue": {
-        "$id": "1340",
+        "$id": "1346",
         "fixed": false
        },
        "deprecated": false,
        "documentation": {
-        "$id": "1341",
+        "$id": "1347",
         "fixed": false
        },
        "isRequired": false,
        "isConstant": false,
        "name": {
-        "$id": "1342",
+        "$id": "1348",
         "fixed": false,
         "raw": "body"
        },
        "serializedName": "body",
        "modelType": {
-        "$ref": "910"
+        "$ref": "916"
        }
       }
      ],
      "name": {
-      "$id": "1343",
+      "$id": "1349",
       "fixed": false,
       "raw": "Authenticate"
      },
      "group": {
-      "$id": "1344",
+      "$id": "1350",
       "fixed": false,
       "raw": ""
      },
@@ -9633,9 +9696,9 @@
      "httpMethod": "post",
      "responses": {
       "OK": {
-       "$id": "1345",
+       "$id": "1351",
        "extensions": {
-        "$id": "1346",
+        "$id": "1352",
         "x-ms-metadata": {
          "apiVersions": [
           "v1.0"
@@ -9653,11 +9716,11 @@
       }
      },
      "defaultResponse": {
-      "$id": "1347",
+      "$id": "1353",
       "isNullable": true
      },
      "returnType": {
-      "$id": "1348",
+      "$id": "1354",
       "isNullable": true
      },
      "requestContentType": "application/json; charset=utf-8",
@@ -9672,12 +9735,12 @@
     }
    ],
    "name": {
-    "$id": "1349",
+    "$id": "1355",
     "fixed": false,
     "raw": ""
    },
    "typeName": {
-    "$id": "1350",
+    "$id": "1356",
     "fixed": false
    },
    "nameForProperty": "API"

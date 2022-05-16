@@ -507,6 +507,12 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      installation: {
+        serializedName: "installation",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -599,11 +605,10 @@ export const ProcessDto: msRest.CompositeMapper = {
           name: "Number"
         }
       },
-      assembly: {
-        nullable: true,
-        serializedName: "assembly",
+      installation: {
+        serializedName: "installation",
         type: {
-          name: "Boolean"
+          name: "Number"
         }
       },
       operatorRequest: {

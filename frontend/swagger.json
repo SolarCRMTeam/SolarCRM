@@ -1021,6 +1021,19 @@
         "type": "integer",
         "format": "int32"
       },
+      "Installation": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "CreateEventCommand": {
         "type": "object",
         "properties": {
@@ -1091,6 +1104,9 @@
           },
           "projectAccept": {
             "$ref": "#/components/schemas/ProjectAccept"
+          },
+          "installation": {
+            "$ref": "#/components/schemas/Installation"
           }
         },
         "additionalProperties": false
@@ -1158,9 +1174,8 @@
           "projectAccepted": {
             "$ref": "#/components/schemas/ProjectAccept"
           },
-          "assembly": {
-            "type": "boolean",
-            "nullable": true
+          "installation": {
+            "$ref": "#/components/schemas/Installation"
           },
           "operatorRequest": {
             "$ref": "#/components/schemas/OperatorRequest"

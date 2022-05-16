@@ -34,7 +34,6 @@ namespace API.Application.Event.Commands.Create
             await ProcessEventByType(mappedEvent.EventType, model, request);
 
             return model.Id;
-
         }
 
         private async Task ProcessEventByType(EventType eventType, Domain.Models.Event model, CreateEventCommand command)
@@ -98,6 +97,13 @@ namespace API.Application.Event.Commands.Create
                     {
                         Model = model,
                         ProjectAccept = command.ProjectAccept
+                    });
+                    break;
+                case EventType.Montaż:
+                    await _bus.SendCommandAsync(new InstallationEvent()
+                    {
+                        Model = model,
+                        Installation = command.Installation.GetValueOrDefault(),
                     });
                     break;
             }

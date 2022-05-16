@@ -20,7 +20,7 @@ namespace API.Domain.Models
         public decimal? Advance { get; set; }
         public Audit? Audit { get; set; }
         public ProjectAccept? ProjectAccepted { get; set; }
-        public bool? Assembly { get; set; }
+        public Installation? Installation { get; set; }
         public OperatorRequest? OperatorRequest { get; set; }
         public string FinalInvoice { get; set; }
         public DateTime? FinalBilling { get; set; }

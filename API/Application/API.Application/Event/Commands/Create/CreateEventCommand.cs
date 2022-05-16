@@ -45,5 +45,9 @@ namespace API.Application.Event.Commands.Create
         #region ProjectAccept
         public ProjectAccept ProjectAccept { get; set; }
         #endregion
+
+        #region Installation
+        public Installation? Installation { get; set; }
+        #endregion
     }
 }
