@@ -22,7 +22,7 @@ namespace API.Application.DTO
         public OperatorRequest? OperatorRequest { get; set; }
         public string FinalInvoice { get; set; }
         public DateTime? FinalBilling { get; set; }
-        public bool? Application { get; set; }
+        public DateTime? Application { get; set; }
         public string ClientNumber { get; set; }
     }
 }

@@ -525,6 +525,18 @@ export const CreateEventCommand: msRest.CompositeMapper = {
         type: {
           name: "String"
         }
+      },
+      finalBilling: {
+        serializedName: "finalBilling",
+        type: {
+          name: "DateTime"
+        }
+      },
+      application: {
+        serializedName: "application",
+        type: {
+          name: "DateTime"
+        }
       }
     }
   }
@@ -642,10 +654,9 @@ export const ProcessDto: msRest.CompositeMapper = {
         }
       },
       application: {
-        nullable: true,
         serializedName: "application",
         type: {
-          name: "Boolean"
+          name: "DateTime"
         }
       },
       clientNumber: {

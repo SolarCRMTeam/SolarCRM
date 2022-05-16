@@ -1122,6 +1122,16 @@
           "finalInvoice": {
             "type": "string",
             "nullable": true
+          },
+          "finalBilling": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "application": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1197,7 +1207,8 @@
             "nullable": true
           },
           "application": {
-            "type": "boolean",
+            "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "clientNumber": {

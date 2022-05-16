@@ -130,6 +130,8 @@ export interface CreateEventCommand {
   installation?: number;
   operatorRequest?: number;
   finalInvoice?: string;
+  finalBilling?: Date;
+  application?: Date;
 }
 
 /**
@@ -153,7 +155,7 @@ export interface ProcessDto {
   operatorRequest?: number;
   finalInvoice?: string;
   finalBilling?: Date;
-  application?: boolean;
+  application?: Date;
   clientNumber?: string;
 }
 

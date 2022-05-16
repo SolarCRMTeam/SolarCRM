@@ -57,5 +57,11 @@ namespace API.Application.Event.Commands.Create
         #region FinalInvoice
         public string FinalInvoice { get; set; }
         #endregion
+        #region FinalBilling
+        public DateTime? FinalBilling { get; set; }
+        #endregion
+        #region Applicatiion
+        public DateTime? Application { get; set; }
+        #endregion
     }
 }

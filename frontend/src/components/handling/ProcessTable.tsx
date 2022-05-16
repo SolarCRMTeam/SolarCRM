@@ -126,10 +126,16 @@ const ProcessTable = () => {
     {
       title: "Rozliczenie końcowe",
       dataIndex: "finalBilling",
+      render: (item: Date) => {
+        return item?.toDateString();
+      },
     },
     {
       title: "Aplikacja",
       dataIndex: "application",
+      render: (item: Date) => {
+        return item ? "Tak" : "Nie";
+      },
     },
     GetTableActions(),
   ];

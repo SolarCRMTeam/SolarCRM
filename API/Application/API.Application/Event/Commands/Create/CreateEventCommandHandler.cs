@@ -120,6 +120,20 @@ namespace API.Application.Event.Commands.Create
                         FinalInvoice = command.FinalInvoice
                     });
                     break;
+                case EventType.Rozliczenie_końcowe:
+                    await _bus.SendCommandAsync(new FinalBillingEvent()
+                    {
+                        Model = model,
+                        FinalBilling = command.FinalBilling.GetValueOrDefault()
+                    });
+                    break;
+                case EventType.Aplikacja:
+                    await _bus.SendCommandAsync(new ApplicationEvent()
+                    {
+                        Model = model,
+                        Application = command.Application.GetValueOrDefault()
+                    });
+                    break;
             }
         }
     }
